@@ -1,0 +1,186 @@
+# Comment inventory
+
+Automatically extracted candidate comment lines from supplied HTML; some matches may be inline code or false positives. Line numbers refer to `racha.html`.
+
+- **L53:** `/* v27: abas do painel (Controle, Câmera, Jogo, Gráficos) e as chaves liga/desliga */`
+- **L102:** `/* ---------- v31: lobby novo (laje na favela, à noite). Tudo aqui dentro mede em px da tela de referência 1920×888:`
+- **L217:** `/* BOTÃO (v44): a sua tampinha à esquerda; à direita, os dois times e o que vai no meio dela */`
+- **L248:** `/* v45: REPLAYS (o 5º item do menu e a tela com os lances) */`
+- **L277:** `/* v45: gravando o vídeo do replay (fica fora da imagem gravada) */`
+- **L286:** `/* v46: os seus botões (tela BOTÃO), a loja de botões e a vitrine */`
+- **L288:** `/* LOJA (v44: sem botões à venda por enquanto) */`
+- **L314:** `#lb .lb-lapis .ic-ok, #lb .lb-lapis.ok .ic-ed{ display:none; } #lb .lb-lapis.ok .ic-ok{ display:block; }   /* v34: editando, o lápis vira ✓ */`
+- **L324:** `/* v35: TREINO e SALAS lado a lado em cima do MODO; o JOGAR do Arcade leva à RANQUEADA (a etiqueta mostra o seu elo) */`
+- **L344:** `#lb .rq-time i s{ width:12px; height:12px; border-radius:50%; background:var(--t0, #f3b720); text-decoration:none; } #lb .rq-time i s.a{ background:var(--t1, #484e51); } #lb .rq-time i u{ width:8px; }   /* v44:…`
+- **L347:** `#lb .rq-mapas{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px; }   /* v44: três mapas numa fileira · v61: quatro (com o Viaduto) */`
+- **L358:** `#lb.retrato .rq-mapas{ grid-template-columns:repeat(2, minmax(0,1fr)); }   /* v61: 2 × 2 em pé */`
+- **L359:** `#lb.retrato .rq-mapa canvas{ height:150px; }        /* v61: em 2 colunas a prévia fica mais alta (sem cortar a formação) */`
+- **L362:** `/* PERFIL (v34): o cartão do jogador com a moldura neon (inspirado no perfil do Free Fire, no clima do baile da laje) e o seu botão do lado */`
+- **L403:** `#lb .pf-emblemas{ flex:1 1 520px; display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:10px; }   /* v35: + o elo da ranqueada */`
+- **L554:** `/* v30: fim de um treino (estrelas, pontos e recorde) */`
+- **L576:** `/* v35: ranqueada — o elo no fim da partida e a busca/apresentação dos times */`
+- **L607:** `.vs-time.v h3{ color:var(--v-claro, #ffb27f); } .vs-time.a h3{ color:var(--a-claro, #d8d0b6); }   /* v44: nas cores das tampinhas */`
+- **L1086:** `/* ================= v56: cara de jogo feito por gente =================`
+- **L1091:** `/* v59 · RACHA — PIXO NEON: noite roxa, lima ácida, magenta e ciano acesos */`
+- **L1241:** `/* ---- v56: abas das telas (VESTIÁRIO, GALERA, PERFIL) ---- */`
+- **L1251:** `/* ---- v56: cartão EM BREVE (o que depende de online) ---- */`
+- **L1259:** `/* ---- v56: Chat do Brasil ---- */`
+- **L1292:** `/* ================= v57: consertos da v56 ================= */`
+- **L1302:** `/* o home: as letras pequenas da v56 (8 a 9 px no celular) */`
+- **L1336:** `/* Ajustes da v57 */`
+- **L1345:** `/* as telas da GALERA que voltaram da v55, no visual da v56 (asfalto, contorno escuro e sombra dura, sem neon) */`
+- **L1390:** `#x49-chat{ display:none !important; }               /* v57: as mensagens rápidas saíram na v56; o elemento vazio não aparece mais */`
+- **L1391:** `/* v57: a pausa da partida e o fim da partida (no visual da v56: asfalto, giz, amarelo, contorno escuro e sombra dura) */`
+- **L1452:** `/* v58: sem o Clássico: a precisão (agora uma só) ocupa duas colunas; os BOTS do painel viram o aviso do sorteio */`
+- **L1458:** `/* ---- v59: o seletor de MODO DE JOGO (futebol, com curva, vôlei, americano, basquete) ---- */`
+- **L1734:** `/* ================= v62: a SALA ONLINE no estilo do print (Time A · Espectadores · Time B) =================`
+- **L1888:** `#lb.retrato .sb-col.sb-lado{ order:0; }                            /* v64: em pé, as SALAS ABERTAS (com o JOGAR AGORA) vêm primeiro */`
+- **L1915:** `#lb .sb-tx b .sb-ofi{ flex:none; font-style:normal; font-size:15px; letter-spacing:1px; line-height:1; padding:5px 8px 4px; border-radius:7px; color:#3a2600; background:#ffd21f; }   /* v1.3 */`
+- **L1916:** `#lb .sb-ja{ margin:2px 0 14px; }                                    /* v64: JOGAR AGORA (salas abertas) */`
+- **L1920:** `/* ================= v63: O CHAT EM TODO LUGAR — a barra embaixo (lobby, sala e partida) e o painel ================= */`
+- **L2081:** `<!-- v30: fim de um treino -->`
+- **L2116:** `<!-- v57: o aquecimento da primeira vez -->`
+- **L2118:** `<!-- v57: a pausa da partida -->`
+- **L2153:** `<!-- v56: o lobby em 5 lugares. Em cima: você, moedas e gemas, correio (só com carta), chat e ajustes.`
+- **L2276:** `<!-- v62: a SALA ONLINE (Time A · Espectadores · Time B), no estilo do print -->`
+- **L2474:** `<!-- v57: a primeira vez (o nome, a tampinha e o aquecimento) -->`
+- **L2539:** `<!-- v85: a imagem da quadra da favela do 1v1 (v42) saiu na auditoria: não havia como provar a origem e nenhum campo a usava -->`
+- **L2565:** `cookie: le('racha84_cookie') === '1',          // v87: a sessão do site no mesmo endereço (o cookie), sem token no aparelho`
+- **L2624:** `nasc: c.criadoEm ? (Date.parse(c.criadoEm) \|\| 0) : 0,   // v88.1: quando a conta nasceu e se nasceu depois do último ZERAR CONTAS`
+- **L2638:** `else if (res.cookie){ R84.cookie = true; grava('racha84_cookie', '1'); }   // v87: entrou pela sessão do site`
+- **L2697:** `(function(){   /* v70: DEMONSTRAÇÃO × PRODUÇÃO. O config.js (ao lado do jogo) diz o modo; sem ele, ?demo=1 liga a demonstração.`
+- **L2710:** `window.RACHA_SEM_SALVAR = 'memoria';   // v70: o jogo avisa que o progresso vale só até fechar (e oferece exportar)`
+- **L2724:** `const c = window.RACHA_CONFIG \|\| {};                // v70: só na DEMONSTRAÇÃO sem servidor configurado (o lançamento conecta de verdade)`
+- **L2730:** `/* RACHA rua v82: as contas (tools/v82/inicio.js) */`
+- **L2731:** `(function(){   /* RACHA rua v82 · AS CONTAS — antes do jogo carregar (o build põe este script antes do script do jogo).`
+- **L2744:** `'racha-hud-layouts-v1'];   // v92 Fase 1: os layouts dos controles da tela também vão para a conta (tools/v92/hud.js)`
+- **L2752:** `// v85: as chaves do treino trocaram de prefixo (o antigo era o nome de outro jogo; ver PROVENIENCIA.md). Antes de tudo, o`
+- **L2754:** `// contas (racha-guarda:*) e no que o conta.js deixou preparado (racha-82-entra:*). A cópia antiga da conta (v82–v84) passa`
+- **L2816:** `if ((!pl \|\| (pl.versao \| 0) < 82) && window.RACHA_JOGO_LOCAL) pl = window.RACHA_JOGO_LOCAL;   // v84: sem o site, a ponte HTTP do login obrigatório`
+- **L2822:** `// v88.1: o mesmo número, outra conta (depois do ZERAR CONTAS do dono do RACHA): o que era da conta apagada sai antes de o jogo ler`
+- **L2873:** `if (n && n.dados && n.dados.chaves) migraObj(n.dados.chaves);   // v85: a cópia antiga da conta, com os nomes antigos`
+- **L2900:** `/* v62: O SERVIDOR DO JOGO (salas, clubes, copa e Chat do Brasil).`
+- **L2903:** `const SERVIDOR_DO_JOGO = (window.RACHA_CONFIG && typeof window.RACHA_CONFIG.servidor === 'string') ? window.RACHA_CONFIG.servidor.trim() : '';   // v70: o config.js (vazio = o mesmo endereço do jogo)`
+- **L2912:** `/* v20: modos de campo. Seletor embaixo no meio da tela: as setas trocam 1v1 → 2v2 → 3v3 → 4v4 (teclas 1 a 4 também).`
+- **L2917:** `const MODOS = [                                     // v95: o campo 30% maior (a área da bola e as marcas × 1,3; a faixa de fora igual) · o gol do tamanho de antes`
+- **L2923:** `// v55: as marcas de cada tamanho (u) (antes: as do 1v1 crescendo com o pênalti do modo).`
+- **L2927:** `const MARCAS_MODO = [                               // v95: × 1,3 (as do servidor — SAIDA_U do núcleo — são as mesmas)`
+- **L2933:** `// v55: as regras da quadra (os testes desligam para comparar com a v54)`
+- **L2938:** `const CHAVE_MODO = 'racha-treino-modo-v1';            // o modo escolhido fica salvo no aparelho (v85: a chave sem a marca; o tools/v82/inicio.js leva a antiga)`
+- **L2940:** `/* ---- A física clássica (a da v84; v87.1: o chute 15% abaixo da versão antiga) ---- */`
+- **L2949:** `let FORCA_KICK = 212.5, FORCA_POWER = 340;          // v87.1: PASSE e CHUTE 15% abaixo da versão antiga (250 e 400; na v86, 275 e 440). Impulso: Δv = força ÷ massa da bola = +21,25 / +34 u/s`
+- **L2954:** `let LIMITE_VEL_BOLA = U(46.75);                     // velocidade máxima: 46,75 u/s (v87.1: 15% abaixo dos 55 da versão antiga, junto com o chute; na v86, 60)`
+- **L2971:** `const ASSIST_TICKS = 600;                             // v34: o passe vale assistência até 10 s antes do gol`
+- **L2976:** `let V92_QJJ = 0.3, V92_QJP = 0.65, V92_DIRECOES = 32;   // v92: tampinha × tampinha, tampinha × muro da área, direções do analógico (os da v91)`
+- **L2986:** `const SOM_FUNK = 0.32;                                // v22: volume do funk do paredão na favela (0 = sem música)`
+- **L2989:** `/* v21: campos trocáveis (2º seletor, ao lado do 1v1). O tamanho continua vindo do modo (1v1 a 4v4).`
+- **L2997:** `/* v42: o 1v1 da Favela era a quadra de uma imagem (embutida no <img id="img-favela-1v1">). v85: a imagem saiu (sem proveniência);`
+- **L3008:** `{id:'estadio', nome:'Arena', margem:[206, 59],  fatorBola:FATOR_BOLA, rede:true,  entraGol:true, fundo:'#3e3029'},   // v37: entra no gol pela boca · v44: desenho novo, mesmo tamanho · v61: a ARENA (o id fica: …`
+- **L3009:** `{id:'favela',  nome:'Favela',  margem:[500, 575], fatorBola:0.992,      rede:true, entraGol:true, golRua:true, quadroExtra:52, fundo:'#4a463f'},   // v24: gol com trave; +95 de margem em cima · v61: sem a foto …`
+- **L3010:** `// v43: mapas novos no estilo da quadra da imagem, desenhados (ver MORRO). morro = desenho, som e rojão de favela`
+- **L3012:** `{id:'viaduto', nome:'Viaduto', margem:[560, 460], fatorBola:FATOR_BOLA, rede:true, entraGol:true, quadroExtra:40, fundo:'#26283a', morro:true},   // v61: a quadra debaixo do elevado (concreto: a bola rola como …`
+- **L3013:** `{id:'gramado', nome:'Estádio', margem:[206, 59], fatorBola:FATOR_BOLA, rede:true, entraGol:true, fundo:'#1d2326', grama:true}   // v70.2: o ESTÁDIO de grama (as medidas e a bola da Arena; o desenho é o gramado …`
+- **L3022:** `const CAM_SUAVE = 3, CAM_ZOOM_SUAVE = 5;              // a câmera da base anda 3·dt do caminho até o alvo a cada quadro (a da v70 substitui)`
+- **L3024:** `/* v27: o que o EDITAR HUD ganhou (os mesmos botões nos dois modos) */`
+- **L3027:** `const OPC_PADRAO = {lag:true, torc:true, efx:true, dir:false, verFps:false, replay:true};   // v70.2: a Seta da direção começa desligada   // v45: replay = o lance de novo depois do gol   // v33: verFps = mostr…`
+- **L3029:** `const FPS_OPCOES = [30, 60, 90, 120], FPS_PADRAO = 60;   // v33: limite de quadros por segundo (acima da taxa da tela do aparelho não muda nada)`
+- **L3036:** `// v20: a geometria do campo vem do modo escolhido (MODOS, em u). aplicaModo(i) recalcula tudo em px virtuais.`
+- **L3037:** `// v21: e também do tipo de campo (CAMPOS: estádio e favela; a praia saiu na v25) → aplicaModo(i, c)`
+- **L3039:** `let QUADRO_W = 0, QUADRO_H = 0;                       // v21: o que a "tela parada" enquadra (área do jogador + a moldura do estádio)`
+- **L3043:** `let JOG_X0 = 0, JOG_X1 = 0;                           // v22: até onde o jogador vai na horizontal (na favela: até a linha do gol)`
+- **L3044:** `let JOG_Y0 = 0, JOG_Y1 = 0;                           // v23: e na vertical (na favela: entre os muros)`
+- **L3051:** `const CHINELOS = [];                                  // v21: os 4 chinelos da favela (posição, ângulo, pé, cores) para o desenho`
+- **L3052:** `const OBST = [];                                      // v21: [x, y, raio] obstáculos só do jogador (v23: vazio; os postes da favela ficaram atrás do muro)`
+- **L3053:** `const JOG_SEGS = [];                                  // v24: [x0, y0, x1, y1] paredes só do jogador (favela: a linha de fundo fora do gol e a rede)`
+- **L3054:** `let ATRITO_JOG_BOLA = Math.sqrt(0.3*ATRITO_BOLA), ATRITO_TRAVE_BOLA = Math.sqrt(0.1*ATRITO_BOLA);   // v92: let (o painel de testes)`
+- **L3056:** `let Q_PAREDE = Math.max(QUIQUE_BOLA, QUIQUE_PAREDE_BOLA), Q_TRAVE = Math.max(QUIQUE_BOLA, QUIQUE_TRAVE), Q_REDE = Math.max(QUIQUE_BOLA, QUIQUE_REDE);   // v92: let`
+- **L3058:** `let GEO_VER = 0;                                      // v44: muda sempre que a geometria muda (caixas de batida da previsão)`
+- **L3062:** `const m = MODOS[i], base = CAMPOS[c], im = i === 0 && base.img1v1 ? base.img1v1 : null;   // v42: 1v1 da favela = a imagem`
+- **L3065:** `if (im){                                            // v42: o mundo é a imagem inteira; linhas, gols e calçada medidos nela`
+- **L3089:** `if (cp.rede){                                       // estádio e (v24) favela: gol com rede, traves de metal`
+- **L3099:** `if (cp.entraGol){                                 // v24 (favela) · v37 (estádio): o jogador entra no gol pela boca; não passa pela rede e esbarra nas traves`
+- **L3100:** `JOG_SEGS.push(...NET_SEGS);                     // v25: e cruza a linha de fundo nos escanteios (como no estádio), até o muro`
+- **L3103:** `} else {                                            // gol de chinelos (v21-v23 na favela; hoje sem uso): rua entre muros, sem rede`
+- **L3106:** `[LX0, LY0, LX0, GOL_Y0], [LX0, GOL_Y1, LX0, LY1],          // v22: linha do gol pintada dos dois lados dos chinelos (a bola não`
+- **L3116:** `JOG_X0 = cp.rede ? GL : LX0; JOG_X1 = cp.rede ? GR : LX1;   // v25: na favela também vai até o muro das pontas (a rede segura o gol: JOG_SEGS)`
+- **L3117:** `JOG_Y0 = cp.rede ? GT : LY0; JOG_Y1 = cp.rede ? GB : LY1;   // v24: na favela, até o pé do muro (passa da lateral, como no estádio)`
+- **L3119:** `if (im){                                            // v42: as marcas pintadas na imagem`
+- **L3127:** `const M = MARCAS_MODO[i] \|\| MARCAS_MODO[0];          // v55: as marcas do tamanho`
+- **L3134:** `try { const s0 = localStorage.getItem(CHAVE_CAMPO), s = s0 === 'laje' \|\| s0 === 'terrao' ? 'escadao' : s0, c = CAMPOS.findIndex(q => q.id === s); if (c >= 0) campo = c; } catch (_) {}   // v44: Laje e Terrão …`
+- **L3233:** `if (RQ.on) rqColide();                                                   // v35: os bots (bola, paredes) e jogador x jogador`
+- **L3235:** `for (let i = 0; i < JOG_SEGS.length; i++){ const s = JOG_SEGS[i]; hitSeg(P, s[0], s[1], s[2], s[3], 0.6, 0); }   // v24: favela: linha de fundo fora do gol e a rede`
+- **L3240:** `for (let i = 0; i < OBST.length; i++){ const o = OBST[i]; hitPoint(P, o[0], o[1], o[2], 0.3, 0); }   // v21: obstáculos do jogador (v24: as traves do gol da favela)`
+- **L3253:** `if (TR.on) trColideArc();                                              // v30: treino (companheiros, goleiro, paredão, cones)`
+- **L3315:** `jogo:String(I.jogo \|\| 'futebol'), pts:I.pts \| 0, ginga:!!I.ginga,   // v61: o modo e o GOL DE GINGA chegam ao título do replay`
+- **L3316:** `contraDe:String(I.contraDe \|\| ''), desvio:String(I.desvio \|\| ''), meu:I.meu ? 1 : 0},   // v70: quem fez contra, em quem desviou e o lado de quem gravou`
+- **L3389:** `trilhaPoe(TRILHA_RP, bx, by, f/R.hz);              // v48: o rastro (no tempo do lance: na câmera lenta fica do tamanho certo)`
+- **L3390:** `{ let m = null, dm = 1e9;                          // v61: o rastro pega a cor de quem encostou por último (o drible também), como no jogo`
+- **L3394:** `rpVeste(R);                                        // v51: o botão de cada um`
+- **L3395:** `{ const t = agoraFx(); for (let i = 0; i < n; i++) aroDe(g, R.ents[i], v(RP_F0 + i*3), v(RP_F0 + 1 + i*3), rpCorTime(R, R.ents[i].time), t); }   // v48: o aro de cada um`
+- **L3406:** `desenhaRespingos(g);                               // v61: o respingo do chute no replay`
+- **L3419:** `const I = R.info \|\| {}, nosso = (I.time \| 0) === (I.meu \| 0);   // v70: do lado de quem gravou (na sala, você pode ser o azul)`
+- **L3421:** `return rqTextoLance(I, nosso, true);                 // v70: a regra única (autor, gol contra, desvio, unidade do modo; o passe vai na linha de baixo do replay)`
+- **L3445:** `txt(g, cam.mode === 'seguir' ? 'CÂMERA NA BOLA' : 'TELA PARADA', bx0 - 120, by + 6, 22, '#e8e3ff', 'rgba(10,8,24,.92)', 5);   // v70: quem a câmera acompanha no replay`
+- **L3513:** `const a = le(CHAVE_REPLAYS), b = le(CHAVE_REPLAYS_REC), soArcade = l => l.filter(e => e && e.modo !== 'classico');   // v58: os do Clássico saem (nem contam no limite)`
+- **L3560:** `contraDe:limpaNome(String(I.contraDe \|\| '')), desvio:limpaNome(String(I.desvio \|\| '')), meu:I.meu ? 1 : 0}, cmp,   // v70`
+- **L3621:** `if (TR.on) trPreArc();                                // v30: treino (onde os companheiros estavam, para o desenho suave)`
+- **L3622:** `if (RQ.on) rqPre();                                   // v35: ranqueada (os bots decidem, andam e chutam)`
+- **L3632:** `if (RQ.on && RQ.jogo === 'ginga') gnPre(mx, my);     // v61: drible e finta (a arrancada passa por cima do analógico)`
+- **L3634:** `if (RQ.on && RQ.jogo === 'curva') cvAmostra(dt, mx, my);   // v61: o botão CURVA (carrega segurando, chuta ao soltar)`
+- **L3641:** `const damping=Math.pow(CAMPO.fatorBola,tk);           // v21: cada campo tem a sua (estádio = FATOR_BOLA)`
+- **L3650:** `const bx0=B.x, by0=B.y;                             // v21: onde a bola estava (para ver se cruzou a linha do gol)`
+- **L3653:** `if (RQ.on && RQ.jogo === 'curva') mdCurva(sub);    // v59: a bola entorta no ar`
+- **L3654:** `if (RQ.on && RQ.travaMeio) mdTravaMeio(P);         // v59: no vôlei você não passa da rede`
+- **L3655:** `if (TR.on) trMoveArc(sub);                          // v30: goleiro e companheiros que andam`
+- **L3656:** `if (RQ.on) rqMove(sub);                             // v35`
+- **L3658:** `if (RQ.on){ rqToques(); const lado = mdCruzou(bx0, by0, B.x, B.y); if (lado) rqGol(lado); }   // v35: na ranqueada o gol é de um time · v59: modos`
+- **L3659:** `else if (TR.on){                                         // v30: no treino quem decide o que vale é o exercício`
+- **L3664:** `goals++;goalT=0;spawnConfetti();som.gol();stGol();perfilSalvar();ecoGol('livre');   // v31: moedas, XP e o Top semanal`
+- **L3665:** `rpMarcaGol({time:0, livre:true});                 // v45: o replay deste gol`
+- **L3668:** `if (TR.on) trPos();                                   // v30: o exercício olha o que aconteceu neste tick`
+- **L3669:** `if (RQ.on) rqPos();                                   // v35: relógio, saída e fim da ranqueada`
+- **L3671:** `// v21: gol = o centro da bola cruzou a linha do gol entre as traves (ou entre os chinelos), saindo do campo. (v55: a bola inteira)`
+- **L3673:** `function golCruzou(x0, y0, x1, y1){                    // v55: com a bola inteira do lado de dentro (o centro 1 raio depois da linha)`
+- **L3679:** `function golY(x0, y0, x1, y1, lado){                   // v30: altura em que a bola cruzou a linha do gol (para os alvos dos cantos)`
+- **L3684:** `/* ---------- v59: MODOS DE JOGO (a "salinha" de modos) ----------`
+- **L3690:** `{id:'curva',     nome:'COM CURVA',  desc:'Futebol com efeito: segure o botão CURVA para carregar — quanto mais segura, mais a bola entorta (o analógico escolhe o lado). PASSE e CHUTE saem retos. Primeiro a 3.'}…`
+- **L3694:** `{id:'ginga',     nome:'GINGA',      desc:'Drible e finta: o DRIBLE arranca com a bola e a FINTA ameaça o chute (o goleiro e o marcador caem). Gol logo depois de uma jogada que deu certo é GOL DE GINGA e vale 2.…`
+- **L3699:** `const MD_SALA = MD_LISTA.slice();                       // v70: a GINGA também nas salas: o convidado manda FINTA e DRIBLE no comando (k), como o anfitrião`
+- **L3700:** `const mdSala = id => mdValida(id);                      // v70: (a ginga vale na sala)`
+- **L3707:** `gnZera(); cvZera();                                  // v61: ginga e curva começam do zero`
+- **L3708:** `if (md === 'ginga') RQ.meta = 5;                     // v61: ginga vai a 5`
+- **L3745:** `if (B.cvUx != null && (B.vx*B.cvUx + B.vy*B.cvUy)/v < .94){ B.cvT = 0; return; }   // v61: bateu (trave, corpo, linha): o efeito acaba ali`
+- **L3752:** `B.cvT = 0;                                           // v61: PASSE e CHUTE saem retos; a curva é só do botão CURVA (e do chute de curva do bot)`
+- **L3753:** `// v70: o convidado tem o botão CURVA como o anfitrião (a carga e o lado chegam no comando: v70Remoto em tools/v70/online.js): sem curva automática`
+- **L3755:** `if (c && !c.usado){ c.usado = true; cvMarca(c.s, c.c); som.curva(c.c); }   // v61: o bot planejou o chute de curva (cvBotPlano)`
+- **L3760:** `const time = lado > 0 ? 0 : 1;                       // v70: touchdown só com um jogador do time que ataca conduzindo: colado na bola e com toque nela agora há pouco`
+- **L3773:** `/* ---------- v61: CURVA NO BOTÃO E O MODO GINGA (DRIBLE e FINTA) ----------`
+- **L3787:** `function cvCancela(){ CV.carga = 0; CV.segura = false; CV.toque = false; CV.arma = 0; CV.n = 0; }   // v61: a carga some sem chutar (pausa, editor, janela sem foco); a bola que já curva segue curvando`
+- **L3912:** `function gnFez(q, tipo){                               // deu certo: o nome em cima de quem fez (o mesmo das jogadas da v47) e abre a janela do GOL DE GINGA`
+- **L3924:** `q.fxPisca = Math.max(q.fxPisca \|\| 0, 1); som.finta(q === P ? 1 : .55);   // v61: a finta só acende o halo (sem respingo na bola: ela não foi tocada)`
+- **L3929:** `q.fxA = Math.atan2(uy, ux);                          // v61: vira para o lado do lance falso`
+- **L3933:** `if (dq > (gk ? U(16) : U(9))) continue;            // v61: o goleiro também precisa estar perto do lance`
+- **L3943:** `if (gk && !vaiGol) continue;                       // v61: finta que não vai para o gol não engana o goleiro`
+- **L3946:** `if ((gk \|\| Math.abs(o.x - ox) < U(8)) && vaiGol){  // o goleiro: pula para onde o chute falso ia`
+- **L3956:** `if (tipo !== 'trava' \|\| !gk) caiu++;               // v61: goleiro que só trava não vale GINGA`
+- **L4002:** `const pb = (B.x - o.x)*a.ax + (B.y - o.y)*a.ay, pq = (q.x - o.x)*a.ax + (q.y - o.y)*a.ay;   // quanto passou dele, na linha de quem ia para cima dele`
+- **L4048:** `/* ---- as quadras dos modos, pintadas por cima do mapa (v59) ---- */`
+- **L4160:** `if (TR.presa) return false;                 // v30: bola no pé de um companheiro do treino (ele vai tocar)`
+- **L4167:** `RP.toque = Math.max(RP.toque, strength >= FORCA_POWER ? 2 : 1);   // v45: o som do chute no replay`
+- **L4168:** `if (RQ.on){ RQ.chuteDe = {x:B.x, y:B.y, time:P.time \|\| 0}; mdAplicaCurva(P, dx, dy, d, strength); }   // v59: origem do chute (3 pontos) e a curva`
+- **L4173:** `if (TR.presa) return false;                   // v30`
+- **L4185:** `rpCorte();                                             // v45: (o replay não volta antes do teleporte)`
+- **L4199:** `// v58: as funções dos bots que mudam (o build troca cada uma pelo nome; as novas entram no fim do bloco dos bots).`
+- **L4226:** `// monta a partida: n por time, mapa (índice de CAMPOS), força dos bots. Você é o primeiro do time 0 (v44: o da sua tampinha)`
+- **L4229:** `aplicaModo(n - 1, mapa); mdGeo(); rqGeo();           // v59: o modo de jogo ajusta a geometria (vôlei, americano, basquete)`
+- **L4234:** `contorno:null, corrida:null, recebeuT:-99, devolver:null, tatico:null, parceiro:null}); RQ.jog.push(P); continue; }   // v58: nada da partida anterior`
+- **L4241:** `RQ.ptsH = RQ.contraH = 0; RQ.golAutor = null; RQ.tdPortador = null; RQ.ultLance = null;   // v70: os pontos (cestas de 2/3, gol de ginga), os gols contra e o lance`
+- **L4244:** `rqHmCria();                                          // v47: o estilo e o tempo de reação de cada um`
+- **L4245:** `rqVesteBots();                                       // v51: o botão de cada bot`
+- **L4257:** `RQ.chuteDe = null; RQ.tdPortador = null; RQ.golAutor = null;   // v70: a saída zera o lance (a cesta nova não herda o arremesso de antes)`
+- **L4266:** `rqHmSaida();                                         // v47`
+- **L4274:** `rqBots();                                            // v47: (com RQ.autoH, o jogo joga por você lá dentro)`
+- **L4282:** `if (RQ.jogo === 'ginga') gnRapido();                 // v61: a arrancada do drible e quem para para armar a finta`
+- **L4301:** `function rqBarreiraUm(q){                              // v55: o meio-campo segura todo mundo; o arco do lado de quem espera segura os dois times`
+
+Showing first 180 of 1421 matches. Full index: `comment-inventory.tsv`.

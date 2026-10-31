@@ -1,0 +1,1422 @@
+line	excerpt
+53	/* v27: abas do painel (Controle, Câmera, Jogo, Gráficos) e as chaves liga/desliga */
+102	/* ---------- v31: lobby novo (laje na favela, à noite). Tudo aqui dentro mede em px da tela de referência 1920×888:
+217	/* BOTÃO (v44): a sua tampinha à esquerda; à direita, os dois times e o que vai no meio dela */
+248	/* v45: REPLAYS (o 5º item do menu e a tela com os lances) */
+277	/* v45: gravando o vídeo do replay (fica fora da imagem gravada) */
+286	/* v46: os seus botões (tela BOTÃO), a loja de botões e a vitrine */
+288	/* LOJA (v44: sem botões à venda por enquanto) */
+314	#lb .lb-lapis .ic-ok, #lb .lb-lapis.ok .ic-ed{ display:none; } #lb .lb-lapis.ok .ic-ok{ display:block; }   /* v34: editando, o lápis vira ✓ */
+324	/* v35: TREINO e SALAS lado a lado em cima do MODO; o JOGAR do Arcade leva à RANQUEADA (a etiqueta mostra o seu elo) */
+344	#lb .rq-time i s{ width:12px; height:12px; border-radius:50%; background:var(--t0, #f3b720); text-decoration:none; } #lb .rq-time i s.a{ background:var(--t1, #484e51); } #lb .rq-time i u{ width:8px; }   /* v44:…
+347	#lb .rq-mapas{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px; }   /* v44: três mapas numa fileira · v61: quatro (com o Viaduto) */
+358	#lb.retrato .rq-mapas{ grid-template-columns:repeat(2, minmax(0,1fr)); }   /* v61: 2 × 2 em pé */
+359	#lb.retrato .rq-mapa canvas{ height:150px; }        /* v61: em 2 colunas a prévia fica mais alta (sem cortar a formação) */
+362	/* PERFIL (v34): o cartão do jogador com a moldura neon (inspirado no perfil do Free Fire, no clima do baile da laje) e o seu botão do lado */
+403	#lb .pf-emblemas{ flex:1 1 520px; display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:10px; }   /* v35: + o elo da ranqueada */
+554	/* v30: fim de um treino (estrelas, pontos e recorde) */
+576	/* v35: ranqueada — o elo no fim da partida e a busca/apresentação dos times */
+607	.vs-time.v h3{ color:var(--v-claro, #ffb27f); } .vs-time.a h3{ color:var(--a-claro, #d8d0b6); }   /* v44: nas cores das tampinhas */
+1086	/* ================= v56: cara de jogo feito por gente =================
+1091	/* v59 · RACHA — PIXO NEON: noite roxa, lima ácida, magenta e ciano acesos */
+1241	/* ---- v56: abas das telas (VESTIÁRIO, GALERA, PERFIL) ---- */
+1251	/* ---- v56: cartão EM BREVE (o que depende de online) ---- */
+1259	/* ---- v56: Chat do Brasil ---- */
+1292	/* ================= v57: consertos da v56 ================= */
+1302	/* o home: as letras pequenas da v56 (8 a 9 px no celular) */
+1336	/* Ajustes da v57 */
+1345	/* as telas da GALERA que voltaram da v55, no visual da v56 (asfalto, contorno escuro e sombra dura, sem neon) */
+1390	#x49-chat{ display:none !important; }               /* v57: as mensagens rápidas saíram na v56; o elemento vazio não aparece mais */
+1391	/* v57: a pausa da partida e o fim da partida (no visual da v56: asfalto, giz, amarelo, contorno escuro e sombra dura) */
+1452	/* v58: sem o Clássico: a precisão (agora uma só) ocupa duas colunas; os BOTS do painel viram o aviso do sorteio */
+1458	/* ---- v59: o seletor de MODO DE JOGO (futebol, com curva, vôlei, americano, basquete) ---- */
+1734	/* ================= v62: a SALA ONLINE no estilo do print (Time A · Espectadores · Time B) =================
+1888	#lb.retrato .sb-col.sb-lado{ order:0; }                            /* v64: em pé, as SALAS ABERTAS (com o JOGAR AGORA) vêm primeiro */
+1915	#lb .sb-tx b .sb-ofi{ flex:none; font-style:normal; font-size:15px; letter-spacing:1px; line-height:1; padding:5px 8px 4px; border-radius:7px; color:#3a2600; background:#ffd21f; }   /* v1.3 */
+1916	#lb .sb-ja{ margin:2px 0 14px; }                                    /* v64: JOGAR AGORA (salas abertas) */
+1920	/* ================= v63: O CHAT EM TODO LUGAR — a barra embaixo (lobby, sala e partida) e o painel ================= */
+2081	<!-- v30: fim de um treino -->
+2116	<!-- v57: o aquecimento da primeira vez -->
+2118	<!-- v57: a pausa da partida -->
+2153	<!-- v56: o lobby em 5 lugares. Em cima: você, moedas e gemas, correio (só com carta), chat e ajustes.
+2276	<!-- v62: a SALA ONLINE (Time A · Espectadores · Time B), no estilo do print -->
+2474	<!-- v57: a primeira vez (o nome, a tampinha e o aquecimento) -->
+2539	<!-- v85: a imagem da quadra da favela do 1v1 (v42) saiu na auditoria: não havia como provar a origem e nenhum campo a usava -->
+2565	cookie: le('racha84_cookie') === '1',          // v87: a sessão do site no mesmo endereço (o cookie), sem token no aparelho
+2624	nasc: c.criadoEm ? (Date.parse(c.criadoEm) \|\| 0) : 0,   // v88.1: quando a conta nasceu e se nasceu depois do último ZERAR CONTAS
+2638	else if (res.cookie){ R84.cookie = true; grava('racha84_cookie', '1'); }   // v87: entrou pela sessão do site
+2697	(function(){   /* v70: DEMONSTRAÇÃO × PRODUÇÃO. O config.js (ao lado do jogo) diz o modo; sem ele, ?demo=1 liga a demonstração.
+2710	window.RACHA_SEM_SALVAR = 'memoria';   // v70: o jogo avisa que o progresso vale só até fechar (e oferece exportar)
+2724	const c = window.RACHA_CONFIG \|\| {};                // v70: só na DEMONSTRAÇÃO sem servidor configurado (o lançamento conecta de verdade)
+2730	/* RACHA rua v82: as contas (tools/v82/inicio.js) */
+2731	(function(){   /* RACHA rua v82 · AS CONTAS — antes do jogo carregar (o build põe este script antes do script do jogo).
+2744	'racha-hud-layouts-v1'];   // v92 Fase 1: os layouts dos controles da tela também vão para a conta (tools/v92/hud.js)
+2752	// v85: as chaves do treino trocaram de prefixo (o antigo era o nome de outro jogo; ver PROVENIENCIA.md). Antes de tudo, o
+2754	// contas (racha-guarda:*) e no que o conta.js deixou preparado (racha-82-entra:*). A cópia antiga da conta (v82–v84) passa
+2816	if ((!pl \|\| (pl.versao \| 0) < 82) && window.RACHA_JOGO_LOCAL) pl = window.RACHA_JOGO_LOCAL;   // v84: sem o site, a ponte HTTP do login obrigatório
+2822	// v88.1: o mesmo número, outra conta (depois do ZERAR CONTAS do dono do RACHA): o que era da conta apagada sai antes de o jogo ler
+2873	if (n && n.dados && n.dados.chaves) migraObj(n.dados.chaves);   // v85: a cópia antiga da conta, com os nomes antigos
+2900	/* v62: O SERVIDOR DO JOGO (salas, clubes, copa e Chat do Brasil).
+2903	const SERVIDOR_DO_JOGO = (window.RACHA_CONFIG && typeof window.RACHA_CONFIG.servidor === 'string') ? window.RACHA_CONFIG.servidor.trim() : '';   // v70: o config.js (vazio = o mesmo endereço do jogo)
+2912	/* v20: modos de campo. Seletor embaixo no meio da tela: as setas trocam 1v1 → 2v2 → 3v3 → 4v4 (teclas 1 a 4 também).
+2917	const MODOS = [                                     // v95: o campo 30% maior (a área da bola e as marcas × 1,3; a faixa de fora igual) · o gol do tamanho de antes
+2923	// v55: as marcas de cada tamanho (u) (antes: as do 1v1 crescendo com o pênalti do modo).
+2927	const MARCAS_MODO = [                               // v95: × 1,3 (as do servidor — SAIDA_U do núcleo — são as mesmas)
+2933	// v55: as regras da quadra (os testes desligam para comparar com a v54)
+2938	const CHAVE_MODO = 'racha-treino-modo-v1';            // o modo escolhido fica salvo no aparelho (v85: a chave sem a marca; o tools/v82/inicio.js leva a antiga)
+2940	/* ---- A física clássica (a da v84; v87.1: o chute 15% abaixo da versão antiga) ---- */
+2949	let FORCA_KICK = 212.5, FORCA_POWER = 340;          // v87.1: PASSE e CHUTE 15% abaixo da versão antiga (250 e 400; na v86, 275 e 440). Impulso: Δv = força ÷ massa da bola = +21,25 / +34 u/s
+2954	let LIMITE_VEL_BOLA = U(46.75);                     // velocidade máxima: 46,75 u/s (v87.1: 15% abaixo dos 55 da versão antiga, junto com o chute; na v86, 60)
+2971	const ASSIST_TICKS = 600;                             // v34: o passe vale assistência até 10 s antes do gol
+2976	let V92_QJJ = 0.3, V92_QJP = 0.65, V92_DIRECOES = 32;   // v92: tampinha × tampinha, tampinha × muro da área, direções do analógico (os da v91)
+2986	const SOM_FUNK = 0.32;                                // v22: volume do funk do paredão na favela (0 = sem música)
+2989	/* v21: campos trocáveis (2º seletor, ao lado do 1v1). O tamanho continua vindo do modo (1v1 a 4v4).
+2997	/* v42: o 1v1 da Favela era a quadra de uma imagem (embutida no <img id="img-favela-1v1">). v85: a imagem saiu (sem proveniência);
+3008	{id:'estadio', nome:'Arena', margem:[206, 59],  fatorBola:FATOR_BOLA, rede:true,  entraGol:true, fundo:'#3e3029'},   // v37: entra no gol pela boca · v44: desenho novo, mesmo tamanho · v61: a ARENA (o id fica: …
+3009	{id:'favela',  nome:'Favela',  margem:[500, 575], fatorBola:0.992,      rede:true, entraGol:true, golRua:true, quadroExtra:52, fundo:'#4a463f'},   // v24: gol com trave; +95 de margem em cima · v61: sem a foto …
+3010	// v43: mapas novos no estilo da quadra da imagem, desenhados (ver MORRO). morro = desenho, som e rojão de favela
+3012	{id:'viaduto', nome:'Viaduto', margem:[560, 460], fatorBola:FATOR_BOLA, rede:true, entraGol:true, quadroExtra:40, fundo:'#26283a', morro:true},   // v61: a quadra debaixo do elevado (concreto: a bola rola como …
+3013	{id:'gramado', nome:'Estádio', margem:[206, 59], fatorBola:FATOR_BOLA, rede:true, entraGol:true, fundo:'#1d2326', grama:true}   // v70.2: o ESTÁDIO de grama (as medidas e a bola da Arena; o desenho é o gramado …
+3022	const CAM_SUAVE = 3, CAM_ZOOM_SUAVE = 5;              // a câmera da base anda 3·dt do caminho até o alvo a cada quadro (a da v70 substitui)
+3024	/* v27: o que o EDITAR HUD ganhou (os mesmos botões nos dois modos) */
+3027	const OPC_PADRAO = {lag:true, torc:true, efx:true, dir:false, verFps:false, replay:true};   // v70.2: a Seta da direção começa desligada   // v45: replay = o lance de novo depois do gol   // v33: verFps = mostr…
+3029	const FPS_OPCOES = [30, 60, 90, 120], FPS_PADRAO = 60;   // v33: limite de quadros por segundo (acima da taxa da tela do aparelho não muda nada)
+3036	// v20: a geometria do campo vem do modo escolhido (MODOS, em u). aplicaModo(i) recalcula tudo em px virtuais.
+3037	// v21: e também do tipo de campo (CAMPOS: estádio e favela; a praia saiu na v25) → aplicaModo(i, c)
+3039	let QUADRO_W = 0, QUADRO_H = 0;                       // v21: o que a "tela parada" enquadra (área do jogador + a moldura do estádio)
+3043	let JOG_X0 = 0, JOG_X1 = 0;                           // v22: até onde o jogador vai na horizontal (na favela: até a linha do gol)
+3044	let JOG_Y0 = 0, JOG_Y1 = 0;                           // v23: e na vertical (na favela: entre os muros)
+3051	const CHINELOS = [];                                  // v21: os 4 chinelos da favela (posição, ângulo, pé, cores) para o desenho
+3052	const OBST = [];                                      // v21: [x, y, raio] obstáculos só do jogador (v23: vazio; os postes da favela ficaram atrás do muro)
+3053	const JOG_SEGS = [];                                  // v24: [x0, y0, x1, y1] paredes só do jogador (favela: a linha de fundo fora do gol e a rede)
+3054	let ATRITO_JOG_BOLA = Math.sqrt(0.3*ATRITO_BOLA), ATRITO_TRAVE_BOLA = Math.sqrt(0.1*ATRITO_BOLA);   // v92: let (o painel de testes)
+3056	let Q_PAREDE = Math.max(QUIQUE_BOLA, QUIQUE_PAREDE_BOLA), Q_TRAVE = Math.max(QUIQUE_BOLA, QUIQUE_TRAVE), Q_REDE = Math.max(QUIQUE_BOLA, QUIQUE_REDE);   // v92: let
+3058	let GEO_VER = 0;                                      // v44: muda sempre que a geometria muda (caixas de batida da previsão)
+3062	const m = MODOS[i], base = CAMPOS[c], im = i === 0 && base.img1v1 ? base.img1v1 : null;   // v42: 1v1 da favela = a imagem
+3065	if (im){                                            // v42: o mundo é a imagem inteira; linhas, gols e calçada medidos nela
+3089	if (cp.rede){                                       // estádio e (v24) favela: gol com rede, traves de metal
+3099	if (cp.entraGol){                                 // v24 (favela) · v37 (estádio): o jogador entra no gol pela boca; não passa pela rede e esbarra nas traves
+3100	JOG_SEGS.push(...NET_SEGS);                     // v25: e cruza a linha de fundo nos escanteios (como no estádio), até o muro
+3103	} else {                                            // gol de chinelos (v21-v23 na favela; hoje sem uso): rua entre muros, sem rede
+3106	[LX0, LY0, LX0, GOL_Y0], [LX0, GOL_Y1, LX0, LY1],          // v22: linha do gol pintada dos dois lados dos chinelos (a bola não
+3116	JOG_X0 = cp.rede ? GL : LX0; JOG_X1 = cp.rede ? GR : LX1;   // v25: na favela também vai até o muro das pontas (a rede segura o gol: JOG_SEGS)
+3117	JOG_Y0 = cp.rede ? GT : LY0; JOG_Y1 = cp.rede ? GB : LY1;   // v24: na favela, até o pé do muro (passa da lateral, como no estádio)
+3119	if (im){                                            // v42: as marcas pintadas na imagem
+3127	const M = MARCAS_MODO[i] \|\| MARCAS_MODO[0];          // v55: as marcas do tamanho
+3134	try { const s0 = localStorage.getItem(CHAVE_CAMPO), s = s0 === 'laje' \|\| s0 === 'terrao' ? 'escadao' : s0, c = CAMPOS.findIndex(q => q.id === s); if (c >= 0) campo = c; } catch (_) {}   // v44: Laje e Terrão …
+3233	if (RQ.on) rqColide();                                                   // v35: os bots (bola, paredes) e jogador x jogador
+3235	for (let i = 0; i < JOG_SEGS.length; i++){ const s = JOG_SEGS[i]; hitSeg(P, s[0], s[1], s[2], s[3], 0.6, 0); }   // v24: favela: linha de fundo fora do gol e a rede
+3240	for (let i = 0; i < OBST.length; i++){ const o = OBST[i]; hitPoint(P, o[0], o[1], o[2], 0.3, 0); }   // v21: obstáculos do jogador (v24: as traves do gol da favela)
+3253	if (TR.on) trColideArc();                                              // v30: treino (companheiros, goleiro, paredão, cones)
+3315	jogo:String(I.jogo \|\| 'futebol'), pts:I.pts \| 0, ginga:!!I.ginga,   // v61: o modo e o GOL DE GINGA chegam ao título do replay
+3316	contraDe:String(I.contraDe \|\| ''), desvio:String(I.desvio \|\| ''), meu:I.meu ? 1 : 0},   // v70: quem fez contra, em quem desviou e o lado de quem gravou
+3389	trilhaPoe(TRILHA_RP, bx, by, f/R.hz);              // v48: o rastro (no tempo do lance: na câmera lenta fica do tamanho certo)
+3390	{ let m = null, dm = 1e9;                          // v61: o rastro pega a cor de quem encostou por último (o drible também), como no jogo
+3394	rpVeste(R);                                        // v51: o botão de cada um
+3395	{ const t = agoraFx(); for (let i = 0; i < n; i++) aroDe(g, R.ents[i], v(RP_F0 + i*3), v(RP_F0 + 1 + i*3), rpCorTime(R, R.ents[i].time), t); }   // v48: o aro de cada um
+3406	desenhaRespingos(g);                               // v61: o respingo do chute no replay
+3419	const I = R.info \|\| {}, nosso = (I.time \| 0) === (I.meu \| 0);   // v70: do lado de quem gravou (na sala, você pode ser o azul)
+3421	return rqTextoLance(I, nosso, true);                 // v70: a regra única (autor, gol contra, desvio, unidade do modo; o passe vai na linha de baixo do replay)
+3445	txt(g, cam.mode === 'seguir' ? 'CÂMERA NA BOLA' : 'TELA PARADA', bx0 - 120, by + 6, 22, '#e8e3ff', 'rgba(10,8,24,.92)', 5);   // v70: quem a câmera acompanha no replay
+3513	const a = le(CHAVE_REPLAYS), b = le(CHAVE_REPLAYS_REC), soArcade = l => l.filter(e => e && e.modo !== 'classico');   // v58: os do Clássico saem (nem contam no limite)
+3560	contraDe:limpaNome(String(I.contraDe \|\| '')), desvio:limpaNome(String(I.desvio \|\| '')), meu:I.meu ? 1 : 0}, cmp,   // v70
+3621	if (TR.on) trPreArc();                                // v30: treino (onde os companheiros estavam, para o desenho suave)
+3622	if (RQ.on) rqPre();                                   // v35: ranqueada (os bots decidem, andam e chutam)
+3632	if (RQ.on && RQ.jogo === 'ginga') gnPre(mx, my);     // v61: drible e finta (a arrancada passa por cima do analógico)
+3634	if (RQ.on && RQ.jogo === 'curva') cvAmostra(dt, mx, my);   // v61: o botão CURVA (carrega segurando, chuta ao soltar)
+3641	const damping=Math.pow(CAMPO.fatorBola,tk);           // v21: cada campo tem a sua (estádio = FATOR_BOLA)
+3650	const bx0=B.x, by0=B.y;                             // v21: onde a bola estava (para ver se cruzou a linha do gol)
+3653	if (RQ.on && RQ.jogo === 'curva') mdCurva(sub);    // v59: a bola entorta no ar
+3654	if (RQ.on && RQ.travaMeio) mdTravaMeio(P);         // v59: no vôlei você não passa da rede
+3655	if (TR.on) trMoveArc(sub);                          // v30: goleiro e companheiros que andam
+3656	if (RQ.on) rqMove(sub);                             // v35
+3658	if (RQ.on){ rqToques(); const lado = mdCruzou(bx0, by0, B.x, B.y); if (lado) rqGol(lado); }   // v35: na ranqueada o gol é de um time · v59: modos
+3659	else if (TR.on){                                         // v30: no treino quem decide o que vale é o exercício
+3664	goals++;goalT=0;spawnConfetti();som.gol();stGol();perfilSalvar();ecoGol('livre');   // v31: moedas, XP e o Top semanal
+3665	rpMarcaGol({time:0, livre:true});                 // v45: o replay deste gol
+3668	if (TR.on) trPos();                                   // v30: o exercício olha o que aconteceu neste tick
+3669	if (RQ.on) rqPos();                                   // v35: relógio, saída e fim da ranqueada
+3671	// v21: gol = o centro da bola cruzou a linha do gol entre as traves (ou entre os chinelos), saindo do campo. (v55: a bola inteira)
+3673	function golCruzou(x0, y0, x1, y1){                    // v55: com a bola inteira do lado de dentro (o centro 1 raio depois da linha)
+3679	function golY(x0, y0, x1, y1, lado){                   // v30: altura em que a bola cruzou a linha do gol (para os alvos dos cantos)
+3684	/* ---------- v59: MODOS DE JOGO (a "salinha" de modos) ----------
+3690	{id:'curva',     nome:'COM CURVA',  desc:'Futebol com efeito: segure o botão CURVA para carregar — quanto mais segura, mais a bola entorta (o analógico escolhe o lado). PASSE e CHUTE saem retos. Primeiro a 3.'}…
+3694	{id:'ginga',     nome:'GINGA',      desc:'Drible e finta: o DRIBLE arranca com a bola e a FINTA ameaça o chute (o goleiro e o marcador caem). Gol logo depois de uma jogada que deu certo é GOL DE GINGA e vale 2.…
+3699	const MD_SALA = MD_LISTA.slice();                       // v70: a GINGA também nas salas: o convidado manda FINTA e DRIBLE no comando (k), como o anfitrião
+3700	const mdSala = id => mdValida(id);                      // v70: (a ginga vale na sala)
+3707	gnZera(); cvZera();                                  // v61: ginga e curva começam do zero
+3708	if (md === 'ginga') RQ.meta = 5;                     // v61: ginga vai a 5
+3745	if (B.cvUx != null && (B.vx*B.cvUx + B.vy*B.cvUy)/v < .94){ B.cvT = 0; return; }   // v61: bateu (trave, corpo, linha): o efeito acaba ali
+3752	B.cvT = 0;                                           // v61: PASSE e CHUTE saem retos; a curva é só do botão CURVA (e do chute de curva do bot)
+3753	// v70: o convidado tem o botão CURVA como o anfitrião (a carga e o lado chegam no comando: v70Remoto em tools/v70/online.js): sem curva automática
+3755	if (c && !c.usado){ c.usado = true; cvMarca(c.s, c.c); som.curva(c.c); }   // v61: o bot planejou o chute de curva (cvBotPlano)
+3760	const time = lado > 0 ? 0 : 1;                       // v70: touchdown só com um jogador do time que ataca conduzindo: colado na bola e com toque nela agora há pouco
+3773	/* ---------- v61: CURVA NO BOTÃO E O MODO GINGA (DRIBLE e FINTA) ----------
+3787	function cvCancela(){ CV.carga = 0; CV.segura = false; CV.toque = false; CV.arma = 0; CV.n = 0; }   // v61: a carga some sem chutar (pausa, editor, janela sem foco); a bola que já curva segue curvando
+3912	function gnFez(q, tipo){                               // deu certo: o nome em cima de quem fez (o mesmo das jogadas da v47) e abre a janela do GOL DE GINGA
+3924	q.fxPisca = Math.max(q.fxPisca \|\| 0, 1); som.finta(q === P ? 1 : .55);   // v61: a finta só acende o halo (sem respingo na bola: ela não foi tocada)
+3929	q.fxA = Math.atan2(uy, ux);                          // v61: vira para o lado do lance falso
+3933	if (dq > (gk ? U(16) : U(9))) continue;            // v61: o goleiro também precisa estar perto do lance
+3943	if (gk && !vaiGol) continue;                       // v61: finta que não vai para o gol não engana o goleiro
+3946	if ((gk \|\| Math.abs(o.x - ox) < U(8)) && vaiGol){  // o goleiro: pula para onde o chute falso ia
+3956	if (tipo !== 'trava' \|\| !gk) caiu++;               // v61: goleiro que só trava não vale GINGA
+4002	const pb = (B.x - o.x)*a.ax + (B.y - o.y)*a.ay, pq = (q.x - o.x)*a.ax + (q.y - o.y)*a.ay;   // quanto passou dele, na linha de quem ia para cima dele
+4048	/* ---- as quadras dos modos, pintadas por cima do mapa (v59) ---- */
+4160	if (TR.presa) return false;                 // v30: bola no pé de um companheiro do treino (ele vai tocar)
+4167	RP.toque = Math.max(RP.toque, strength >= FORCA_POWER ? 2 : 1);   // v45: o som do chute no replay
+4168	if (RQ.on){ RQ.chuteDe = {x:B.x, y:B.y, time:P.time \|\| 0}; mdAplicaCurva(P, dx, dy, d, strength); }   // v59: origem do chute (3 pontos) e a curva
+4173	if (TR.presa) return false;                   // v30
+4185	rpCorte();                                             // v45: (o replay não volta antes do teleporte)
+4199	// v58: as funções dos bots que mudam (o build troca cada uma pelo nome; as novas entram no fim do bloco dos bots).
+4226	// monta a partida: n por time, mapa (índice de CAMPOS), força dos bots. Você é o primeiro do time 0 (v44: o da sua tampinha)
+4229	aplicaModo(n - 1, mapa); mdGeo(); rqGeo();           // v59: o modo de jogo ajusta a geometria (vôlei, americano, basquete)
+4234	contorno:null, corrida:null, recebeuT:-99, devolver:null, tatico:null, parceiro:null}); RQ.jog.push(P); continue; }   // v58: nada da partida anterior
+4241	RQ.ptsH = RQ.contraH = 0; RQ.golAutor = null; RQ.tdPortador = null; RQ.ultLance = null;   // v70: os pontos (cestas de 2/3, gol de ginga), os gols contra e o lance
+4244	rqHmCria();                                          // v47: o estilo e o tempo de reação de cada um
+4245	rqVesteBots();                                       // v51: o botão de cada bot
+4257	RQ.chuteDe = null; RQ.tdPortador = null; RQ.golAutor = null;   // v70: a saída zera o lance (a cesta nova não herda o arremesso de antes)
+4266	rqHmSaida();                                         // v47
+4274	rqBots();                                            // v47: (com RQ.autoH, o jogo joga por você lá dentro)
+4282	if (RQ.jogo === 'ginga') gnRapido();                 // v61: a arrancada do drible e quem para para armar a finta
+4301	function rqBarreiraUm(q){                              // v55: o meio-campo segura todo mundo; o arco do lado de quem espera segura os dois times
+4321	if (u && u.p === q){u.tick=RQ.tick;if(RQ.mind&&RQ.mind.ultimo&&RQ.mind.ultimo.p===q)Object.assign(RQ.mind.ultimo,{tick:RQ.tick,x:q.x,y:q.y});} else { rqEliteToque(q,u);h.push({p:q, t0:RQ.tick, tick:RQ.tick, chu…
+4323	const cd = RQ.chuteDe, e = h[h.length - 1];         // v70: o adversário ficou com a bola (mais que um desvio): o arremesso que estava no ar perde a validade
+4331	if (RQ.td && forca >= FORCA_POWER && !q.remote){ const gl = q.time === 0 ? LX1 : LX0;   /* v70: (a regra é do bot; quem joga de fora chuta como o anfitrião) */ if (Math.abs(gl - B.x) > U(16)) return false; }   …
+4334	RQ.chuteDe = {x:B.x, y:B.y, time:q.time, p:q, tick:RQ.tick}; mdAplicaCurva(q, dx, dy, d, forca);   // v59: origem do chute (3 pontos) e a curva · v70: de quem e quando
+4347	RP.toque = Math.max(RP.toque, forca >= FORCA_POWER ? 2 : 1);   // v45
+4348	rqHmChute(q, forca);                                 // v47
+4349	fxChute(q, forca >= FORCA_POWER);                    // v48: o aro do bot pulsa
+4354	const time = lado > 0 ? 0 : 1, md = RQ.jogo, e = RQ.ev, L = rqLance(time);   // v70: quem fez, pela sequência de toques (a regra única: rqLance, logo abaixo)
+4355	let pts = md === 'basquete' ? (L.tres ? 3 : 2) : 1;  // v59: no basquete a cesta vale 2 (ou 3, de fora do arco) · v70: os 3 só do arremesso atual do autor
+4356	if (md === 'ginga' && gnGolDeGinga(time) && !L.contra){ pts = 2; e.ginga = true; }   // v61: GOL DE GINGA vale 2 · v70: gol contra não vira gol de ginga (a janela fecha do mesmo jeito)
+4363	if (RQ.placar[time] >= (RQ.meta \|\| 3)) RQ.fimPendente = true;               // morte súbita: o gol acaba o jogo (v59: a meta vem do modo)
+4365	jogo:md, pts, ginga:!!e.ginga, meu:NET49.playing && NET49.localSlot >= 0 ? P.time \| 0 : 0});   // v45 · v59 · v70: o replay leva a mesma classificação
+4370	/* ---- v70: a regra de autoria — uma só para o placar, a faixa, o replay, as estatísticas, o prêmio, a sala online e a plataforma ----
+4392	if (h[i].p.time !== time){                           // o último toque foi de quem sofreu: desvio de um chute que ia no gol, ou gol contra
+4410	function rqMarcaChute(q, forca){                       // (rqHmChute) o chute ou passe de q: marca o toque dele e guarda se a bola, como saiu, ia no gol
+4434	const MD_UN = {                                        // v70: o nome do ponto de cada modo (faixa, replay, placar, fim de jogo, sala)
+4442	function mdMetaTxt(){                                  // v70: a meta da partida, com a unidade do modo (a apresentação, a sala e o fim)
+4447	function rqTextoLance(I, nosso, semPasse){            // v70: o texto do lance — {t: GOL! / CESTA DE 3! / TD DELES ..., s: a linha de baixo, nosso} · semPasse: o replay mostra o passe numa linha própria
+4469	else if (RQ.golT === RQ_GOL_TICKS - 1) rpPede(null);   // v45: acabou a comemoração: o replay (a saída vem depois dele)
+4478	jogo:RQ.jogo \|\| 'futebol', ptsH:RQ.ptsH \| 0, contraH:RQ.contraH \| 0};   // v70: o modo, os pontos e os gols contra
+4512	const x = rqCl(B.x - s*G.L*.9, LX0 + G.rr*2, LX1 - G.rr*2);   // v58: o alvo dentro do campo (antes, perto da linha de fundo deles, mirava na parede)
+4524	if (cobra && espera >= rqNv(q).saida + (q.hm ? q.hm.ritmo*4 : 0)){   // v58: o tempo de cada nível (e de cada um)
+4530	/* v38: coordenação coletiva do Arcade. Funções por fase e passagem de marcação. */
+4533	/* v44: a previsão da bola sem lixo e sem conta à toa (era o que mais pesava nos bots e fazia o jogo travar).
+4594	/* v39: intenções persistentes, controle de espaço e execução sem alterar a física. */
+4936	y=rqHmLeitura(gk,t,y,cross);                          // v47
+5015	// v58: O CORPO ANDA ATÉ O PONTO ESCOLHIDO. Entre uma decisão e outra o bot antes ficava com o analógico parado na mesma
+5016	// direção: passava do ponto e, na decisão seguinte, voltava (o goleiro ia e voltava umas 3 vezes por segundo, os outros a cada
+5021	if(!ativo)for(const o of RQ.jog){                     // v58: o ponto dele não fica em cima do companheiro que está na bola (eles se trombavam)
+5037	const own=rqGolX(q.time),gx=own-B.x,gy=CY-B.y,l=Math.hypot(gx,gy)\|\|1,mc=rqNv(q).marca;   // v58: o Fácil marca de longe (dá espaço)
+5040	{const L=rqHmBloqueia(q,carrier);if(L){tx=L.x;ty=L.y;}}   // v47
+5049	if(q.chutar&&rqHmContra(q,q.chutar)){q.chutar=0;}   // v58: (com as batidas, não vai para o próprio gol)
+5052	if(!q.chutar)rqHmBicoSePreciso(q);                   // v58: na dividida, o bico que tira a bola dele (se for bom)
+5055	const target=rqGkAlvo(q,q.time);rqHmGkSuave(q,target);rqVai(q,target.x,target.y);   // v47
+5062	if(RQ.estado==='gol'&&rqHmComemora(q))return;        // v47
+5065	if(RQ.jogo==='ginga'&&gnBot(q))return;                // v61: caiu na finta, arrancando no drible ou tentando um
+5066	if(rqHmSkill(q))return;                               // v47: double shot e finta em andamento
+5080	const a=q.tatico;if(a){rqHmDesvio(q);rqVai(q,a.x+(q.hm?q.hm.ox:0),a.y+(q.hm?q.hm.oy:0));}   // v47
+5188	if(dg<(RQ.travaMeio?G.L*1.35:G.L*.92)){              // v59: no vôlei a rede segura o bot no meio: o spike sai de longe
+5196	rqHmOpcoes(q,options);                               // v47
+5204	const fundo=Math.abs(gx-B.x)<rr*4,vg=CY>B.y?1:-1;   // v58: na linha de fundo também corta para o gol ou volta
+5206	const p=rqPonto(B.x+dir*rr*ax,B.y+ay*rr,rr);if(Math.hypot(p.x-B.x,p.y-B.y)<rr*1.2)continue;   // v58: (o ponto caiu em cima da linha: levar a bola para lá prende ela)
+5219	if(stale\|\|fixo){q.plano=fixo\|\|rqPlanoAtaque(q);q.planoT=RQ.tick;rqHmErro(q);if(RQ.jogo==='curva')cvBotPlano(q);if(q.plano.tipo==='finta'&&rqHmFintaInicia(q))return;}   // v47 · v61: às vezes de curva
+5226	if(q.hm&&q.hm.erro){const c=Math.cos(q.hm.erro),sn=Math.sin(q.hm.erro),x=ux*c-uy*sn;uy=ux*sn+uy*c;ux=x;}   // v47: a mira um pouco torta
+5227	const alvo=rqHmVolta(q,pb,ux,uy,plan.tipo==='conduz');   // v58: dá a volta na bola sem empurrar
+5231	if((bx*ux+by*uy)/dist<Math.cos(tolerance)){rqHmBicoSePreciso(q);return;}   // v58: sem alinhar e apertado: o chute de onde está, se for bom
+5234	if(rqVaiProGol(q.time,B.x,B.y,B.vx+bx/dist*dv,B.vy+by/dist*dv)\|\|rqHmContra(q,force))return;   // v58: (com as batidas)
+5235	if(plan.tipo!=='afasta'&&rqHmHesita(q))return;            // v58: (às vezes ele demora para chutar)
+5262	liga:[true, true],                                   // (testes: false = o time joga como os bots da v46)
+5269	foco:true, motor:true, bico:true, destrava:true},   // v58
+5291	ritmo:Math.floor(Math.random()*3) - 1, focoT:0, pinoT0:-1, dueloT0:-1, destravaT:-999, recua:null, paciencia:.8 + Math.random()*.5};   // v58: o ritmo de decidir e a paciência de cada um
+5292	q.nextThink49 = 1 + Math.floor(Math.random()*nv.plano);   // v58: cada um decide num tick (antes todos juntos, no mesmo tick)
+5361	function rqBots(){                                     // v47 (era da v41): cada um decide com a bola que vê · v58: cada um no seu ritmo
+5369	for (const q of RQ.bots) if (q.remote) net49Control(q);   // v58: quem joga de fora (sala online) depois da bola de verdade voltar: antes o chute dele se perdia
+5403	if (ativo) return q.papel === 'gk' ? (h.parado ? G.vm*1.7 : G.vm*.6) : G.vm*.75;   // um passo de jogador: mais perto que isso ele ia passar e voltar (o zigue-zague); o goleiro anda de pouco em pouco
+5447	// v58: o lado em que ele está da bola. Uma jogada que pede para dar a volta inteira na bola custa tempo (e, perto do próprio gol,
+5462	const b = bd <= ALCANCE_CHUTE - .5 && RQ_HM.f.bico ? rqHmBico(q, false) : null;   // v58: o chute de onde está (o bico) também é uma opção
+5737	rqMarcaChute(q, forca);                              // v70: o chute entra na sequência de toques (e a conta de "ia no gol")
+5787	const t = RQ.golTime, autor = RQ.golAutor && RQ.golAutor.time === t ? RQ.golAutor : null;   // v70: o autor da regra única (no gol contra ninguém corre para comemorar)
+5824	// v58: quando cada um decide de novo. Antes todos decidiam juntos, no mesmo tick (de 4 em 4 a 16 em 16): viravam todos ao mesmo
+5847	// v58: NUNCA LEVAR A BOLA PARA O PRÓPRIO GOL. Perto do seu gol, se ele está encostado na bola e indo para cima dela de um jeito
+5862	// v58: A BOLA PRESA. Com a bola no pé encostada na linha, no canto ou num adversário, e ela não sai do lugar, ele não fica
+5863	// empurrando para sempre (era o bug do canto: dois empurrando a bola um contra o outro por 10, 20 segundos). Depois de um
+5876	if (duelo){ if (h.dueloT0 < 0) h.dueloT0 = RQ.tick; } else h.dueloT0 = -1;   // v58: a dividida (os dois na bola), parada ou andando
+5908	// v58: O CHUTE DE ONDE ELE ESTÁ (o bico). No jogo o chute sai do centro do jogador para o centro da bola: para chutar
+5952	// v58: DAR A VOLTA NA BOLA. Para chutar para um lado ele precisa estar atrás da bola. Antes, se estava na frente, ia quase
+5991	const dv = h.dueloT0 >= 0 ? Math.min(1.6, (RQ.tick - h.dueloT0)/(nv.pino*2.2)) : 0;   // v58: quanto mais dura a dividida, menos ele escolhe
+6000	const lim=rqHmLim(q,A.ativo);   // v47: sem ir e voltar em cima do ponto; parado, só sai quando ficou longe
+6014	// v58: o chute que ele vai dar (de onde está) termina no próprio gol, contando as batidas nas linhas e nas traves? (antes só via
+6024	function rqHmHesita(q){                                // v58: na hora de chutar, às vezes ele ainda não chuta (o Fácil mais)
+6028	// v58: O LUGAR ONDE O JOGADOR PODE IR. O jogador anda numa área maior que a da bola (passa das linhas brancas, até as placas):
+6034	// v58: o ponto escolhido não pode cair em cima da trave nem da rede (onde o jogador não cabe): se cair, vai para o lado de fora delas.
+6060	/* v58: o modo Clássico saiu (o motor dele, os bots, o campo, os controles e a tela). O que ele guardava no aparelho é apagado. */
+6226	function trGolFesta(txt){ TR.banner = txt; goalT = 0; spawnConfetti(); som.gol(); stGol(); perfilSalvar(); ecoGol('treino'); }   // v31: o gol conta no Top semanal
+6230	function trPode(){ return TR.id !== 'livre' && !RQ.on; }   // v35: na ranqueada não tem exercício
+6291	// v35: na ranqueada não tem exercício
+6311	TR.fim = {valor, est, novo, ant:rec ? rec.pts : null, txt:X.resumo(), premio:ecoTreino(est, novo, key)};   // v31: moedas e XP pelas estrelas
+6674	somChute(forte, n){ som.chute(forte); fxChute(n, forte); },   // v48: o aro do companheiro pulsa no chute
+6730	if (txtPronto(g, s, x, y, size, fill, stroke, lw)) return;   // v48: no Arcade o texto que se repete vira imagem pronta
+6750	const HALO = {brilho:.22, tag:.3, dirs:32, giro:[3.2, 5.6], gotas:[4, 7], vida:.18, estalo:.1, estaloPx:58};   // v61: brilho e tag em raios · dirs = as direções da tag (32, como o analógico) · giro da carga (r…
+6752	function haloForma(g, m, rpx, ri, re, sem){            // v61: o anel torto (a borda de fora encosta no alcance; a de dentro varia: pincelada)
+6761	function haloTag(g, m, rpx, re){                       // v61: a tag: a ponta do pixo saindo do halo, virada para a direita (ângulo 0)
+6765	function spriteHalo(cor, rpx, camada){                 // v61: 'p' = o halo (parado: não gira) · 'c' = a carga (tracejado do chute armado)
+6810	function spriteTag(cor, rpx, k){                       // v61: a tag já girada na direção k (de 32): imagem pequena, desenhada sem girar nada no quadro
+6826	function spriteAro(cor, rpx, camada){ return spriteHalo(cor, rpx, camada === 'b' ? 'p' : camada); }   // v61: a prévia dos times em SKINS usa o halo (sem a tag)
+6827	function aroJog(g, x, y, r, cor, ang, luz, giro, semTag){      // v61: o halo parado, a tag girando para onde ele está virado e a carga (luz 0 a 1, girando sozinha)
+6838	const RESP = [], FX_RND = rndFixo(4242);              // v61: as gotas do respingo e o estalo que estão no ar · o sorteio só delas (o Math.random da partida fica igual)
+6844	q.fxA = ang;                                         // v61: quem chuta fica virado para onde a bola foi
+6845	const T = RP.ativo ? TRILHA_RP : TRILHA; T.cor = q.fxCor \|\| null;   // v61: o rastro pega a cor de quem chutou
+6859	function desenhaRespingos(g){                          // v61: no campo, por cima da bola (gota: o risco que voa e afina; estalo: a estrelinha que abre e some)
+6885	function spriteEstalo(){                               // v61: o estalo do CHUTE (branco com borda magenta e ciano): imagem pronta, uma só
+6898	function viradoDe(q, x, y){                            // v61: para onde q está virado (você: a setinha; os outros: para onde andaram por último)
+6909	q.fxCor = cor;                                       // v61: a cor do time de q (o respingo e o rastro usam)
+6913	aroJog(g, x, y, q.r, cor, viradoDe(q, x, y), luz, giro, q === P && !RP.ativo && P.humano !== false);   // v63: o seu (o que você controla) sem a ponta: a direção dele é a setinha branca
+6939	/* ---- v61: o rastro neon da bola (a cor de quem tocou por último; branco sem dono) ---- */
+6951	function trilhaCor(T){                                 // v61: [corpo, miolo] do rastro (guardadas: nada de misturar cor a cada quadro)
+6959	function trilhaFaixa(g, xy, ac, n, L, larg, corte, ox, oy){   // v61: o contorno do rastro com a meia largura larg, afinando até corte (fração do comprimento)
+7070	/* v61: a ARENA — a quadra de cimento da quebrada debaixo dos refletores, no lugar do estádio da v55 (o desenho antigo de grama em
+7085	let estGraoK = 1;                                      // (v51: o tamanho do pé da grama; a arena da v61 não usa)
+7086	const GOL3D = {cima:2.1, baixo:1.77, frente:.2, fundo:.109, malha:1.15, sombra:[.333, 2.333]};   // u (e frações da profundidade): a armação do gol (ver gol3dGeo) · v61: malha = o losango da rede
+7096	function desenhaEstadio(g, leve){                      // v61: a ARENA (leve = o desenho pequeno do painel da ranqueada)
+7207	const LINHA_E = 1/3;                                   // u: a espessura das linhas (a saída da v55 pinta por cima com a mesma)
+7208	function estLinhas(g, liso){                           // v61: quadra poliesportiva: a volta e as áreas em lima, o meio em branco (a saída pinta ele na cor de quem bate), a área pequena, a meia-lua e as marcas …
+7501	// as medidas do gol (as da v55): o teto sobe 2,1 u (lado de lá) e 1,77 u (lado de cá) na tela; a frente do teto fica 20% da
+7507	function golCor(side){ return skinDoTime(side < 0 ? 0 : 1).cor; }   // v61: a fita e a rede na cor do time que defende esse gol
+7516	function golPanos(G){                                  // v61: os panos da rede, do mais longe ao mais perto: o fundo, o lado de lá, o teto e o lado de cá
+7534	function golEstadio(g, side){                          // v61: a rede de corda em losango e a armação de ferro com a fita listrada (na frente da bola)
+7558	function campoPlano(g){                               // v33: Ultra leve · v61: o cimento liso da arena (sem textura, luz nem cenário), as linhas e a sombra dos gols
+7584	// v22: refeita do zero. Vista de cima "um pouco de frente" (3/4): de cada casa aparece o telhado (a laje) e a parede
+7588	// v23: no lugar das calçadas, muros pixados dos dois lados da rua (ver muroCima / muroBaixo); o jogo agora se chama STREETBALL.
+7589	// v24: linhas laterais pintadas e o muro mais para trás (o jogador passa entre a lateral e o muro); gol com trave e rede no lugar dos chinelos.
+7598	// v31: as faixas que tocam no paredão do lobby (a primeira é a mesma batida da favela)
+7640	let y1 = GT - ALT_MURO, n = 2 + Math.floor(r()*2.6), primeira = true, topo = 1e9;   // v24: atrás do muro
+7658	let n = 1 + Math.floor(r()*2.4), topo = GB + ALT_MURO, primeira = true;   // v24: depois do muro de baixo
+7752	noiteJanela(x + 2, y + 2, w - 4, h - 4, .4);         // v61: na noite pode acender
+7799	noiteAceso(px, top, dx, base - top, '#ffd89a', .3); noiteAceso(sx, sy, pw, ph, L[1], .5); noiteLuz(x + w/2, base + 40, 110, '#ffd89a', .45, .6);   // v61: a loja aberta acesa na noite
+7871	if (b.frente && b.n >= 2 && r() < .5) pixo(g, r, nomePixo(r), x + 5 + r()*Math.max(1, w - 70), y + 11.5, 9 + r()*2, '#151515');   // v23: pixo lá no alto do prédio
+8024	noiteTampa(b.x, b.y0 - b.H, b.w, d + b.H);           // v61: cobre as janelas das casas de trás
+8179	function linhaPintada(g, r, x, y0, y1){                // v22: linha do gol pintada de branco, de meio-fio a meio-fio
+8328	/* --- v23: muros pixados no lugar das calçadas · v24: o muro foi para trás (fica no limite do jogador, GT e GB) ---
+8707	if (xb - xa >= 40) pneusCanto(g, m, LY1 - 40);       // v25: os pneus vieram para o beco (no escanteio agora o jogador passa)
+8727	/* --- v24: as linhas da quadra (tinta) e o gol de rua --- */
+8799	function sprayRua(g, r){                               // v23: meio de campo e círculo pintados com spray
+8856	noiteNova('#474e52', '#ffa347');                     // v61: a favela de noite, na luz laranja dos postes
+8861	asfalto(g, r, GL, GT, GR, GB);                       // v24: o asfalto vai de muro a muro
+8862	pinturaBrasil(g, r, CX - 470, GT, CX - 330, LY0); pinturaBrasil(g, r, CX + 330, LY1, CX + 470, GB);   // v24: bandeiras pintadas na faixa entre a lateral e o muro
+8863	detalhesRua(g, r); marcasRua(g, r); sprayRua(g, r);  // v24: laterais, fundo, cantos, área pequena (tinta) e o meio (spray)
+8864	if (!mdSemGol()){ golRuaChao(g, -1); golRuaChao(g, 1); }      // v24: o gol de rua (a trave e a rede vão por cima da bola) · v59: nos modos sem trave, não tem
+8880	for (const p of postes){ posteO(g, p[0], p[1]); mrBracoLuz(g, p[0], p[1] - ALTURA_POSTE, Math.round(p[0]) % 2 ? 1 : -1); }   // v61: com o braço da luz da rua
+8881	// v23: os muros pixados, no lugar das calçadas (o de cima tampa o pé dos postes e o térreo das casas)
+8882	noiteTampa(xE1 + 8, GT - ALT_MURO - CAP_MURO, xR0 - xE1 - 8, ALT_MURO + CAP_MURO); noiteTampa(xE1 + 8, GB, xR0 - xE1 - 8, ALT_MURO);   // v61
+8886	favelaNoite(g, r, L, xR0, xR1, xE0, xE1, festa);   // v61: as luzes da noite
+8891	noiteAplica(g);                                      // v61: escurece, acende janelas e letreiros e tinge a gente
+8927	const atras = (x, extra) => {                        // v23: em pé atrás do muro de cima: aparece a cabeça e o ombro por cima do muro
+8951	const ocup = [];                                     // v23: gente sentada no muro de cima, pernas para o lado da rua (onde não tem caco de vidro)
+8991	const cruza = F.map((f, i) => [f, i]).filter(q => q[0][3] > GB + ALT_MURO - 20 && q[0][2] > GL + 80 && q[0][2] < GR - 80);   // v23: um par de tênis num fio que atravessa a rua
+9059	if (FAVELA.viaduto && G().efeitos && opc.efx) vdCarrosAnima(g, vx0, vy0, vx1, vy1);   // v61: os carros do Viaduto (no Suave, parados fora da tela)
+9064	if (G().efeitos && opc.efx) for (const f of FAVELA.fumaca){       // v25: no Suave não tem fumaça                      // fumaça do churrasco subindo
+9068	if (opc.torc) for (const p of FAVELA.pessoas) if (dentro(p.x - 16, p.y - 50, p.x + 16, p.y + 14)) desenhaPessoa(g, p, t, bx, festa);   // v27: Galera na arquibancada
+9076	for (const k of (opc.torc ? FAVELA.pipas : [])){   // v27: a pipa é da molecada: sem torcedores, sem pipa                       // a linha sai da mão do guri
+9082	if (festa && G().efeitos && opc.efx) for (let i = 0; i < 3; i++){   // v25: no Suave não tem rojão              // rojão depois do gol: sobe, estoura e deixa fumaça
+9091	function somFavela(){                                  // v22: o funk fica mais alto (e menos abafado) perto das caixas de som
+9093	if (CAMPO.id !== 'estadio' && FAVELA && FAVELA.som.length){   // v43: e no mapa do morro (v44: o Escadão)
+9102	if (G().plano \|\| !FAVELA) return;                    // v33: Ultra leve: nada se mexe no cenário
+9104	if (CAMPO.id === 'favela' \|\| CAMPO.morro){ const p = som.pulso(); PULSO = p >= 0 ? p : pulsoRelogio(tAmb); ambienteFavela(vx0, vy0, vx1, vy1); }   // v43: e nos mapas novos   // v22: tudo no ritmo do funk
+9237	if (NOITE){ const lx = hx + 12, ly = hy + 2; noiteAceso(lx - 10, ly - 4, 20, 8); noiteBrilho(lx, ly, 40, NOITE.poste, .75); noiteLuz(lx, y + 4, 290, NOITE.poste, .85, .72); }   // v61: acende na noite
+9407	noiteAceso(x + w/2 - tw/2 - 9, y + 3, tw + 18, 20, cor, .45); noiteAceso(px + 4, y + h - 20, pw - 8, 18, '#ffd89a', .3); noiteLuz(x + w/2, y + h + 30, 120, '#ffd89a', .5, .6);   // v61: a placa e a loja acesas
+9423	noiteJanela(cx - jw/2 + 3, top + 3, jw - 6, jh - 6);   // v61: na noite pode acender
+9435	noiteTampa(b.x, ty, b.w, d + b.H);                   // v61
+9683	/* ---------- v61: A NOITE DA QUEBRADA (Escadão, Favela e Viaduto) ----------
+9688	let NOITE = null;                                      // v61: o que acende, juntado enquanto o mapa é desenhado (null = nada)
+9704	let mdCampoNoite = false;                              // v61: a quadra do modo (vôlei, americano, basquete) entra antes da noite (buildStatic)
+9707	if (mdCampoNoite && stat && g.canvas === stat){ mdDesenhaCampo(g); mdCampoNoite = false; }   // v61: a quadra também fica à noite (os refletores, o escuro)
+9758	function mrLampadas(g, r, x0, y0, x1, y1, cai, cores){  // v61: gambiarra de lâmpadas (o fio caído; as lâmpadas acendem na noite)
+9771	function mrNeon(g, txt, x, y, h, cor, giro){            // v61: letreiro de neon (o tubo escuro de dia; aceso na noite)
+9788	function mrFaixaNeon(g, cores, larg){                   // v61: a faixa no pé da cerca vira tubo de neon na noite
+9796	function mrLuzQuadra(cor, a){                           // v61: o refletor cobrindo a quadra inteira (mais forte no meio)
+9802	function mrCaixaSom(g, x, y){                           // v61: caixa de som de rua (os cones pulsam no ritmo: FAVELA.caixas)
+9809	function mrBracoLuz(g, x, yTopo, lado){                 // v61: o braço da luz da rua no poste da favela (a lâmpada laranja sobre a rua)
+9819	function favelaNoite(g, r, L, xR0, xR1, xE0, xE1, festa){   // v61: as luzes da favela (rua do jogo, festa, escadaria, rua de trás)
+9833	function mrMesaDomino(g, r, x, y){                     // v61: mesa de dominó com a turma em volta
+9842	/* ---------- o mapa do morro (v44: ficou só o Escadão) ---------- */
+9847	lotes:{cima: null}, desenha: mrMapaEscadao, noite: ['#4a3626', '#ffe2b0'], desenhos: mrPinturaEscadao},   // v61: noite neon (luz branca-lilás)
+9848	viaduto: {nome:'Viaduto', gol:'ferro', cerca:'corrente', semente:9161,   // v61: concreto petróleo, linha branca, luz de sódio
+9871	if (!mdSemGol()) for (const s of [-1, 1]) mrGolChao(g, s);   // v59: nos modos sem trave, não tem gol no chão
+9878	noiteNova(T.noite[0], T.noite[1]);                   // v61: os mapas de rua são à noite
+9879	T.desenha(g, r, T);                                  // v61: cada tema desenha o seu mapa (Escadão, Viaduto)
+9913	escadaoVida(g, r, B, ocupado);                      // v61: caixa de som com a galera dançando, dominó, gente nas lajes
+9920	escadaoNoite(g, r, T, B, ex, we, wl, ax, ocupado);  // v61: a noite neon, a caixa de som, o dominó e mais gente
+9922	function mrPinturaEscadao(g, r, T){                    // v61: as áreas e o círculo pintados de uva mais escuro (a quadra fica com cara de quadra)
+9928	function escadaoVida(g, r, B, ocupado){                 // v61: mais vida no Escadão
+9938	function escadaoNoite(g, r, T, B, ex, we, wl, ax, ocupado){   // v61: as luzes do Escadão (refletor na quadra, faixa neon, letreiro, gambiarra)
+9957	/* ---------- v61: VIADUTO — a quadra debaixo do elevado ----------
+10236	/* ---- v42: campo que é uma imagem pronta (o 1v1 da favela: QUADRA_FAVELA) ---- */
+10275	const qs = wantQS(); qsBuilt = qs; corCenario = corBotao(skinAtual());   // v46
+10276	estGraoK = qs/Math.max(1e-6, K*zoomAlvo());          // v51: o pé da grama do estádio sai do tamanho do pixel da tela
+10278	const sw = Math.max(1, Math.round(MW*qs)), sh = Math.max(1, Math.round(MH*qs));   // v20: imagem do tamanho do mundo do modo
+10282	FAVELA = null;                                       // v21: cada campo desenha o seu cenário
+10283	MD.campo = RQ.on ? (RQ.jogo \|\| 'futebol') : 'futebol';   // v59: o modo de jogo pinta a quadra dele por cima
+10285	if (G().plano) campoPlano(g);                        // v33: Ultra leve: só o verde claro, as linhas e os gols
+10286	else if (CAMPO.imagem) desenhaCampoImagem(g);        // v42: o 1v1 da favela é a imagem da quadra
+10287	else if (CAMPO.morro) desenhaMorro(g);               // v43: mapa do morro (v44: o Escadão)
+10289	else desenhaEstadio(g, false);                       // v44: o estádio novo (mesmo tamanho; desenho todo daqui)
+10290	if (mdCampoNoite) mdDesenhaCampo(g);                 // v61: sem noite (Arena, 1v1 da foto, Ultra leve) a quadra vem aqui
+10293	nets = !CAMPO.rede \|\| mdSemGol() ? [] : [-1, 1].map(side => {   // v59: vôlei, americano e basquete não têm trave
+10294	if (CAMPO.imagem && !G().plano) return redeImagem(side, qs);   // v42: a rede que já está na imagem, recortada
+10295	const morro = CAMPO.morro && !G().plano;           // v43: o gol dos mapas novos também sobe um pouco na tela
+10296	const alto = CAMPO.golRua ? ALT_GOL_RUA + 8 : morro ? ALT_GOL_MORRO + 8 : U(GOL3D.cima + .4);   // v24: o gol da favela fica em pé (a trave sobe na tela) · v55: o teto do gol 3D também
+10346	function spinBallVel(dt, vx, vy, r, giro){             // v26: serve aos dois modos (só desenho)
+10392	/* ---------- jogador: a TAMPINHA (v44) ----------
+10419	// v46: a coleção. cor = a cor do botão (v51: cada bot usa um botão daqui; a cor do seu é a do seu time) · r = a raridade ·
+10421	// corpo (v61) = a cor fixa do corpo do disco, quando ela não segue o time (o bot evita a do time de lá)
+10422	// v61: A COLEÇÃO DA QUEBRADA — 20 discos novos, desenhados do zero para o RACHA (os da v46 e os ULTRAS saíram na v60 por
+10450	// v61: os de conquista (ultra: true): não estão à venda, liberam com partidas concluídas (meta) e dá para testar no treino
+10456	// v61: os discos da coleção antiga (v46) e o preço que custavam: quem tinha recebe de volta, uma vez (volta61)
+10469	raro:{nome:'Raro', cor:'#39c6ff'}, epico:{nome:'Épico', cor:'#a56bff'}, lendario:{nome:'Lendário', cor:'#bfff33'}, mitico:{nome:'Mítico', cor:'#ff4fd8'}};   // v61: o mítico (a Coroa)
+10476	function skinDoTime(time){ const s = skinAtual(); return time ? skinContra(s) : s; }   // time 0 = o seu · 1 = o adversário (v51: é a COR do time: o aro, o placar e a torcida; o botão dos bots é skinDoBot)
+10477	// v51: cada bot com o seu botão (antes: o seu botão, e o adversário com o seu botão na cor contrária). O time de cada um
+10478	// continua no aro em volta e no nome; v61: o disco do bot vem com o detalhe na cor do time dele (skinNaCor61).
+10485	const BOT_RAR = {facil:{comum:1.5, raro:1.2}, dificil:{epico:1.5, lendario:1.7, mitico:1.7}};   // v58: os dois níveis
+10495	const rar = BOT_RAR[nivel] \|\| {};                    // v61: o detalhe do disco do bot vem na cor do time dele (skinDoBot)
+10497	const corpo = s => { if (!s.corpo) return 1; const m = matizDe(s.corpo), d0 = distMatiz(m, h0), d1 = distMatiz(m, h1); return d0 <= d1 ? 1 + (1 - d0/90) : .03; };   // v61: o corpo de cor fixa não pode parecer …
+10507	function skinNaCor61(s, cor){                          // v61: o mesmo disco com o detalhe na cor do time (os bots e o replay)
+10518	function skinDoBot(q){                                 // v61: o disco do bot na cor do time dele (o goleiro do treino é do outro time)
+10529	function skinRival(){ return skinNaCor61(botSkin(1, new Set([skinAtual().id]), rndDe('rival\|' + skinAtual().id), false, 'normal'), skinDoTime(1).cor); }   // o exemplo do adversário em SKINS (v61: na cor dele)
+10530	function rpVeste(R){                                   // replay: o botão que cada um usava (nos replays de antes da v51, um botão fixo para cada bot)
+10542	return skinNaCor61(s, rpCorTime(R, e.time));         // v61: todos na cor do time (o seu também: trocou de disco depois do gol, o detalhe acompanha o halo)
+10573	function desenhaAvatar(g, x, y, rb, av, cor, borda){   // v46: cor e borda opcionais (alguns botões pedem); devolve se desenhou
+10661	/* ---------- v61: a base de todos (desenho em unidades: o disco tem raio 1) ---------- */
+11557	// v46: o botão = o desenho do tipo (BOTAO_TIPOS). No jogo a base é uma imagem pronta (uma por tipo, cor, avatar e tamanho);
+11565	const T = tipoBotao(sk), cor = corBotao(sk), e = est \|\| EST0, m = T.mov ? mov61(e, x, y, r) : M061;   // v61: m = a corrida de quem usa
+11572	const giro61 = (T, e, m) => typeof T.gira === 'function' ? T.gira(e, m) : e.t*T.gira + e.id*1.3;   // v61: o giro pode depender da corrida
+11573	function sombraBotao(g, x, y, r){                       // v36: a sombra do botão, redonda e centrada (uma borda escura em volta, igual de todos os lados)
+11581	if (SPR_BOTAO.size > 160) SPR_BOTAO.clear();   // v51: cada bot com o seu botão
+11593	const mv = T.mov ? mov61(e, x, y, r) : M061;         // v61: a corrida, o chute e a bola de quem usa (para os vivos)
+11617	function chuteDe61(id, t){                             // v61: há quantos segundos este chutou (o fxT do aro; só existe com os Efeitos na Quadra)
+11621	function vitrineEst61(t, bx, by, R){                   // v61: na vitrine o disco "joga" de mentira: corre e para, chuta a cada 3 s e comemora de vez em quando
+11639	function drawPlayer(g, x, y, r, sk, nome, avatar, semSombra, est){   // v36: semSombra = a sombra já foi desenhada (ranqueada) · v46: est = o que os botões vivos precisam
+11642	txt(g, nome, x, y + r + 27, 20, 'rgba(24,12,40,.5)', 'rgba(24,12,40,.5)', 6);     // sombra do nome (v48: 5 px mais baixo, livre do aro)
+11646	// v31: sorteio com semente fixa (os desenhos saem iguais em todo quadro) e o brilho de 4 pontas
+11654	/* ---------- v27: indicador de direção (a setinha na borda do seu botão) ---------- */
+11665	g.scale(1.12, 1.12); haloTag(g, 0, r, r*AROV.ate);  // v61: a tag do pixo (a mesma do halo), em branco: sem a seta do jogo original
+11672	// v19.1: a física anda em passos fixos de 1/60 s, mas a tela atualiza no ritmo dela (60, 90, 120 Hz) e o intervalo entre
+11679	VIS.a = X49?.contactSync ? 1 : a;                                           // v30: os companheiros do treino usam a mesma fração
+11687	/* ---------- v44: o alcance do chute ----------
+11706	// v27: cam.zoom = Aproximação da câmera em % do enquadramento normal do modo (100 = o de sempre); cam.desl = Câmera puxada para a bola (0 a 10). Só valem no modo 'seguir'.
+11709	/* v25: qualidade dos gráficos (v36: só no AJUSTES do lobby, fora da partida), como no Free Fire: Suave, Padrão, Ultra e Max.
+11715	leve:   {nome:'Ultra leve', dpr:d => .5, cena:.4, mem:2.5e6, conf:0, sombra:false, efeitos:false, plano:true, nota:'O mais leve: quadra lisa, sem cenário nem torcida, em baixa resolução'},   // v33
+11724	const cam = {mode:CAM_MODO_PADRAO, estilo:'jogador', preset:'equilibrado', auto:false, zoom:ZOOM_PADRAO, desl:DESL_MAX, x:CX, y:CY, z:1};   // v70: preset = Perto, Equilibrado, Campo inteiro ou Personalizado (p…
+11725	// v20: tela parada = zoom que faz o mundo inteiro do modo caber na tela (no 4v4 fica bem pequeno)
+11726	const ARC_ZOOM_BASE = 100/CAM_DIST_PADRAO;             // v27: o zoom do Arcade com a Aproximação da câmera em 100% (a distância de 85% de antes)
+11727	const zoomAlvo = () => cam.mode === 'seguir' ? camZoomPreset() : Math.min(W/QUADRO_W, H/QUADRO_H);   // v70: o enquadramento escolhido (o zoom automático só abre a partir daqui)
+11728	function zoomFaixa(){                                  // v27: menor e maior Aproximação da câmera (em %) que o modo e o campo de agora aceitam
+11730	}   // v21: enquadra o campo (o cenário em volta sobra nas bordas)   // v21: enquadra o campo (o cenário em volta sobra nas bordas)
+11731	/* ---------- v70: a câmera (uma implementação só) ----------
+11820	const kz = 1 - Math.exp(-CAM_ZOOM_SUAVE*dt), lim = (editing ? 3 : CAM_ZOOM_VEL_MAX)*dt, dz = (tz - cam.z)*kz;   // v27: no editor o zoom responde depressa ao deslizante
+11840	// v20: a câmera não mostra fora do mundo; se o mundo é menor que a tela naquele eixo, fica centralizada
+11845	function wantQS(){ const q = G(), c = (CAMPO.id === 'estadio' \|\| CAMPO.grama) && !q.plano ? Math.min(1, q.cena) : q.cena; return Math.min(K*zoomAlvo()*c, QCAP*c, Math.sqrt(q.mem/(MW*MH)), 4096/Math.max(MW, MH…
+11846	function desenhaStat(g, s, tx, ty){                   // v51: com a imagem do cenário na escala da tela, ela vai inteira na grade de pixels (nítida, sem borrar)
+11860	kick:  {r:140, nome:'PASSE'},                         // v20: era KICK (o chute fraco, 250)
+11861	power: {r:132, nome:'CHUTE'},                         // v20: o botão do chute forte
+11862	curva: {r:112, nome:'CURVA'},                         // v60: segura para carregar — quanto mais, mais a bola entorta (v61: só no COM CURVA)
+11863	finta: {r:98,  nome:'FINTA'},                         // v60: o bote de mentira: os bots por perto caem (v61: só na GINGA)
+11864	drible:{r:104, nome:'DRIBLE'},                        // v60: a arrancada com um toquinho na bola (v61: só na GINGA)
+11866	cav:   {r:82,  nome:'CAVADINHA'},                   // v99: os chutes do Rachão (só nas salas que ligam)
+11872	// v27: oc = Esconde Quando Solta · adere = Nasce Onde Tocar · segue = Vai com o Dedo · km = tamanho da bolinha · al = raio do analógico (1 = 100%)
+11873	joy:   {x:215,  y:706, s:1, a:1, oc:false, adere:true, segue:true, km:1, al:1},   // v65: flutuante por padrão
+11876	curva: {x:1560, y:455, s:1, a:1, oc:false},          // v61: entre o PASSE e o CHUTE, sem encostar neles nem nos da ginga
+11877	finta: {x:1465, y:230, s:1, a:1, oc:false},          // v61: do lado do PASSE
+11878	drible:{x:1475, y:700, s:1, a:1, oc:false},          // v61: do lado do CHUTE
+11880	cav:   {x:1440, y:215, s:1, a:1, oc:false},          // v99: acima do SUPER, do lado do PASSE
+11881	cve:   {x:1330, y:700, s:1, a:1, oc:false},          // v99: as duas curvas embaixo, do lado do CHUTE
+11883	sup:   {x:1560, y:455, s:1, a:1, oc:false}           // v99: entre o PASSE e o CHUTE (o lugar da CURVA do COM CURVA)
+11885	const HUD_GINGA_PADRAO = {                             // v70: na GINGA os quatro botões ficam juntos no canto de baixo (cobrem menos campo)
+11891	const HUD_TROCA = ['kick', 'power', 'finta', 'drible'];   // v70: os que têm um lugar na GINGA e outro nos outros modos
+11895	const BTN_PAUSA = {x:130, y:24, w:84, h:84};           // v57: o botão de pausa (no lugar dos dois de cima: EDITAR HUD e LOBBY ficam no menu dele)
+11896	const HUDX = {k:1, css:1};                             // v70: a escala do HUD (k) e quantos px de verdade vale 1 px da tela virtual (css) — ver hudAplica
+11897	const TAM_MIN = .5, TAM_MAX = 1.5, OPAC_MIN = 0;   // v92 Fase 1: a opacidade de 0% a 100% (era .25)
+11898	const ORDEM_TOQUE = ['finta', 'curva', 'drible', 'cav', 'cve', 'cvd', 'sup', 'power', 'kick', 'joy', 'reset'];   // v99: + os chutes do Rachão // de cima para baixo
+11899	function controleVisivel(k){                           // v60: CURVA só no modo COM CURVA · v61: FINTA e DRIBLE só na GINGA · v70: no editor, os do modo atual (ou todos)
+11902	if (k === 'curva') return v70Joga() && RQ.jogo === 'curva';             // v70: o convidado da sala também tem os botões do modo
+11906	function hudEditVisivel(k){                            // v70: o editor mostra os controles do modo atual; Mostrar todos mostra o conjunto inteiro
+11915	const HUDM = {base:{}, ginga:{}, atual:'base', todos:false, editaGinga:false, molde:'destro'};   // v70: os dois conjuntos de lugares (base e GINGA)
+11918	for (const k of HUD_TROCA){ HUDM.base[k] = hud[k]; HUDM.ginga[k] = Object.assign({}, HUD_GINGA_PADRAO[k]); }   // v70
+11922	// v27: o raio do controle; o analógico cresce com o alcance e com o tamanho da bolinha (com 100% e 100% é o de sempre: 133)
+11929	const joy = {id:null, dx:0, dy:0, ativo:false, cx:0, cy:0};   // v27: cx,cy = onde o analógico está agora (sai do lugar com Adere/Vai com o Dedo)
+11935	const DT_MAX_ARC = 8*STEP;                            // v36: o maior pedaço de tempo que um quadro do Arcade alcança (0,133 s = 8 passos). Era 0,05:
+11941	const ctlVis = {joy:1, kick:1, power:1, curva:1, finta:1, drible:1, cav:1, cve:1, cvd:1, sup:1};   // v99: + os chutes do Rachão   // v27: Esconde Quando Solta: quanto cada controle aparece agora (0 = escondido…
+11943	hudModoConfere();                                    // v70: na GINGA os botões estão no lugar da GINGA
+11951	function joyCentro(){ return joy.id !== null ? {x:joy.cx, y:joy.cy} : {x:hud.joy.x, y:hud.joy.y}; }   // v27: com o dedo no analógico, o centro é o dele
+11952	function drawBtn(k, down, lines, size, cols, fill, stroke, pixo){   // v61: pixo = a cor do aro de spray (PASSE e CHUTE ganham o ícone, como os botões novos)
+11954	if (va <= .004) return;                              // v27: escondido (Esconde Quando Solta)
+11955	g.save(); g.globalAlpha = e.a*va; g.translate(e.x, e.y); g.scale(e.s, e.s); if (down && e.fx !== false) g.scale(.92, .92);   // v93: sem efeitos, não encolhe
+11956	pintaHud(g, sprHud('btn\|' + r + '\|' + lines.join('/') + '\|' + size + '\|' + cols.join('/') + '\|' + fill + '\|' + stroke + '\|' + (pixo \|\| '') + '\|' + k, escHud(e.s), r + 6, r + 6, r + 6, r + 14, h => btn…
+11965	g.font = size + 'px ' + FONT;                                                    // v20: o texto diminui sozinho se não couber no botão
+11970	function joyAroCorpo(g, anel){                        // v48: o aro tracejado do analógico · v59: ciano neon
+11977	function joyPinoCorpo(g, kr, kx, ky){                 // v48: o pino do analógico · v59: uva
+11989	function btnCorpo(g, r, lines, size, cols, fill, stroke, pixo, k){   // v48: o desenho do botão (para a imagem pronta) · v61: com pixo, no estilo dos botões novos
+11990	if (pixo){ g.fillStyle = 'rgba(0,0,0,.32)'; g.beginPath(); g.arc(5, 9, r, 0, TAU); g.fill(); }   // v61: a sombra dura (adesivo)
+11998	if (pixo){                                           // v61: o aro de spray quebrado e o ícone (como CURVA, FINTA e DRIBLE); o nome desce
+12008	g.font = size + 'px ' + FONT;                                                    // v20: o texto diminui sozinho se não couber no botão
+12012	function icChute61(g, k, r, cor, lw){                  // v61: PASSE = a bola e a seta reta · CHUTE = a bola com o estouro e a seta grossa
+12024	const g = ctx, j = hud.joy, c = joyCentro(), kr = JOY.knob*j.km, anel = JOY.aro*j.al + kr;   // v27: o anel acompanha o alcance e o manipulador (100% e 100% = 129, como sempre)
+12027	{                          // v48: o aro e o pino viram imagens prontas
+12035	if (controleVisivel('kick')) drawBtn('kick', pressed('kick'), ['PASSE'], 80,     // v20: KICK → PASSE · v59: lima neon
+12037	drawBtn('power', pressed('power'), ['CHUTE'], 80,                                // v20: CHUTE · v59: magenta neon
+12039	for (const k of V61_BTNS) if (controleVisivel(k)) v61Btn(k);   // v61: CURVA, FINTA e DRIBLE
+12041	/* ---- v61: os botões CURVA, FINTA e DRIBLE (o corpo é imagem pronta; por quadro só a carga da curva e a espera do drible/finta) ---- */
+12094	if (!editing && RQ.on && e.fx !== false){   // v93: sem efeitos, o botão fica parado (a carga continua no aviso ao lado)
+12147	function editCorpo(g, b){                           // v48: o desenho do botão (para a imagem pronta)
+12165	// v35: na ranqueada não tem reiniciar
+12170	g.translate(b.x, b.y); pintaHud(g, sprHud('edit\|' + b.w + 'x' + b.h, escHud(1), 6, 6, b.w + 6, b.h + 12, h => { h.translate(-b.x, -b.y); editCorpo(h, b); }));   // v48: imagem pronta
+12173	function lobbyCorpo(g, b){                           // v48: o desenho do botão (para a imagem pronta)
+12187	g.translate(b.x, b.y); pintaHud(g, sprHud('lobby\|' + b.w + 'x' + b.h, escHud(1), 6, 6, b.w + 6, b.h + 12, h => { h.translate(-b.x, -b.y); lobbyCorpo(h, b); }));   // v48: imagem pronta
+12191	function pausaCorpo(g, b){                             // v57: a pausa: placa clara de contorno escuro, sombra dura e as duas barras
+12206	// v20: tamanho (1v1, 2v2, 3v3, 4v4) · v21: campo (Estádio, Favela). Seta da esquerda = anterior; da direita = próximo
+12208	// v30: são três: tamanho, campo e treino (com o nome em cima). Centro e tamanho de cada pílula (px da tela virtual)
+12214	function selPerto(lista, x, y, pad){                   // v30: o seletor mais perto do dedo (as áreas de toque, maiores que o desenho, se sobrepõem um pouco:
+12222	function arcHitSel(x, y, pad){ return RQ.on ? null : selPerto(ARC_SELS, x, y, pad \|\| 0); }   // v35: na ranqueada os seletores somem   // área de toque maior que o desenho (bom para o dedo)
+12235	function selCorpo(g, s, texto, papel, x0, y0){           // v48: o desenho do seletor (para a imagem pronta)
+12240	if (papel.slice(-6) === 'treino' && TR.id !== 'livre'){ rr(g, x0 + 2, y0 + 2, s.w - 4, s.h - 4, 10); g.lineWidth = 3; g.strokeStyle = '#ffd23f'; g.stroke(); }   // v30: um exercício escolhido
+12248	const pm = pressed(papel + '-'), pp = pressed(papel + '+'), tr = papel.slice(-6) === 'treino' && TR.id !== 'livre';   // v48: imagem pronta
+12254	if (RQ.on){ if (pilulaVisivel()) rqInfoPilula(); return; }   // v35: na ranqueada não troca nada · v57: a etiqueta só 2 s na saída (e na pausa)
+12255	for (const s of ARC_SELS){                           // v30: tamanho, campo e treino
+12264	trMonta();                                           // v30: o treino escolhido recomeça no campo novo
+12270	function pilulaLCorpo(g){                            // v48: a pílula laranja do treino (para a imagem pronta)
+12275	function resetCorpo(g){                               // v48: o desenho do botão de reiniciar (para a imagem pronta)
+12292	pintaHud(g, sprHud('reset', escHud(e.s), 52, 52, 52, 58, h => resetCorpo(h)));   // v48: imagem pronta
+12295	// pílula laranja no topo (v30: num treino, o placar do treino)
+12296	if (RQ.on) rqPlacar(g);                              // v35: o placar da ranqueada
+12300	{ g.translate(800, 14); pintaHud(g, sprHud('pilulaL', escHud(1), 4, 4, 324, 50, h => { h.translate(-800, -14); pilulaLCorpo(h); })); g.translate(-800, -14); }   // v48: imagem pronta
+12305	g.save(); g.globalAlpha = Math.min(1, hintT);       // v30: um pouco mais para cima, para não cair nos nomes dos seletores
+12306	txt(g, RQ.on ? 'WASD mover · Espaço passe · K chute' + (RQ.jogo === 'curva' ? ' · U curva (segure)' : RQ.jogo === 'ginga' ? ' · F finta · G drible' : '') + ' · H HUD · Esc ' + (NET49.playing ? 'menu' : 'sair (c…
+12312	if (!opc.efx) return;                                // v27: Efeitos na Quadra
+12313	const cols = ['#b6f224','#8a4dff','#ff2bd6','#14d4f0','#ffffff'];   // v61: o confete nas cores da RACHA (lima, uva, magenta, ciano e branco)
+12326	const eb = 1 + .7*Math.pow(1 - p, 3), tr0 = (1 - p)*.05;   // v61: o carimbo: cai grande e assenta (antes crescia do zero)
+12328	const dois = RQ.on;                                  // v35: na ranqueada também tem GOL DELES
+12329	const tr = TR.on && TR.banner, az = !tr && dois && bannerAzul, frase = tr ? TR.banner : dois ? bannerTxt : 'GOL!';   // v26: gol deles = azul · v30: no treino, o recado do exercício
+12330	const moedas = ganhoGol > 0 && !tr && !az ? ganhoGol : 0, sub = bannerSub && dois && !tr ? bannerSub : '';   // v70: a linha de baixo também no ponto deles (GOL CONTRA, GOL DE ...)
+12332	if (BANNER.k !== chave){ BANNER.k = chave; BANNER.img = bannerImagem(frase, az, moedas, sub); }   // v36: desenhada uma vez por gol (e quando a tela muda)
+12339	const BANNER_COR = {                                   // v61: as cores da faixa (o nosso: lima com neon ciano na mancha magenta · o deles: uva com neon magenta na mancha ciano)
+12342	function bannerImagem(frase, az, moedas, sub){          // v36: a faixa inteira numa imagem em px da tela · v61: o pixo neon da RACHA (mancha de spray com escorrido, sombra dura, contorno neon e o risco da tag)
+12351	const ry = tam*.64, rx = Math.min(tw/2 + 70, Math.max(tw/2 + 40, ry*3.2));   // v61: a mancha cobre a altura das letras (frase comprida não vira fita)
+12373	const ly = tam*.5, x0 = -tw/2 - 10, x1 = tw/2 + 40;   // v61: o risco desce para baixo das letras
+12381	if (G().sombra){ g.shadowColor = C.neon; g.shadowBlur = 26; }   // v25: no Suave sem sombra borrada (pesa no celular)
+12390	if (moedas > 0){ const s = '+' + moedas, w = 60 + s.length*36; moedaIcone(g, -w/2 + 30, 170, 32); txt(g, s, -w/2 + 70 + s.length*18, 173, 66, '#fff6b0', esc, 12); }   // v31: as moedas do gol
+12391	if (sub){                                            // v34: assistência · v61: na fita preta, meio torta
+12402	function moedaIcone(g, x, y, r){                       // v31: moedinha dourada com o cifrão
+12434	/* ---------- v30: desenho dos treinos ----------
+12530	trVesteNpcs();                                       // v51: os companheiros e o goleiro, cada um com o seu botão (o time fica no aro)
+12630	function desenhaFps(){                                 // v33: o FPS de verdade, no canto de cima à direita
+12638	/* v55: o que a quadra mostra a mais na partida (as regras da saída à vista). Na saída, o meio-campo (até a beira de onde o jogador anda) e o meio
+12665	function foraObstaculos(){                             // v70: onde a setinha não pode ficar (px da tela virtual): os controles, a pausa, o placar e o aviso
+12695	function desenhaForaDaTela(g){                         // no espaço da tela (por baixo do placar e dos controles) · v70: sem ficar embaixo deles
+12702	g.save(); g.translate(p[0], p[1]); g.scale(HUDX.k, HUDX.k); marcadorFora(g, 0, 0, ang, cor, bola); g.restore();   // v70: no tamanho do HUD
+12710	if (!espec){                                         // v70: você fora da tela (Seguir bola, Transmissão): a sua setinha, maior e com VOCÊ
+12720	function desenhaEspecRotulo(g){                        // v70: o espectador vê quem a câmera acompanha (e troca no botão CÂMERA da barra da sala)
+12736	ctx.fillStyle = CAMPO.fundo; ctx.fillRect(0, 0, cv.width, cv.height);   // v20: onde o mundo não cobre a tela (tela parada), fica a cor do fundo
+12740	if (stat) desenhaStat(ctx, K*z, K*(W/2 - cam.x*z), K*(H/2 - cam.y*z));   // v51: alinhado aos pixels da tela
+12741	desenhaSaidaArco(ctx);                                // v55: na saída, a barreira na cor de quem bate
+12742	if (TR.on){ ctx.save(); ctx.translate(CX, CY); trDesenhaChao(ctx); ctx.restore(); }   // v30: marcas do treino no chão
+12743	trilhaPoe(TRILHA, VIS.bx, VIS.by, agoraFx()); trilhaDesenha(ctx, TRILHA); try { lnDesenha(ctx); } catch (_) {}   // v48: o rastro da bola (no chão, por baixo de todo mundo)
+12744	desenhaAros(ctx);                                     // v48: o aro do time de todo mundo (no lugar do anel tracejado e da sombra)
+12745	if (TR.on){ ctx.save(); ctx.translate(CX, CY); trDesenhaObjetos(ctx); ctx.restore(); }   // v30: paredão, cones, companheiros e goleiro
+12746	if (RQ.on) rqDesenhaJog(ctx);                         // v35: os bots da ranqueada e o anel de cada time
+12747	drawPlayer(ctx, VIS.px, VIS.py, P.r, tpNoTimeSk(skinAtual(), RQ.on ? P.time : -1), perfil.nome, perfil.avatar, true, estDe(0, 0, VIS.bx, VIS.by));   // v19.1: posições suaves (ver posVisual) · v36: na ranqueada…
+12748	drawDirecao(ctx, VIS.px, VIS.py, P.r);                // v27: Seta da direção
+12750	desenhaRespingos(ctx);                                // v61: o respingo de tinta do chute (por cima da bola)
+12752	drawAmbiente(dt);                                     // v21: o que mexe no cenário (ondas, gaivotas, fios, pipas) fica por cima · v22: e a gente da favela
+12753	if (RQ.on && (RQ.jogo === 'curva' \|\| RQ.jogo === 'ginga')) v61DesenhaCampo(ctx);   // v61: a carga e o caminho da curva, a arrancada e quem caiu na finta
+12754	if (RQ.on) rqHmDesenhaTags(ctx);                      // v47: o nome da jogada, em cima de tudo do campo
+12755	if (TR.on){ ctx.save(); ctx.translate(CX, CY); trDesenhaCima(ctx); ctx.restore(); }   // v30: balão de quem pede a bola e os pontos
+12758	desenhaForaDaTela(ctx); desenhaEspecRotulo(ctx);       // v55: as setinhas de quem está fora da tela · v70: e quem o espectador acompanha
+12759	drawHUD(); drawConfetti(dt); drawBanner(); drawControls(dt); desenhaArmado();   // v70: ARMADO no botão segurado sem a bola no alcance
+12760	if (editing){ drawEditOverlay(); hudDesenhaAvisos(); } else { drawPausaBtn(); drawSeletores(); }   // v70: os avisos de botão encostado   // v57: a pausa (com EDITAR HUD e SAIR dentro) fica por cima de tudo
+12761	desenhaFps();                                        // v33
+12764	let bannerTxt = 'GOL!', bannerAzul = false, bannerSub = '';   // o GOL!/GOL DELES e a linha de baixo (v34: a assistência)
+12770	/* ---- v35: os elos da ranqueada (os pontos ficam em CONTA.rq) ----
+12829	/* ---- v35: ranqueada na tela: os jogadores, o placar, os eventos, a apresentação dos times, o fim e a saída ---- */
+12831	// v58: O JOGO SORTEIA O NÍVEL DOS BOTS de cada partida (casual, ranqueada e o Jogar de novo): FÁCIL ou DIFÍCIL, meio a meio,
+12840	} // v38: dificuldade fixa para o teste tático do Arcade
+12841	// v44: as cores dos times na ranqueada = a tampinha (o seu time) e a cor contrária (o adversário)
+12848	function rqDesenhaJog(g){                              // v36: para todo mundo (você também): a sombra e o botão (v44: a cor da tampinha já diz o time; o anel saiu)
+12850	const ps = RQ.jog.map(pos);                          // (v48: a sombra saiu; o aro de cada um já foi desenhado)
+12857	function placarFundo(g, x0, y, h, wt, wp){             // v48: a caixa do placar (para a imagem pronta)
+12868	function placarCaixa(g, p0, p1, tempo, prorrog, un){   // a caixa do placar da ranqueada (seu time · tempo · adversário; v44: nas cores das tampinhas) · v70: (un) a unidade embaixo da meta
+12872	g.translate(x0, y); pintaHud(g, sprHud('placar\|' + c0.base + '\|' + c1.base, escHud(1), 6, 6, wt + 2*wp + 6, h + 12, k => { k.translate(-x0, -y); placarFundo(k, x0, y, h, wt, wp); })); g.translate(-x0, -y);   …
+12880	const hk = HUDX.k; g.save(); if (hk !== 1){ g.translate(W/2, 0); g.scale(hk, hk); g.translate(-W/2, 0); }   // v70: o placar, o aviso e o modo crescem juntos (Tamanho da interface)
+12884	const seg = RQ.t, lim = RQ.tempoLim \|\| 0, ouro = lim > 0 && seg >= lim && RQ.placar[0] === RQ.placar[1];   // v62: a sala com tempo
+12886	placarCaixa(g, RQ.placar[0], RQ.placar[1], lim > 0 ? (ouro ? 'OURO' : Math.floor(resta/60) + ':' + String(resta%60).padStart(2, '0')) : 'ATÉ ' + (RQ.meta \|\| 3), ouro, lim > 0 ? '' : mdUn(RQ.jogo).placar.toUpp…
+12888	const meu = NET49.playing ? (NET49.localSlot < 0 ? -1 : P.time) : 0;   // v62: na sala, o seu time pode ser o azul (e quem assiste não tem time)
+12902	const g = ctx, w = medeTxt(s, '24px ' + FONT) + 48, x0 = W/2 - w/2;   // v48: a pílula vira imagem pronta
+12913	autorEu:!!e.golH, assistEu:!!e.assistH, contraEu:!!e.contraH}, nosso);   // v70: o mesmo texto do replay e da sala online (a regra única)
+12917	if (e.golH){ estMarca(e.pts); estGolDeFinalizacao(); stGol(); perfilSalvar(); ecoGol('partida'); }   // moedas, XP e o Top semanal · v70: no modo e no contexto
+12940	jogo:RQ.jogo \|\| 'futebol', ptsH:RQ.ptsH \| 0, contraH:RQ.contraH \| 0};   // v70
+12952	RQ.jogo = X49.mode === 'ranked' ? 'futebol' : mdValida(X49.jogo);            // v59: o modo de jogo (a ranqueada é sempre futebol)
+12957	rqAvisa((RQ.jogo !== 'futebol' ? md.nome + ' · ' : '') + rqNivelTexto() + RQ_NIVEIS[RQ.nivel].nome.toUpperCase(), RQ.nivel === 'dificil' ? '#ffb4a8' : '#a8f0b0');   // v58: o nível que o jogo sorteou
+12958	if (X49.mode === 'ranked'){ CONTA.rq.n = n; CONTA.rq.mapa = mapa; CONTA.rq.mapaId = CAMPOS[mapa].id; contaSalvar(); }   // v50: a casual guarda à parte (X49)
+12964	try{ window.__rachaGingaH = 0; }catch(_){}          // v70: o RACHA_EVT.inicio saiu daqui: vai quando a bola rola (v70EvInicio no rqVsComeca), uma vez por partida
+12988	li.append(ins, nodo('b', null, q.humano ? perfil.nome : q.nome), nodo('small', null, e.nome + (!q.humano && q.hm ? ' · ' + q.hm.estilo.nome.toUpperCase() : '')));   // v47: o estilo
+13002	VS.nivel.textContent = rqNivelTexto() + RQ_NIVEIS[RQ.nivel].nome.toUpperCase() + ' · ' + mdMetaTxt();   // v70: sorteio, escolha ou liga   // v58: o jogo sorteia o nível · v70: a meta e a unidade do modo
+13015	const unF = mdUn(R.jogo \|\| RQ.jogo); if (R.golsH) fez.push(R.golsH + ' ' + (R.golsH === 1 ? unF.um : unF.varios));   // v70: na unidade do modo
+13017	fimEl('fim-info').textContent = x49ModeName() + (RQ.jogo && RQ.jogo !== 'futebol' ? ' · ' + mdAtual().nome : '') + ' · ' + R.n + 'v' + R.n + ' · ' + CAMPOS[R.mapa].nome + ' · bots ' + RQ_NIVEIS[R.nivel].nome.to…
+13048	let geral88 = null, musBus88 = null, mus88 = 1, efx88 = 1;   // v88: a música e os efeitos, cada um com o seu volume (o geral fica por cima)
+13062	// v21: o fundo muda com o campo. estádio = torcida; favela = rua ao longe
+13092	// v22: funk no paredão da favela, gerado aqui: bumbo 808, palma, tambor e chimbal na batida FUNK (130 BPM).
+13096	let lobOn = false, lobFaixa = 0;                     // v31: a música do lobby (o paredão da laje) e a faixa escolhida
+13103	musG = ac.createGain(); musG.gain.value = (lobOn ? .85 : musV)*SOM_FUNK; if (lobOn) musLP.frequency.value = 3200;   // v31: o lobby já pode estar tocando
+13104	musIn.connect(musLP); musLP.connect(musG); musG.connect(musBus88 \|\| mestre);   // v31: direto no volume geral (no lobby o som de fundo fica calado, a música não)
+13140	const F = lobOn ? (FAIXAS[lobFaixa] \|\| FUNK) : FUNK;   // v31: no lobby, a faixa escolhida
+13173	// v19.1: o iOS deixa o áudio em 'interrupted' (ligação, Siri, troca de app), não em 'suspended'. Antes só 'suspended'
+13179	try { ac = new AC({latencyHint:'interactive'}); } catch (_) { ac = new AC(); }   // v93: a latência de jogo (o som sai junto com o toque)
+13182	geral88.connect(lim93); lim93.connect(ac.destination);   // v93: o limitador no fim (chute + torcida + apito juntos não estouram)   // v88: o geral; embaixo dele, os efeitos (mestre) e a música
+13187	criarMusica();                                   // v22
+13192	let vozes93 = 0, ultChute93 = -1;                    // v93: quantos sons tocando agora (no celular, até 32) · o último chute
+13195	function tom(freq, freq2, dur, ganho, tipo, t0){      // um "tum" com a frequência caindo · v93: com o ataque de 3 ms (sem o estalo do começo)
+13203	function estalo(freq, tipo, dur, ganho){             // pedacinho de ruído filtrado (contato, batida) · v93: o ataque de 2 ms, ±6% no filtro, o limite de vozes
+13211	// v26: apito (saída e fim) e gol deles
+13224	contagem(n){                                       // v93: o bip do 3, 2, 1 e o JÁ! (mais agudo, com o apito da saída)
+13240	toque(f){ if (!pronto()) return; const t = agora(); if (t - ultToque < .08) return; ultToque = t; const k = var93(1, .05); tom(150*k, 70, .07, var93(.1 + .22*f, .1)); estalo(700*k, 'lowpass', .035, var93(.07 + …
+13242	clique(){ if (!pronto()) return; tom(620, 380, .05, .16, 'triangle'); tom(1240, 980, .03, .035); },   // v93: o clique mais macio (sem o estalo seco)
+13243	replay(){                                          // v45: o "rebobinar" quando o replay começa
+13253	get mistura(){ return {musica:Math.round(mus88*100), efeitos:Math.round(efx88*100)}; },   // v88
+13263	chute(forte){                                      // bico na bola: tum grave + estalo do contato · v93: o passe com o som dele, a variação e sem repetir colado
+13277	curva(c){                                          // v61: o "fiiiuuu" da bola com efeito (mais longo e mais agudo com a carga)
+13285	finta(a){                                          // v61: o "respiro" do chute armado, sem o contato (mais baixo que o chute)
+13289	drible(a){                                         // v61: o "tsss" da arrancada com o toquinho
+13297	erro(){ if (!pronto()) return; const t = agora(); tom(330, 210, .16, .14, 'triangle', t); tom(250, 150, .22, .12, 'triangle', t + .11); },   // v30: errou no treino
+13298	// v31: lobby. on = toca a faixa no paredão da laje (sem o som de fundo); moeda, compra e nível
+13309	campo(id){ ambTipo = id === 'estadio' \|\| id === 'gramado' ? 'estadio' : 'favela'; ajustaAmbiente(); },     // v21: troca o som de fundo junto com o campo · v43: os mapas novos soam como a favela (rua, funk, r…
+13310	musica(v, corte){                                  // v22: volume (0..1) e "abafado" (Hz) do funk, pela distância das caixas
+13317	chinelo(vel){                                      // v21: bola no chinelo = "plof" de borracha (nada de metal)
+13332	g.gain.setValueAtTime(.0001, t); g.gain.linearRampToValueAtTime(a*k, t + .002); g.gain.exponentialRampToValueAtTime(.0001, t + dur);   // v93: o ataque de 2 ms
+13344	{ const r = fonteRuido(false), rf = ac.createBiquadFilter(), rg = ac.createGain();   // v93: a rede (o "chuá" da bola entrando)
+13348	for (const fq of [523.25, 659.25, 783.99]) tom(fq, fq*.996, .45, .05, 'triangle', t + .08);   // v93: o acorde curto (no lugar do apito agudo)
+13349	if (ambTipo === 'favela') rojoes(t);             // v22: na favela tem rojão
+13355	som.campo(CAMPO.id);                                   // v21: som de fundo do campo salvo
+13366	// v36: qualidade, FPS e Mostrar FPS ficam só no menu (AJUSTES do lobby)
+13388	if ('oc' in e) e.oc = bool(s.oc, e.oc);                                                       // v27
+13392	if (o && o.hudGinga) for (const k of HUD_TROCA){                          // v70: o layout da GINGA
+13397	if (o && typeof o.graf === 'string' && GRAFICOS[o.graf]) graf = o.graf;   // v25: qualidade dos gráficos
+13401	else if (typeof o.cam.dist === 'number') cam.zoom = num(100*CAM_DIST_PADRAO/num(o.cam.dist, DIST_MIN, DIST_MAX, CAM_DIST_PADRAO), ZOOM_ABS_MIN, ZOOM_ABS_MAX, cam.zoom);   // v26 guardava a distância: vira zoom
+13403	if (['jogador', 'frente', 'bola', 'tv'].indexOf(o.cam.estilo) >= 0) cam.estilo = o.cam.estilo;   // RACHA rua v67: como a câmera segue
+13404	cam.preset = CAM_PRESETS.indexOf(o.cam.preset) >= 0 ? o.cam.preset : Math.round(cam.zoom) === ZOOM_PADRAO ? 'equilibrado' : 'pers';   // v70: quem tinha mexido no zoom fica no Personalizado
+13408	if (o && FPS_OPCOES.indexOf(o.fps) >= 0) FPS.alvo = o.fps;                // v33
+13413	if (FPS_OPCOES.indexOf(o.fps) >= 0) FPS.alvo = o.fps;   // v33
+13414	for (const k in HUD_PADRAO) Object.assign(HUD_TROCA.indexOf(k) >= 0 ? HUDM.base[k] : hud[k], o.hud[k]);   // v70: o base no base, a GINGA na GINGA
+13417	if (typeof o.vol === 'number' && o.vol !== som.volume){ som.setVolume(o.vol); try { syncSom(); } catch (_) {} }   // v70: o Cancelar também volta o volume
+13425	let aba = 'ctl';                                       // aba aberta: ctl (Controle) · cam (Câmera) · jogo (Jogo) · v36: Gráficos/FPS só no AJUSTES do menu
+13478	ui.replay.addEventListener('click', () => { opc.replay = !opc.replay; syncPanel(); });   // v45
+13479	ui.rest.addEventListener('click', () => {               // v70: só os controles (o molde Destro e o layout da GINGA de sempre); vale ao Salvar, o Cancelar desfaz
+13483	function aplicaGraficos(){ tamKey = ''; resize(); if (lobby.aberto) lbLayout(); EMB.leveFeito = false; }    // v25: refaz a tela e o cenário na qualidade nova · v33: e o lobby
+13489	// v19.1: o painel fica dentro de #wrap, que no iPhone começa depois do notch e termina antes da barra de gestos (área segura).
+13517	HUDM.todos = false; HUDM.editaGinga = RQ.on && RQ.jogo === 'ginga';   // v70: começa com os controles do modo atual
+13549	function joyComeca(id, x, y){                          // v27: o dedo pousou no analógico
+13569	if (!power && (DOMINIO_LIGADO \|\| trDominio()) && dominarBola()){ efeitoDominio(); som.dominio(); if (TR.on) TR.ev.dom = true; return true; }   // passe: bola vindo na sua direção = domina em vez de chutar (v3…
+13571	if (ok){ fxChute(P, power, BOTAO.novo); som.chute(power); stChute(); if (TR.on) TR.ev.chuteH = power ? 2 : 1; if (RQ.on){ rqToque(P); rqHmChute(P, power ? FORCA_POWER : FORCA_KICK); } }   // v44: no chute, só o…
+13575	if (navigator.vibrate && CONTA.vibrar !== false) { try { navigator.vibrate(power ? 35 : 18); } catch (_) {} }   // v37: era 22 e 12 ms · v57: Ajustes > Vibração
+13612	BOTAO.novo = BOTAO.estado !== 1 && antes !== BOTAO.estado;   // v48: o botão acabou de ser apertado (aí a luz do aro pisca no chute)
+13621	ARMADO.saiu = BOTAO.estado === 3 ? 'power' : 'kick'; ARMADO.saiuT = performance.now();   // v70: o botão pisca: o chute aconteceu
+13630	sel = k; mostraAba('ctl'); syncPanel();            // v27: tocar num controle abre a aba dele
+13640	function botaoPerto(x, y){                             // v61: o botão de ação tocado (PASSE, CHUTE, CURVA, FINTA, DRIBLE); no empate, PASSE/CHUTE
+13652	if (RP.ativo){ rpToque(x, y); e.preventDefault(); return; }   // v45: no replay só valem os botões dele
+13656	if (hitRet(BTN_PAUSA, x, y, 12)) role = 'pausa';     // v57: abre o menu da pausa ao soltar o dedo em cima do botão
+13657	else if (hs) role = 'arc-' + hs.id + (x < hs.x ? '-' : '+');   // seletores: trocam ao soltar o dedo (v30: o Arcade também tem três)
+13658	else if (controleVisivel('reset') && hit(x, y, el('reset'), 8)){ role = 'reset'; if (TR.on) trReinicia(); else { resetAll(); goalT = -1; } }   // v30: num exercício, recomeça o exercício
+13659	else if ((role = botaoPerto(x, y))){                 // v61: botões encostados (HUD salvo/aumentado): vale o mais perto do centro
+13660	if (role === 'curva') CV.toque = true;             // v60: a carga anda no passo da física; o chute sai ao soltar (v61: o toque rápido também vale)
+13663	else if (role === 'power'){ BOTAO.powerL = true; hapticoChute(); }   // o chute sai na próxima amostra da física (v48: no iPhone, a vibração)
+13666	else if (joy.id === null && joyZona(x, y)){ role = 'joy'; joyComeca(e.pointerId, x, y); }   // v65: o lado todo do analógico (joyZona)   // v27: com Nasce Onde Tocar a área de toque é maior
+13685	else if (role === 'drag'){ if (drag.id === e.pointerId){ hudSolta(drag.k); drag.id = null; } ui.painel.classList.remove('arrastando'); }   // v70: hudSolta
+13686	else if (role === 'pausa' && e.type === 'pointerup'){ const p = vpos(e); if (hitRet(BTN_PAUSA, p[0], p[1], 30)) pausaAbre(); }   // v57
+13687	else if (role === 'curva' && e.type !== 'pointerup' && !cvSegurada()) cvCancela();   // v61: toque cancelado pelo sistema não chuta
+13688	else if (role.slice(0, 4) === 'arc-' && e.type === 'pointerup'){ const p = vpos(e), id = role.slice(4, -1), s = arcHitSel(p[0], p[1], 30); if (s && s.id === id) arcTrocaSel(id, role.slice(-1) === '+' ? 1 : -1);…
+13695	if (PAUSA.aberta){ if (e.code === 'Escape'){ e.preventDefault(); pausaFecha(); } return; }   // v57: com a pausa aberta, o Esc continua
+13696	if (RP.ativo){ rpTecla(e); e.stopImmediatePropagation(); return; }        // v45: o replay do gol (e a tecla não chega ao lobby que ele reabre)
+13698	if (fimAberto() \|\| trFimAberto()){ if (e.code === 'Escape') abrirLobby(); return; }     // fim de partida (Enter aperta o botão em foco) · v30: e fim de treino
+13701	const tc = teclaCanon(e.code);                       // v70: a tecla do jeito que o jogo entende (Ajustes › Controles › Teclado)
+13703	if (RQ.on && /^(KeyR\|KeyT\|KeyC\|Digit[1-4])$/.test(tc)) return;   // v35: na ranqueada o campo e o treino não mudam
+13706	else if (tc === 'KeyU' \|\| tc === 'KeyI') CV.toque = true;                 // v61: CURVA (segura para carregar)
+13707	else if (tc === 'KeyF') fazFinta();                                           // v61: FINTA (na ginga)
+13708	else if (tc === 'KeyG' \|\| tc === 'ShiftLeft' \|\| tc === 'ShiftRight') fazDrible();   // v61: DRIBLE (na ginga)
+13709	else if (tc === 'KeyR'){ if (TR.on) trReinicia(); else { resetAll(); goalT = -1; } }   // v30: num exercício, recomeça ele
+13710	else if (tc === 'KeyT'){ trTroca(e.shiftKey ? -1 : 1); som.clique(); }                                  // v30: próximo treino
+13714	else if (tc === 'KeyC') trocaCampo(1);                                       // v21: C = próximo campo   // v20: 1 a 4 = 1v1 a 4v4
+13715	else if (tc === 'Escape') pausaAbre();                                       // v57: o Esc abre a pausa (o SAIR fica nela)
+13717	window.addEventListener('keyup', e => { keys[teclaCanon(e.code)] = false; keys[e.code] = false; });   // v70
+13723	cvCancela();                                         // v61: soltar à força não dispara o chute de curva
+13754	const BIO_MAX = 30;                                    // v34: a bio do cartão do perfil
+13755	// v34: os títulos do cartão (conquistados pelas estatísticas; mexa à vontade nas metas). cor = o degradê da faixa
+13768	nome:'Jogador', skin:SKIN_INICIAL,                                       // v44: a tampinha (o Personalizado saiu com as skins antigas)
+13770	bio:'', uid:novoUid(), titulos:['', ''],                                   // v34: a bio (até 30 caracteres), o ID e os 2 títulos escolhidos para o cartão
+13772	assist:0, semSofrer:0, golsA:0, chutesA:0, golsC:0, chutesC:0},      // v34: assistências, jogos sem sofrer gol, gols e chutes (A = Arcade; C = o Clássico, que saiu na v58)
+13773	est:{}, ganhos:[], v70:1                                             // v70: os números por contexto e modo (tools/v70/perfil.js) e os títulos conquistados
+13779	const limpaBio = s => Array.from(semLixo(s).replace(/\s+/g, ' ')).slice(0, BIO_MAX).join('').trim();   // v34
+13781	let PERFIL_SKIN_CRU61 = '';                           // v61: o disco salvo no perfil antes do filtro (o v60 já tinha zerado a lista da conta)
+13788	if (typeof o.skin === 'string' && SKIN_MAP.has(o.skin)) perfil.skin = o.skin;   // v44: os botões antigos viram a tampinha
+13799	if (typeof o.bio === 'string') perfil.bio = limpaBio(o.bio);                                  // v34
+13802	perfilCarregaV70(o);                               // v70
+13807	function stGol(){ const s = perfil.st; s.gols++; s.golsA++; }       // v34: o gol conta no total e no modo
+13808	// v34: o gol conta no total e no Arcade
+13811	try { const o = JSON.parse(localStorage.getItem(CHAVE_PERFIL) \|\| 'null'); if (!o \|\| o.uid !== perfil.uid) perfilSalvar(); } catch (_) {}   // v34: o ID novo fica salvo de primeira
+13816	/* ---------- v31: a conta do jogador (fica salva no aparelho): moedas, gemas, XP e nível, botões comprados, Top semanal ----------
+13828	const PRESENTE = {id:'v32', m:50000, g:5000};        // v32: presente que cada aparelho recebe uma vez (moedas e gemas): mude o id para dar outro
+13829	// v87.2: o presente de teste também na PRODUÇÃO quando o config.js pede: presente: true (50.000 moedas e 5.000 gemas, uma vez
+13835	if (p === true){ PRESENTE.id = 'teste-v87'; return true; }   // (um id novo: quem ganhou o v32 lá atrás também recebe)
+13847	missaoPagas:0, pecas:[], cap:null, missoes:null, vistos:[], chatBrasil:true, menosAnim:false, vibrar:true, onb:false,   // v70: pecas · cap (o dia) · missoes · vistos
+13848	// v57: missões já pagas (a cada 5 partidas), Chat do Brasil ligado, reduzir animações
+13849	rq:{pts:0, melhor:0, jogos:0, vit:0, seq:0, n:2, mapa:0, mapaId:'estadio'}});   // v35: ranqueada (pontos, melhor, partidas, vitórias, vitórias seguidas, o último time e mapa)
+13852	function rqMapaSalvo(r){                               // v44: o mapa fica salvo pelo nome (mapaId); sem ele, o número é da v43 (5 mapas)
+13873	const r = o.rq;                                    // v35
+13877	if (Number.isInteger(o.missaoPagas) && o.missaoPagas >= 0) CONTA.missaoPagas = o.missaoPagas;   // v57
+13882	contaCarregaV70(o);                              // v70: as peças, os ganhos do dia, as missões e o que já foi visto
+13888	if (!s.partidas && !s.treinos) contaNovaV70();   // v70: conta nova de verdade (sem as janelas de novidade antigas)
+13891	volta61([...(o && Array.isArray(o.skins) ? o.skins : []), PERFIL_SKIN_CRU61]);   // v61: os discos da coleção antiga viram moedas e gemas de volta
+13892	// (quem abriu o v60 perdeu a lista: só o disco equipado, se o perfil ainda guardava, volta)
+13894	if (presenteTeste() && CONTA.presentes.indexOf(PRESENTE.id) < 0){      // v32: o presente (uma vez por aparelho) · v70: na DEMONSTRAÇÃO (presente:false tira) · v87.2: e na produção com presente no config.js
+13901	const VOLTA61_PRESENTE = 3000;                         // v61: moedas para quem tinha a coleção antiga e o v60 apagou (não dá para saber o que era)
+13902	function volta61(lista){                               // v61: quem tinha discos da coleção antiga (v46) recebe de volta o que pagou, uma vez por aparelho
+13911	if (!n && CONTA.presentes.indexOf('v46') >= 0){ m = VOLTA61_PRESENTE; VOLTA61.presente = true; }   // v61: o v60 já tinha apagado a lista: quem viveu a coleção antiga ganha um presente fixo
+13979	const PREMIOS_TOP = [{ate:1, g:200, m:1000, txt:'200 gemas + 1.000 moedas'}, {ate:3, g:50, m:500, txt:'50 gemas + 500 moedas'}, {ate:10, m:500, txt:'500 moedas'}, {ate:99, m:150, txt:'150 moedas'}];   // v44: s…
+14003	/* ---------- v31: o lobby (a laje à noite: você, o Top semanal, os amigos, o seu botão no meio, as salas, o modo e o JOGAR)
+14047	const PFP = {feito:false};                             // v34: o botão do perfil (no Ultra leve é desenhado uma vez)
+14051	PALCO.vw = vw; PALCO.vh = vh; PALCO.ret = ret; PALCO.dpr = G().plano ? .75 : Math.min(window.devicePixelRatio \|\| 1, 2);   // v33: Ultra leve = menos pixels
+14056	if (!ret){                                           // v50: o meio fica entre o menu e a coluna da direita; o botão em pé na quadra
+14062	PALCO.cx = Math.round(Math.max(280, Math.min(430, PALCO.w*.27))); PALCO.cy = Math.round((112 + PALCO.h - 176)/2 - 8);   // v56: a tampinha à esquerda, o JOGAR no centro-direita
+14071	const lt = LB.lugar.offsetTop, lh = LB.lugar.offsetHeight;   // v57: a quadra cresce; a tampinha, o nome e a skin (448 px) no meio dela
+14076	LB.raiz.classList.toggle('largo', !ret && PALCO.w >= 1760);   // v34: tela larga deitada (o fim do cartão do perfil numa linha só)
+14079	// v70: as telas e janelas têm a escala delas (PALCO.sc), com um piso para o texto e o toque não ficarem miúdos (o que não cabe
+14081	// v70.1: no celular deitado (o palco encolhe abaixo do piso) tudo CABE na tela, como na v69: as telas e janelas com a escala do
+14082	// palco, sem os pisos e sem o texto crescer — nada fica escondido embaixo nem precisa arrastar ('v70-cabe').
+14100	/* ---- o botão do meio (v44: a tampinha): raios girando na cor dela, pontinhos dourados e brilhos; a luz pulsa com a música ---- */
+14104	const CONT = {m:CONTA.moedas - (CONTA.presPend ? CONTA.presPend.m : 0), g:CONTA.gemas - (CONTA.presPend ? CONTA.presPend.g : 0)};   // v32: o presente sobe na tela          // os números mostrados (sobem devaga…
+14118	else { bola.style.setProperty('--cor', p.cor); nm.appendChild(nodo('em', 'rk-bot', 'BOT')); }   // v57: o selo BOT
+14127	const TELAS = {                                        // v56: o lobby em 5 lugares; as telas de um mesmo lugar viram abas
+14132	amigos:{el:$('tela-amigos'), render:() => amigosRender(), abre:() => galeraConecta()},     // v57: as salas, o clube e a copa da v55 de volta
+14140	const GRUPOS = {                                     // as abas de cada lugar (v56)
+14169	function lbMarcaTela(){ LB.raiz.classList.toggle('pf-aberto', lobby.tela === 'perfil'); LB.raiz.classList.toggle('sk-aberto', lobby.tela === 'skins'); marcaAbas(); }   // v34: com o perfil aberto, o lobby atrás…
+14170	function lbCalmo(){ LB.raiz.classList.toggle('calmo', !!G().plano \|\| !opc.efx \|\| !!CONTA.menosAnim); }   // v57: e Reduzir animações           // v34: Ultra leve ou sem efeitos = sem animação no perfil
+14171	function abreTela(id, volta){                          // volta: a tela que o VOLTAR reabre (v34: Trocar botão, no perfil)
+14172	if (id === 'botoes' \|\| id === 'vestiario') id = 'skins';   // v50: a tela do botão agora é a SKINS · v56: VESTIÁRIO abre em SKINS
+14193	// BOTÃO (v44): a sua tampinha, os dois times (o seu e o adversário, na cor contrária) e o que vai no meio dela
+14260	// LOJA (v46): os botões à venda, por raridade (cada um no pedestal, com o seu avatar), a vitrine e a troca de gemas por moedas
+14272	const VIT_BOLA = new Set(['olho-gato', 'gato-luz']);   // v61
+14280	// BOTÃO (v46): os seus botões (toque para equipar) e o atalho para a loja
+14282	// v61: a novidade (uma vez por aparelho): a coleção da quebrada (e o que voltou de quem tinha os discos antigos)
+14290	else if (v.presente){ c.appendChild(nodo('p', 'pop-txt', 'A coleção antiga saiu do jogo. De presente, para começar a nova:')); linhaPremio(c, v.m, 0, 0); }   // v61   // v61: no singular também
+14304	// v61: o disco de conquista que acabou de liberar (Pixo RACHA com 10 partidas, Coroa do Morro com 30): uma vez cada
+14323	// v59: a novidade (uma vez por aparelho): a salinha de modos — COM CURVA, VÔLEI, AMERICANO e BASQUETE
+14345	// PERFIL (v34): o cartão do jogador (identidade, emblemas, bio, estatísticas, precisão de cada modo e títulos) e o seu botão do lado
+14352	const TRES_TOTAL = TR_LISTA.filter(id => id !== 'livre').length;     // v58: os exercícios (os do Clássico saíram)
+14387	const eu = ranking().find(p => p.voce), tits = TITULOS.filter(tituloGanho).length;   // v44: no lugar da coleção de botões, os títulos
+14390	const er = rqElo(CONTA.rq.pts); $('pf-rq-ins').innerHTML = rqInsignia(er); $('pf-rq-tx').textContent = er.nome;   // v35: o elo da ranqueada
+14484	botaoPronto(g, x, y, R, sk, perfil.avatar, {t, bx:null, by:null, id:0, humor:''}, k);   // v46
+14516	LB.zerar.addEventListener('click', () => {               // v57: confirmação dupla (a janela e, nela, o segundo toque)
+14530	function abrePop(monta){ LB.popCaixa.className = 'pop-caixa'; LB.popCaixa.textContent = ''; monta(LB.popCaixa); LB.pop.hidden = false; }   // v34: cada janela começa sem as classes da anterior
+14577	if (typeof ONB !== 'undefined' && (ONB.aberto \|\| ONB.aquece)) return;   // v57: depois da primeira vez
+14578	if (CONTA.presentes.indexOf('v59') < 0 && !CONTA.presPend){ CONTA.presentes.push('v59'); contaSalvar(); filaPop.push(() => filaPops()); popModosNovos(); return; }   // v59: a salinha de modos · v60: o presente …
+14579	if (CONTA.presentes.indexOf('v61') < 0 && !CONTA.presPend){ CONTA.presentes.push('v61'); contaSalvar(); filaPop.push(() => filaPops()); popNovosBotoes(); return; }   // v61: a coleção nova
+14580	const u61 = ULTRAS49.find(s => skinTem(s.id) && CONTA.presentes.indexOf('ultra-' + s.id) < 0);   // v61: liberou um disco de conquista
+14592	if (LB.ajCam) for (const b of LB.ajCam.children) b.classList.toggle('on', b.dataset.cam === X49.camera);   // v50: a câmera e o contato (antes no painel separado)
+14595	for (const b of LB.ajFps.children) b.classList.toggle('on', +b.dataset.fps === FPS.alvo);   // v33
+14597	LB.ajReplay.setAttribute('aria-pressed', String(opc.replay));   // v45
+14598	$('aj-vibra').setAttribute('aria-pressed', String(CONTA.vibrar !== false)); $('aj-anim').setAttribute('aria-pressed', String(!!CONTA.menosAnim)); $('aj-chat').setAttribute('aria-pressed', String(brasilLigado())…
+14614	LB.ajReplay.addEventListener('click', () => { opc.replay = !opc.replay; salvar(); syncAjustes(); som.clique(); if (lobby.tela === 'replays') renderReplays(); });   // v45
+14615	$('aj-vibra').addEventListener('click', () => { CONTA.vibrar = CONTA.vibrar === false; contaSalvar(); syncAjustes(); som.clique(); });   // v57
+14616	$('aj-anim').addEventListener('click', () => { CONTA.menosAnim = !CONTA.menosAnim; contaSalvar(); EMB.leveFeito = PFP.feito = SKL.feito = false; syncAjustes(); som.clique(); });   // v57
+14636	/* ---- v35: RANQUEADA (o JOGAR do Arcade abre este painel: o seu elo, o tamanho do time e o mapa) e o botão TREINO ---- */
+14640	// v59: um chip por modo de jogo (FUTEBOL, COM CURVA, VÔLEI, AMERICANO, BASQUETE) — a "salinha" de modos da casual
+14647	// v43: um botão por mapa (do CAMPOS), com o desenho e o nome; a descrição do escolhido fica embaixo da fileira (v44: Estádio, Favela e Escadão)
+14650	viaduto:'Concreto debaixo do elevado: pilares pixados, pista de skate, baile e os carros passando lá em cima'};   // v61
+14656	// v43: o desenho de verdade dos mapas novos, pequeno, para o painel (um por quadro, guardado por mapa e tamanho)
+14664	const est = CAMPO.id === 'estadio' \|\| !!CAMPO.grama, fav = CAMPO.id === 'favela', P = est ? 0 : MR_PASSEIO + 30;   // v44: o estádio também (o mundo inteiro na largura) · v61: e a favela desenhada (2v2 a 4v4)
+14690	if (cp.morro \|\| cp.id === 'estadio' \|\| cp.grama \|\| (favela && (RQP.n > 1 \|\| !cp.img1v1))){   // v61: a favela do 2v2 ao 4v4 também (e o 1v1, sem a foto) · v43: o mapa desenhado de verdade (se ainda não …
+14708	if (favela && RQP.n === 1 && CAMPOS[1].img1v1 && imagemPronta(QUADRA_FAVELA)){   // v42: no 1v1 a favela é a quadra da imagem (recortada em volta da calçada) · v61: não usa mais
+14754	RQP.times.addEventListener('click', e => { const b = e.target.closest('[data-n]'); if (!b) return; som.clique();   // v50: a Casual vale na hora (o JOGAR usa)
+14774	if (PAUSA.aberta) pausaFecha();                       // v57
+14776	const desistiu = RQ.on ? RQ.saiu : null; RQ.saiu = null;   // v35
+14785	trUiFecha();                                         // v30
+14790	if (desistiu) aviso('Você desistiu da ranqueada: ' + (desistiu.delta < 0 ? '−' + Math.abs(desistiu.delta) : '0') + ' pontos');   // v35
+14796	if (lobby.tela){ if (TELAS[lobby.tela].fecha) TELAS[lobby.tela].fecha(); TELAS[lobby.tela].el.hidden = true; lobby.tela = null; }   // v56: o chat fecha quando a partida começa
+14798	if (TR.on) trReinicia();                             // v30: o exercício escolhido começa do zero (com o cartão de abertura)
+14805	const lbParado = () => !!G().plano \|\| !!CONTA.menosAnim;   // v57: Ultra leve ou Reduzir animações
+14815	else if (!EMB.leveFeito){ pintaBrilho(0); EMB.leveFeito = true; }   // v33: Ultra leve: o botão parado (desenha só quando muda)
+14816	} else if (lobby.tela === 'perfil'){                 // v34: o seu botão do lado do cartão
+14819	} else if (lobby.tela === 'skins'){                  // v50: o botão grande da tela SKINS
+14825	if (semanaChecar()){ lbRender(); filaPops(); }   // v56: sem contagem do que não existe
+14829	const SKL = {feito:false};                             // v50: no Ultra leve o botão da tela SKINS é desenhado só quando muda
+14830	document.getElementById('fim-denovo').addEventListener('click', () => { som.clique(); if (RQ.on) rqDeNovo(); try { cv.focus({preventScroll:true}); } catch (_) {} });   // v35
+14833	/* v30: tela do fim de um treino (estrelas, pontos, recorde) · v31: e o prêmio em moedas e XP */
+14902	/* ---------- v45: a tela REPLAYS do lobby (SALVOS e ÚLTIMOS GOLS) e o ASSISTIR ----------
+15046	fpsTela(now);                                        // v48: o intervalo da tela (todo quadro que ela oferece)
+15047	if (FPS.alvo < 120 && FPS.tela < 1000/FPS.alvo*.85){   // v33: limite de FPS: pula quadros da tela até dar o tempo do próximo · v48 (Arcade): só se a tela for mais rápida que o limite
+15048	const iv = 1000/FPS.alvo, folga = FPS.tela*.5;   // v48: folga de meio quadro da tela (antes 1,5 ms: um quadro um pouco adiantado era jogado fora)
+15053	if (lobby.aberto){ last = now; lbAnima(now); requestAnimationFrame(frame); return; }   // no lobby o jogo fica parado (v31: o lobby anima)
+15055	const dt = Math.min(DT_MAX_ARC, (now - last)/1000 \|\| 0); last = now;   // v36: (era 0,05)
+15057	if (RP.ativo){ rpFrame(Math.max(0, bruto)); requestAnimationFrame(frame); return; }   // v45: o replay do gol passa no lugar do jogo
+15058	const parado = editing \|\| PAUSA.on \|\| trFimAberto() \|\| fimAberto() \|\| rqVsAberto() \|\| ARB_PARADO();   // RACHA rua v68: a pausa do árbitro   // v30: a tela do fim do treino também para o jogo · v35: e…
+15059	if (RQ.on && rqVsAberto() && !editing) rqIntro(dt);  // v35: a busca e a apresentação dos times
+15061	acc += dt; perfil.st.segundos += dt; estTempo(dt);   // v70: o tempo em campo no contexto e no modo
+15063	dirSegue(dt, inp.mx, inp.my);                      // v27: só o desenho da setinha
+15065	while (acc + 1e-9 >= STEP && !RP.pedido){ guardaAnterior(); physicsStep(STEP, inp.mx, inp.my); if (DOMINIO_LIGADO && seg && dominarBola()){ efeitoDominio(); som.dominio(); } acc = Math.max(0, acc - STEP); rpGra…
+15067	if(NET49.playing&&NET49.host)net49Publish(now);                            // v35
+15068	if (EV.trave > 0){ if (CAMPO.rede) som.trave(EV.trave); else som.chinelo(EV.trave); EV.trave = 0; }   // v21: chinelo faz "plof", não "plim"
+15073	if (goalT > 1.7){ goalT = -1; if (!TR.on && !RQ.on && !rpPede(resetAll)) resetAll(); }   // v30: no treino quem recoloca a bola é o exercício (v35: na ranqueada, a saída) · v45: no treino livre, o replay antes
+15075	trUiFrame(dt);                                     // v30
+15076	if (RQ.on && RQ.estado === 'fim' && RQ.fimT >= RQ_FIM_TICKS && RQ.resultado && !RQ.resultado.mostrado) rqMostraFim();   // v35
+15077	if (RP.pedido) rpInicia();                         // v45: o replay do gol começa no próximo quadro
+15079	if (corCenario !== corBotao(skinAtual())) buildStatic();   // v46: trocou de botão no lobby (a torcida do estádio é das cores dos times)
+15082	somFavela();                                         // v22: funk do paredão (volume pela distância)
+15093	const dpr = G().dpr(window.devicePixelRatio \|\| 1);   // v25: depende da qualidade (Suave desenha menos pixels, Max mais)
+15100	K = cv.width/W; HUDX.css = s; hudAplica();          // v70: a escala do HUD (placar, pausa, setinhas) acompanha o tamanho de verdade da tela
+15101	SPR_HUD.clear(); SPR_TXT.clear();                   // v48: outra resolução, outras imagens prontas
+15102	if (!stat \|\| qsBuilt <= 0 \|\| Math.abs(wantQS() - qsBuilt)/qsBuilt > .05) buildStatic();   // v44: a tela mudou pouco (a barra do navegador que some e aparece): o cenário pronto serve, sem travar refazendo t
+15110	/* v49 — partidas até 3, cosméticos conquistados e salas privadas reais.
+15117	try{const o=JSON.parse(localStorage.getItem(X49_KEY)\|\|'null');if(o){if(Array.isArray(o.vistos))X49.vistos=o.vistos.filter(x=>typeof x==='string').slice(0,64);X49.evVisto=!!o.evVisto;}}catch{}   // v50
+15144	if(url)url=normalizaServidor(url)\|\|url;else url=servidorEndereco();   // v57: aceita https://, o domínio sozinho e o salvo em Ajustes
+15147	NET49.ws.onopen=()=>{let token;NET49.tokenKey=servidorChaveToken(NET49.ws.url);try{token=localStorage.getItem(NET49.tokenKey)\|\|localStorage.getItem('streetball-online-token:'+url);}catch{}net49Send(Object.ass…
+15150	NET49.ws.onclose=()=>{const was=NET49.playing,sala=NET49.room,slot=sala?sala.roster.indexOf(NET49.id):-1;NET49.id=null;NET49.room=null;NET49.playing=false;NET49.ws=null;if(was){x49NetStop();x49Toast('Conexão en…
+15169	NET49.goal=null;NET49.room=room;NET49.playing=true;NET49.host=!room.servidor&&room.host===NET49.id;NET49.localSlot=room.roster.indexOf(NET49.id);NET49.inputs.clear();NET49.pending=[];NET49.seq=0;NET49.lastTick=…
+15175	function net49BotSkin(room,i){                       // v51: o botão do bot da vaga i (pula os botões de quem está na sala)
+15176	const usados = new Set((room.members \|\| []).map(m => m && m.skin)), L = SKINS.filter(s => s.loja && !s.ultra && (s.r === 'comum' \|\| s.r === 'raro') && !usados.has(s.id)).map(s => s.id);   // v61: a coleção …
+15189	function net49HostInput(){if(P.remote){net49Control(P);return {mx:P.mx,my:P.my};}if(!P.netId){if(P.chutar){rqChuta(P,P.chutar);P.chutar=0;}return {mx:P.mx,my:P.my};}return {mx:0,my:0};}   // v58: (ele decide no…
+15206	if(changed){const t=s.score[0]>NET49.lastScore[0]?0:1,esp=NET49.localSlot<0,ours=!esp&&P.time===t,g=s.goal&&s.goal.time===t?s.goal:{},md=g.jogo\|\|RQ.jogo\|\|'futebol',eu=x=>!!x&&x===NET49.id;const T=rqTextoLan…
+15219	function net49Draw(dt){posVisual(1);updateCamera(dt,false);spinBall(dt);render(dt);}   /* v70: quem assiste escolhe o alvo da câmera (camFoco) */
+15230	if(NET49.playing){X49UI.netText.textContent=NET49.paused?'Aguardando o admin':NET49.localSlot<0?'ESPECTADOR · '+NET49.room.code:'SALA '+NET49.room.code+(NET49.host?' · anfitrião':slDono(NET49.room)?' · admin':'…
+15233	// v50: sem o painel separado e sem o botão ULTRAS + AMIGOS: tudo isso mora nas telas do lobby. Ficam só o que aparece no jogo.
+15235	X49UI.chat=x49El('div');X49UI.chat.id='x49-chat';X49UI.chat.hidden=true; /* v56: mensagens rápidas saíram; o elemento fica só para as referências antigas */
+15250	const base49Goal=rqGol;rqGol=function(lado){const before=RQ.placar[0]+RQ.placar[1];base49Goal(lado);if(RQ.placar[0]+RQ.placar[1]!==before){const e=RQ.ev;if(e.autor===P&&X49.shotOrigin){X49.longest=Math.max(X49.…
+15256	function net49Skin(q){const sk=skinPorId(q.netSkin\|\|perfil.skin);return {...sk,cor:q.time?'#8a4dff':'#b6f224'};}   // v60: online joga lima × uva (as cores da casa)
+15345	// v59: RACHA pixo neon — a noite roxa da quebrada, o letreiro aceso no muro
+15409	// v57: as placas só onde o muro está livre (zonas: os trechos sem nada da tela na frente, do maior para o menor)
+15487	function lbZonasMuro(chao, esq, dir){                  // v57: os trechos do muro (em px do palco) sem nada da tela na frente
+15504	if (LB.raiz.hidden \|\| !LB.palco.getBoundingClientRect().width) return;   // v57: as placas medem a tela; com o lobby escondido, pinta quando abrir
+15511	const chao = PALCO.cy + 92, zonas = lbZonasMuro(chao, 24, PALCO.w - 24).map(z => [z[0] + ox, z[1] + ox]);   // v57: em pé também, o chão é o da tampinha
+15530	g.save(); g.translate(x, y); g.globalCompositeOperation = 'lighter';   // v56: só a luz do refletor, sem raios nem brilhinhos
+15550	function pintaEu(){                                    // v56: você no topo — a sua tampinha pequena
+15559	const nv = nivelInfo(CONTA.xp), sk = skinAtual(), rar = RARIDADES[sk.r] \|\| RARIDADES.inicial;   // v61: os de conquista mostram a raridade
+15568	missoesWidget();                                     // v70: as missões do dia, o bônus e a série (tools/v70/economia.js)
+15574	function rapidoTexto(){ const j = X49.jogo && X49.jogo !== 'futebol' ? MD_MAP.get(X49.jogo).nome + ' · ' : ''; return 'CASUAL · ' + j + X49.n + 'v' + X49.n + '\n' + CAMPOS[X49.map].nome.toUpperCase() + ' · ' + …
+15575	function lbClube(){}                                  // v56: o clube sai da home (EM BREVE na GALERA)
+15584	/* ---- JOGAR: o painel com RANQUEADA e CASUAL (v58: os bots de cada partida o jogo sorteia: FÁCIL ou DIFÍCIL) ---- */
+15588	RQP.jogo = mdValida(X49.jogo);                     // v59: o modo salvo da casual
+15610	R.modoSub.hidden = rq; R.modos.hidden = rq; R.modoDesc.hidden = rq;      // v59: o modo de jogo é da casual (a ranqueada é sempre futebol)
+15615	const cas = R.cabCas.querySelector('small'); if (cas) cas.textContent = MD_MAP.get(RQP.jogo).desc + ' ' + rqNivelDesc();   // v70
+15619	R.nota.textContent = rq ? ligaNota()                  // v70: a liga contra bots (o elo é deste aparelho; o desafio cresce com ele)
+15639	['comum', 'Comuns', RARIDADES.comum.cor], ['inicial', 'Iniciais', RARIDADES.inicial.cor]];   // v61: sem Especiais (nenhum disco) nem Conquistas (já é a aba)
+15640	const SK_ORDEM = {inicial:0, especial:1, ultra:2, mitico:3, lendario:4, epico:5, raro:6, comum:7};   // v61: o mítico
+15641	const skRar = sk => sk.ultra ? {...(RARIDADES[sk.r] \|\| RARIDADES.lendario), ultra:true} : (RARIDADES[sk.r] \|\| RARIDADES.comum);   // v61: conquista, com a raridade
+15757	miniTime(LB.btMeu, skinAtual(), perfil.avatar, skinDoTime(0).cor); miniTime(LB.btContra, skinRival(), {t:'1', e:'', cor:'#ffffff'}, skinDoTime(1).cor);   // v51
+15785	botaoPronto(g, x, y, R, sk, perfil.avatar, vitrineEst61(t, bx, by, R), k);   // v61: ele corre, chuta e comemora de mentira
+15889	const l = ['paredao', 'coroa', 'pipa', 'globo'].map(id => SKIN_MAP.get(id)).filter(Boolean);   // v61
+15949	/* v62: amigosRender (GALERA › SALAS) e a sala nova ficam no bloco das SALAS ONLINE, no fim */
+15981	rk.appendChild(onP('Ranking amistoso deste servidor: a partida é simulada no servidor — nenhum celular roda o jogo oficial.', 'on-nota'));   // v83
+16007	const lin = nodo('div', 'on-linha'); lin.appendChild(onBtn('VOLTAR PARA A SALA', () => abreTela(NET49.room ? 'sala' : 'amigos'), 'azul'));   // v62
+16012	if (NET49.id){                                        // v57: a galeria de campeões (do servidor) só conectado; o Desafio da Quadra saiu
+16033	nodo('p', 'sj-info', (NET49.localSlot < 0 ? 'Você está assistindo' : slDono(r) && !r.oficial ? 'Você é o admin da sala: a partida roda no servidor' : 'Conexão ' + Math.round(NET49.ping) + ' ms') + ' · ' + CAMPO…
+16059	const tela = {skins:'skins', online:NET49.room ? 'sala' : 'amigos', clubs:'clube', cup:'copa', records:'perfil'}[tab];   // v62: na sala, a tela da sala
+16060	if (NET49.id && ['clubs', 'cup', 'records'].includes(tab)) net49Send({type:'social'});   // v57: como na v55
+16073	for (const b of $$('.nv-item', LB.palco)) b.addEventListener('click', () => abreTela(b.dataset.tela));   // v56: TREINO · VESTIÁRIO · GALERA · PERFIL
+16079	clique(LB.missoes, () => { som.clique(); missoesAbre(); });   // v70: as missões do dia, o bônus e a série
+16120	trMonta();                                             // v30: o treino escolhido da última vez
+16126	setTimeout(function(){ txtFonteOk = true; }, 3000);   // v48: (se a fonte demorar, os textos prontos são refeitos quando ela chegar)
+16127	// v42: a imagem da quadra (1v1 da favela) termina de carregar sozinha; quando ela chega, refaz o campo e o desenho do mapa na ranqueada
+16133	/* ================== CHAT DO BRASIL (v56) ==================
+16140	/* v57: o servidor do jogo é um só (salas, clubes, Copa dos Amigos e Chat do Brasil). O endereço: o salvo em Ajustes › Avançado
+16152	if (!u) u = normalizaServidor(SERVIDOR_DO_JOGO \|\| BRASIL_FIXO);   // v62: o endereço fixo (se tiver) vem antes do automático
+16160	if (SERVIDOR_DO_JOGO) return 'Servidor do jogo: ' + SERVIDOR_DO_JOGO + ' (definido no código).';   // v62
+16172	function brasilEndereco(){ return servidorEndereco(); }   // v57: o mesmo servidor das salas
+16184	st.textContent = '';                                 // v57: sem servidor nenhum não adianta tentar de novo; diz onde pôr o endereço
+16202	ws.onopen = () => { BRASIL.tentativas = 0; let token = null; try { token = localStorage.getItem(servidorChaveToken(ws.url)); } catch (_) {}   // v57: com o token das salas, o servidor sabe o seu clube
+16206	ws.onclose = () => { if (BRASIL.ws !== ws) return; BRASIL.ws = null; if (BRASIL.estado !== 'off'){ brasilEstado('fora'); brasilRetry(); } };   // v57: só o socket atual
+16210	if (!BRASIL.aberto \|\| !brasilLigado() \|\| BRASIL.estado !== 'fora') return;   // tenta de novo sozinho com o chat aberto (v57: só se tem servidor e caiu)
+16265	function brasilCorNome(m){                              // v57: a cor da skin, escurecida até contrastar 4,5:1 com o balão (#f2efe6)
+16274	else { const feitas = lista.querySelectorAll('.br-msg, .br-vazio'); feitas.forEach(e => e.remove()); }   // v57: o 'ninguém falou nada' some com a primeira mensagem
+16325	function brasilDesliga(){ BRASIL.estado = 'off'; clearTimeout(BRASIL.retryT); const ws = BRASIL.ws; BRASIL.ws = null; if (ws) try { ws.close(); } catch (_) {} BRASIL.naoLidas = 0; brasilBadge(); if (BRASIL.aber…
+16344	/* ---- v57: a pausa da partida. Um botão pequeno no canto (no lugar do EDITAR HUD e do LOBBY) abre o menu: CONTINUAR, EDITAR HUD e
+16395	function fimNumeros(gols, assist, jogo, pts){         // os seus números no fim da partida · v70: na unidade do modo (gol, ponto, touchdown, cesta)
+16405	/* ---- v57: a primeira vez. Duas telas (o seu nome e a sua tampinha) e um aquecimento de 20 s no treino livre; depois, o lobby
+16420	const um = box.children.length === 1, p2 = $('onb-2');   // v61: só uma de graça: o passo apresenta em vez de pedir escolha
+16474	const SL_MODO = {futebol:'Futebol', curva:'Com curva', volei:'Vôlei', americano:'Americano', basquete:'Basquete', ginga:'Ginga'};   // v70: + ginga
+16544	const slDono = r => !!r && (r.host === NET49.id \|\| (!!r.admin && r.admin === NET49.id));   // v1.3: quem manda na sala (com a partida na nuvem, o admin)
+16557	d.setAttribute('aria-label', (m.name \|\| 'Jogador') + (m.id === (r.admin \|\| r.host) ? ', admin da sala' : '') + (m.id === NET49.id ? ', você' : ''));   // v83
+16746	nodo('p', 'pop-txt', dono && outros ? 'Você é o admin: a sala passa para outra pessoa e a partida segue no servidor.' : outros ? 'Dá para voltar depois com o código ' + r.code + '.' : 'Você é o único aqui: a sa…
+16752	/* ---- o chat da sala (a barra e o painel são os do chat em todo lugar, v63) ---- */
+16779	if (s.oficial) h.appendChild(nodo('i', 'sb-ofi', 'OFICIAL'));   // v1.3: as salas do servidor (começam sozinhas)
+16792	/* v64: JOGAR AGORA (salas abertas): entra na sala aberta que está esperando com vaga (a mais cheia primeiro: começa antes);
+16802	if (L.length){ net49Send({type:'join', code:L[0].code, rapido:true}); return; }   // v70: com lugar num time
+16806	function amigosRender(){                                // v62: GALERA › SALAS (era AMIGOS): criar, entrar com código e as salas abertas
+16820	onP('A partida roda no servidor do RACHA: se alguém cair — até quem criou a sala — os outros continuam jogando.', 'on-nota')));   // v83
+16855	if (sv){ const u = normalizaServidor(sv); if (u) SL.servidorConvite = u; }   // v100: o servidor do convite espera a confirmação (tools/v100/seguranca.js)
+16902	/* ---- as mensagens novas do servidor (o resto continua no net49Message da v49) ---- */
+16977	onbFim(); lbRender();                             // (o onbFim da v62 chama o slEntrarConvite)
+17262	const k70 = (m.k \| 0) & 7;                           // v70: 1 = CURVA segurada · 2 = FINTA · 4 = DRIBLE (o pedido vale uma vez)
+17270	if (m && m.type === 'snapshot' && NET49.playing && NET49.host) return;   // v1.3: quem roda a partida não aceita a de outro (ela apagava os seus movimentos)
+17275	/* v1.3: o dono da sala mudou no meio da partida (a partida passou para a nuvem, por exemplo): quem rodava a partida
+17324	v70Remoto(q, f, vale, dir);                          // v70: a CURVA, a FINTA e o DRIBLE de quem joga de fora (as regras do botão do anfitrião)
+17331	const pelaRede = force \|\| now - NET49.sentAt >= 1000/30 \|\| (RQ.estado === 'fim' && !NET49.finishSent);   // pelo servidor: 30 quadros por segundo (v70: e o do fim)
+17332	const direto = RQ.tick !== NS.p2Tick && p2Diretos() > 0 && p2Diretos() <= 3;   // v1.3: pela conexão direta, um quadro a cada passo (60 por segundo) até 3 jogadores
+17341	p2Manda(str);                                        // v64: e direto para quem tem (P2P)
+17697	if (joy.id !== null && j.fx !== false){   // v93: sem efeitos, o analógico não acende
+17711	if (j.fx !== false) g.translate(joy.dx, joy.dy);   // v93: sem efeitos, o pino fica parado no meio
+17723	// v70: a câmera inteira (os estilos, o À frente, a proteção do jogador, os enquadramentos) mora no updateCamera do jogo
+17724	// (tools/v70/camera.py). Aqui ficam só os botões do painel até o painel novo de Ajustes › Câmera.
+18054	else { arbEstado(true); x49Toast('Agora você é o admin da sala: pode banir também.'); }   // v83
+18083	return x49Toast('O admin saiu: agora você é o admin da sala.');   // v83
+18089	arbEstado(true); x49Toast('O admin saiu e o sorteio deu você: agora você é o admin da sala.');   // v83
+18120	if (!NET49.host && !(r.servidor && !r.ranked && !r.local)) return x49Toast('Esta partida está rodando no servidor: daqui não dá para pausar.');   // v88: na sala hospedada o admin pausa pelo servidor
+18184	if (m.type === 'join' && !m.spectate && !m.rapido && !Number.isInteger(m.slot)) m = Object.assign({}, m, {spectate:true});   // (v70: JOGAR AGORA entra com lugar)   // quem entra assiste: o árbitro monta os tim…
+18308	c.appendChild(nodo('p', 'pop-txt sx-como', 'Como funciona: quem cria a sala é o admin. A galera entra pelo link ou pelo código e fica assistindo; o admin monta o Time A e o Time B e começa. A partida roda no se…
+18781	{id:'tc', nome:'Tricolor', pr:'gratis', cores:2, f:(g, R, a, b) => { tpRect(g, -R, -R, R - .34, 2*R, a); tpRect(g, .34, -R, R, 2*R, b); }},   // v95: de graça (é o padrão da tampinha inicial: mexer só na borda …
+18951	// v71: a tampinha PADRÃO é metade preta e metade branca; na partida ela fica toda preta no Time A e toda branca no
+18952	// Time B (as outras tampinhas ficam como são). TP_PADRAO_ANTIGO = a amarela, a padrão até a v70.2.
+18954	const TP_PADRAO_PB = tpCodigo(TP_PADRAO_V71('#17191c', '#f2f0ea', '#c7ccd2', 'me'));   // v80: a padrão da v71 (só para a troca)
+18955	const TP_PADRAO_V80 = (esq, dir) => Object.assign(TP_PADRAO_V71(esq, dir, '#c7ccd2', 'ls'), {pp:[76, 50, 84, 0]});   // v80: Listras, uma listra do meio para a direita
+18956	const TP_PADRAO_V80COD = tpCodigo(TP_PADRAO_V80('#ff6a00', '#7a3fc4'));   // v95: a inicial da v80 (metade laranja, metade roxa: só para a troca)
+18957	const TP_PADRAO_V95 = (esq, dir) => Object.assign(TP_PADRAO_V71('#f4f2ec', esq, '#c7ccd2', 'tc'), {pc:['#f4f2ec', esq, dir]});   // v95: o Tricolor, as listras em pé (a do meio, branca)
+18958	const TP_PADRAO_COD = tpCodigo(TP_PADRAO_V95('#7a3fc4', '#ff6a00'));   // v95: sem equipe, roxo, branco e laranja
+18959	const TP_TIME_V80 = [tpCodigo(TP_PADRAO_V80('#ff6a00', '#ff6a00')), tpCodigo(TP_PADRAO_V80('#7a3fc4', '#7a3fc4'))];   // v95: as do time da v80 (só para a troca)
+18960	const TP_TIME_COD = [tpCodigo(TP_PADRAO_V95('#ff6a00', '#ff6a00')), tpCodigo(TP_PADRAO_V95('#7a3fc4', '#7a3fc4'))];   // v95: Time A laranja, branco e laranja; Time B roxo, branco e roxo
+19254	if (Array.isArray(o.salvas)) TP.salvas = o.salvas.filter(s => s && tpEhCodigo(s.c) && s.c[0] === 'T' && tpLe(s.c)).slice(0, 24).map(s => ({c:s.c, n:Array.from(semLixo(String(s.n \|\| ''))).slice(0, 20).join('')…
+19258	// v70: as peças compradas moram também na conta, junto com o saldo (uma gravação só na compra: não sobra compra pela metade)
+19279	contaSalvar();                                        // v70: o saldo e as peças na mesma gravação (a conta)
+19290	const tpLivre = cod => TP.livres.has(cod);               // v70: as skins da conta (e a tampinha restaurada da conta) não se paga de novo
+19317	const tpMinha = () => (TP.equipada && !(typeof v101Esconde === 'function' && v101Esconde(TP.equipada)) ? TP.equipada : '') \|\| TP_PADRAO_COD;   /* v101: a pronta vale a inicial (as prontas fora) */   // v71: a…
+19369	// (v70: zerar o progresso — o que apaga e o que fica, com as escolhas — está em tools/v70/perfil.js)
+19404	const TPE_ABAS = {T:[['p', 'PADRÃO'], ['b', 'BORDA'], ['i', 'ÍCONE'], ['pre', 'MODELOS PRONTOS'], ['inv', 'INVENTÁRIO']],   // v70: Modelos prontos (era Pré-projetado)
+19415	TP.conta = cods; for (const c of cods) TP.livres.add(tpCodigo(TP_CONTA[c].d)); try { v88TampinhasDaConta(); } catch (_) {}   // v93: as exclusivas (passe, eventos) ficam   // v70: soma (a tampinha da conta, res…
+19436	if (x && x.D){ ED.D = tpCopia(x.D); ED.aba = x.aba \|\| 'p'; }   // v70: da LOJA: a peça em destaque na sua tampinha (o preço aparece no botão)
+19437	else { const r = tpeLeRascunho(); if (r){ ED.D = tpLe(r.c); ED.rasc = true; } }   // v70: o rascunho de quando você saiu sem equipar
+19445	/* ---------------------------------------------------------------- v70: o rascunho e o aviso de sair sem equipar */
+19505	rascB.addEventListener('click', () => { som.clique(); const D = tpLe(tpMinha()); tpeApagaRascunho(); if (D){ ED.hist.push(tpCopia(ED.D)); ED.fut = []; tpeTroca(D); tpeBotoesHist(); } });   // v70
+19724	// escolhida era uma das últimas da faixa, que não tem mais para onde andar — v96)
+19891	if (TP.salvas.length > 1){                                 // v70: buscar pelo nome
+19911	function tpeInvGrade(){                                   // v70: as salvas (favoritas primeiro), com o menu de cada uma
+19930	function tpeSalvaMenu(s){                                 // v70: renomear, duplicar, favoritar, trocar pelo atual e apagar (com DESFAZER)
+19987	const acao = tpeAcao(igual, !!(c.m \|\| c.g)); E.ok.querySelector('b').textContent = acao;   // v70: o botão diz o que faz (e o preço, quando tem)
+20021	const dep = nodo('p', 'pop-txt tpe-saldo'); dep.innerHTML = 'Saldo depois: <i class="ic-moeda"></i> ' + fmtNum(CONTA.moedas - c.m) + ' · <i class="ic-gema"></i> ' + fmtNum(CONTA.gemas - c.g);   // v70: o saldo …
+20054	abreTela = function(id, volta){                         // (a v67 mandava SKINS para o PERFIL: agora é o editor)
+20525	function clbCriar(){                                       // v70: criar é grátis (em qualquer lugar)
+20790	const UIX = {chave:'racha-ui-v1', opcoes:[.9, 1, 1.15, 1.3], pisoTexto:12.5, cabe:.56};   // v70.1: abaixo de cabe (celular deitado), tudo cabe na tela como na v69
+20818	if (LB.raiz.classList.contains('v70-cabe')){          // v70.1: no celular deitado tudo cabe na tela (como na v69): o texto não cresce
+21106	if (ARMADO.desde && agora - ARMADO.desde > 150 && hud[seg].fx !== false){   // v93: sem efeitos, nada em cima do botão       // (um instante de folga: no chute normal a bola já está no pé e o aviso nem aparece)
+21110	v93Rotulo(g, 'ARMADO · ENCOSTE NA BOLA', e.x, e.y, r, 22, '#ffe14d', 'rgba(8,10,28,.82)');   // v93: no lado livre (não em cima do PASSE)
+21276	aviso('+' + [p.m ? fmtNum(p.m) + ' moedas' : '', p.g ? p.g + ' gemas' : '', p.xp && !(typeof c82SemXpLocal === 'function' && c82SemXpLocal()) ? p.xp + ' XP' : ''].filter(Boolean).join(' · '));   // v82: com a c…
+21509	const tit = {ranking:'RANKING', replays:'REPLAYS', loja:'LOJA', caixas:'CAIXAS', treino:'TREINAMENTO'};   // v70 · Etapa 6: o mesmo nome do botão do lobby
+21545	} else {                                              // perfil de antes da v70: os totais antigos viram o grupo "Antes da v70"
+21584	if (cx === 'antigo'){                              // o de antes da v70 não tem modo: entra nos totais (e os gols antigos, nos gols)
+21591	function estResultado(R, ctx, info){                     // o fim de uma partida que valeu: uma vez por partida (R.v70)
+21638	// a finalização: seu chute ou passe rumo ao gol adversário (marcado na hora da batida, com o caminho que a bola ia fazer)
+21733	if (v87TemSite()) a.appendChild(botaoPop('ABRIR O PERFIL DA CONTA', 'verde', () => { som.clique(); fechaPop(); v87Abre('/perfil'); }));   // v87: também sem o site por fora
+21843	} else if (PX.ctx === 'online') notas.push('Na sala online o servidor decide os lances: finalizações não são medidas lá.');   // v83
+22006	const PX_CHAVES = /^(streetball-\|racha-(?!dono$\|guarda:\|nuvem:\|aparelho$\|82-))/;   // v82: sem as gavetas das contas, as cópias da conta e o id do aparelho     // o que é do jogo no armazenamento do navega
+22450	v93Rotulo(g, s, e.x, e.y, r, 24, c >= 1 ? '#aef52a' : '#7fe8ff', 'rgba(8,10,28,.84)');   // v93: no lado livre
+22509	if (V70ON.bilhete && Date.now() - V70ON.bilheteT < 12*60e3) o.conta = V70ON.bilhete;   // v100: o bilhete vale 15 min (eram 30)
+22682	if (m.type === 'error' && m.codigo === 'sem_conta'){   // v84: o servidor exige conta (login obrigatório)
+22838	const curto = LB.raiz.classList.contains('v70-baixo'), base = el.querySelector('.sl-base');   // (v70.1: no celular deitado a sala cabe inteira, como na v69)   // (celular deitado: uma linha acima das regras)
+23319	2) Deitado com a tela baixa (#lb.v70-cabe, o lbLayout liga quando o palco fica abaixo de UIX.cabe): o lobby e as telas
+23376	V70C_LISTA.unshift({q:'#v70-gire', fecha:null, modal:true});   // por cima de tudo: prende o foco e deixa o resto inerte (o Esc não fecha)
+23388	if (C.closest('#pop-ajustes')) return AJX.raiz.classList.contains('v70-compacto');
+23629	// a novidade da v59 (a salinha com seis modos) não aparece mais: segue a fila das janelas
+23883	const tp71Padrao = cod => cod === TP_PADRAO_COD;   // (a Clássica amarela, a padrão até a v70.2, agora é um modelo como os outros: não muda)
+24178	try { for (const b of document.querySelectorAll('#tela-loja .v70-lj-peca')){ const t = (b.querySelector('small') \|\| {}).textContent \|\| '';
+24239	try { localStorage.removeItem('racha-teste-modo-v72'); } catch (_) {}   // (o modo que o TESTE da v72 guardava)
+24288	const CN_KIT = {src:"data:image/webp;base64,UklGRsJUAABXRUJQVlA4WAoAAAAQAAAAfwIAdQIAQUxQSMkKAAABFLUByDD8fzgbKUNETADCp4+PMVR72P+bcmutpFO3UT2nilFbyUnDVRuHVWqfe299kNq2bdu2bds9SY2993qemb1n1m/tXzOz/roRAQuSbalJHzXucv…
+24295	pedra:['#c9c2b1', '#25272b'], onda:[U(.82), U(.5), U(5.6)],   // v76: a calçada de Copacabana: a pedra branca e a preta · a largura de cada onda, a altura e o comprimento
+24351	g.fillStyle = CN.escuro; g.fillRect(GL, GT, w, h);       // v76: fora das linhas, toda a grama no verde escuro (as faixas claras só dentro do campo)
+24435	/* ---- v76: a calçada em volta é a de Copacabana: as ondas de pedra portuguesa, preta e branca, correndo junto do alambrado
+24705	cnCalcadao(g, true);                                      // v76: a calçada de Copacabana, lisa (sem as pedrinhas)
+24737	/* ---- as trocas: o desenho (com a reserva da v70.2), a imagem de fora do mundo, a cor de fundo e a descrição ---- */
+24795	function l75Veu(g, w, h, X){                                // o mesmo véu da v71: escuro nas bordas (os botões) e embaixo; o meio fica aceso
+24882	const SK76_KIT = {src:"data:image/webp;base64,UklGRnJwAQBXRUJQVlA4WAoAAAAQAAAAhwMAhwMAQUxQSFIyAAABynHQNpIkpcKf9XTXzD0AImICmD0BVAGVUmWezsQV8Rq2p/gPeUOf0OsWnssaPC9wAdnVibgXWLLwpi14lCu61ZqPpkk6KV2n1EB6ziQqY1wBAQGy…
+25454	const V77P = {fundo:{src:"data:image/webp;base64,UklGRgoZAQBXRUJQVlA4IP4YAQAwJgWdASo0B1UDPm02l0ikIyKkJBMJMIANiWVu3No5n+eZoamz7SofECxH22Wz8l/xA9XFGnzdNpouzq7TuV247/f2ZvLZx7BrPa63/oX/3P1YMxSnF5i89fy8T4G5vmP/cvFZk…
+25456	function v77Abre(nome){                                     // abre uma imagem embutida; quem precisa dela se inscreve em V77.depois[nome]
+25543	return cenaAntes77 ? cenaAntes77.apply(this, arguments) : false;   // (sem a imagem: o fundo da v75)
+25586	if (!rx \|\| !topo \|\| !LB.jogar \|\| !LB.modo \|\| !V71L.pronto \|\| !V77IC) return;   // (sem o lobby da v71 ou sem os ícones: fica o de antes)
+25591	// os botões dos lados: o desenho da imagem no lugar do da v71
+25635	if (v87Abre('/amigos')) return;                          // v87: os amigos da conta (pelo site por fora ou no painel por cima do jogo)
+25643	const e = rqElo(CONTA.rq.pts), bar = document.querySelector('#lb .v77-liga-barra i');
+25657	try { EMB.leveFeito = false; lbLayout(); lbRender(); } catch (_) {}   // (o lobby já foi montado antes daqui: arruma de novo, já com a v77)
+25750	// a área da tampinha do perfil (px do palco): à esquerda do cartão, embaixo do cabeçalho (as mesmas medidas do v77.css)
+25762	cmRenderAntes77.apply(this, arguments);                   // (a v70 monta tudo; a tela AMIGOS fica só com os amigos e o chat)
+25840	// ESTATÍSTICAS: as da v70 (onde jogou × modo)
+25920	const k = (PALCO.sc \|\| PALCO.s)*(G().plano ? 0.75 : Math.min(window.devicePixelRatio \|\| 1, 2)), key = w + 'x' + h + '@' + k.toFixed(3);   // (a escala da v70: PALCO.sc)
+25938	// as sub-abas antigas (v70/v71: CARTÃO · ESTATÍSTICAS · RECORDES · PARTIDAS) levam às novas (o botão antigo fica escondido; quem muda V70PF.parte cai na aba certa)
+26273	/* ---- as trocas: o desenho da Arena (com a reserva da v61), a imagem de fora do mundo, a cor de fundo e a descrição ---- */
+26352	cfg:{chance:.16, chanceFom:.07, ang:.16, angFom:.1, alcance:1, conduz:1, passe:1, gkLim:[.8, .8], folgaN:[1, 1, 1, 1.08, 1.12], ultimo:true, sobraAlta:.6, gkCorta:true, gkCobre:.34},   // (os pesos de ajuste: a…
+27445	tuBotsNaApresentacao = function(){                            // (v70) os bots na apresentação: BOT e o estilo, sem o nível
+27457	b78NaApresentacao = function(){                               // (v78) o jeito de cada bot, sem o nível
+27566	const liga = document.querySelector('#lb .v71-liga') \|\| document.querySelector('#lb [data-rx="ranqueada"]'), e = rqElo(CONTA.rq.pts);
+27815	try {                                                             // as camadas da v70 (o foco, o Tab, o fundo inerte e o Esc): as PATENTES e a BUSCA por cima do JOGAR
+27817	if (i >= 0) V70C_LISTA.splice(i, 0, {q:'#v79-pat', fecha:() => { som.clique(); v79PatentesFecha(); }, modal:true}, {q:'#v79-busca', fecha:() => { som.clique(); v79BuscaCancela(); }, modal:true});
+27852	(function v79SeloCss(){                                       // o V no DOM: [data-v79-selo="…"]::before (o v79.css dá o tamanho e o lugar)
+28013	const tp80Padrao = cod => cod === TP_PADRAO_COD \|\| cod === TP_PADRAO_PB;   // (a da v71 que chega de outro jogo também é "a padrão")
+28024	tpSkin = function(cod){ return tpSkinAntes80.call(this, cod === TP_PADRAO_PB ? TP_PADRAO_COD : cod); };   // a padrão da v71 vira a nova
+28025	try {                                                    // quem estava com a padrão da v71 passa para a nova (uma vez)
+28200	g.save(); g.lineWidth = 3; g.strokeStyle = '#ffffff';                                    // o símbolo do contorno em campo (v70: os times além da cor):
+28231	let esc93 = false; try { esc93 = v93RotuloEscondido(); } catch (_) {}   // v93: a barra da sala por cima do rótulo (no celular): o rótulo sai
+28241	function v80Ginga(g, y0){                               // (o modo GINGA, guardado) a janela do GOL DE GINGA embaixo do placar, como na v70
+28901	if (conta && v87TemSite()) bt('VER PERFIL', 'perfil', 'amarelo', () => { som.clique(); v87Abre('/jogador/' + conta); c81FichaFecha(); if (!lobby.aberto) cbFecha(); });   // v87: também sem o site por fora
+28960	/* ---------------------------------------------------------------- 9) monta a barra e o painel novos (nos mesmos nós da v63: #cb e #cp) */
+29031	/* ---------------------------------------------------------------- 1) a conta (da plataforma v82; o resto é o de sempre) */
+29039	// o que o CONTA guarda a mais (o contaCarregar do jogo-base só lê os campos dele): os empates da ranqueada (v80: sumiam ao
+29231	if (n && n.dados && n.dados.chaves && R82.migraChaves) R82.migraChaves(n.dados.chaves);   // v85: a cópia antiga, com os nomes antigos das chaves
+29326	if (window.RACHA84 && !window.RACHA84.embutido){ v84AbreLogin(qual); return true; }   // v84: sem o site, a tela de login é daqui
+29518	/* ================================================================ v84: LOGIN OBRIGATÓRIO (o jogo sem o site)
+29526	V70C_LISTA.splice(1, 0, {q:'#v84auth', fecha:null, modal:true, foco:'input, button'});   // na pilha de modais do v70 (senão o overlay fica inerte)
+29534	#v84auth .v84-card{width:100%;max-width:420px;margin:auto;background:#141210;border:1px solid #2c2721;border-radius:18px;padding:22px 20px;color:#f0e9df;box-shadow:0 24px 70px rgba(0,0,0,.6)}
+29535	#v84auth .v84-logo{text-align:center;font-size:52px;font-weight:900;letter-spacing:.14em;color:#FF6A00;text-shadow:0 0 26px rgba(255,106,0,.35);line-height:1}
+29536	#v84auth .v84-sub{text-align:center;color:#a89f92;font-size:13px;margin:8px 0 18px}
+29537	#v84auth .v84-abas{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;background:#0c0b09;border:1px solid #2c2721;border-radius:12px;padding:4px;margin-bottom:16px}
+29538	#v84auth .v84-abas button{border:0;border-radius:9px;padding:10px 6px;font-weight:800;font-size:12px;letter-spacing:.04em;background:transparent;color:#b7aea0;cursor:pointer}
+29539	#v84auth .v84-abas button.at{background:#FF6A00;color:#140b00}
+29540	#v84auth label.v84-cp{display:block;margin-bottom:12px}
+29541	#v84auth label.v84-cp>span{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;color:#a89f92;margin-bottom:5px;text-transform:uppercase}
+29544	#v84auth .v84-senha{position:relative}
+29545	#v84auth .v84-senha button{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:transparent;border:0;font-size:17px;cursor:pointer;padding:6px;color:#a89f92}
+29546	#v84auth .v84-go{width:100%;border:0;border-radius:12px;background:#FF6A00;color:#140b00;font-weight:900;font-size:16px;letter-spacing:.06em;padding:14px;cursor:pointer;margin-top:6px}
+29547	#v84auth .v84-go:disabled{opacity:.55}
+29548	#v84auth .v84-erro{background:#3b1414;color:#ffb3a7;border-radius:10px;padding:10px 12px;font-size:13px;margin:10px 0}
+29549	#v84auth .v84-okm{background:#12321c;color:#9fe8b6;border-radius:10px;padding:10px 12px;font-size:13px;margin:10px 0}
+29550	#v84auth .v84-nota{color:#a89f92;font-size:12px;margin:8px 0;line-height:1.45}
+29551	#v84auth .v84-link{background:none;border:0;color:#FF6A00;font-weight:700;font-size:13px;cursor:pointer;padding:4px 0}
+29552	#v84auth .v84-termos{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:#b7aea0;margin:4px 0 2px}
+29553	#v84auth .v84-termos input{width:18px;height:18px;accent-color:#FF6A00;margin-top:1px;flex:none}
+29554	#v84auth .v84-cod{background:#0c0b09;border:1px dashed #FF6A00;border-radius:12px;text-align:center;font-family:monospace;font-size:20px;font-weight:700;letter-spacing:.18em;color:#FF6A00;padding:16px 8px;margi…
+29555	#v84auth .v84-ver{text-align:center;color:#a89f92;font-size:15px;padding:24px 0}
+29556	#v84auth .v84-ver b{color:#FF6A00;display:block;font-size:19px;margin-bottom:8px;letter-spacing:.08em}
+29557	#v84auth .v84-alt{width:100%;border:1px solid #35302a;border-radius:12px;background:transparent;color:#f0e9df;font-weight:800;font-size:14px;padding:12px;cursor:pointer;margin-top:8px}`;
+29659	v84BotaoOffline(box);                                  // v85: sem conta, o treino offline continua livre
+29663	// A conta entrou: guarda o token; se o dono do progresso deste aparelho é outro, reabre o jogo (o v82 troca as chaves na entrada)
+29688	function v84BotaoOffline(box){                          // v85: o mesmo SÓ TREINAR OFFLINE da tela sem plataforma
+29705	box.append(v, b); v84BotaoOffline(box); return;     // v85: sem a plataforma, o treino offline continua livre
+29732	// v87: sem a sessão no aparelho, vale a do site neste mesmo endereço (o cookie): quem já entrou pelo site entra direto
+29830	/* ================================================================ v87: TUDO DENTRO DO JOGO
+29839	V70C_LISTA.splice(1, 0, {q:'#v87site', fecha:() => { som.clique(); v87FechaSite(); }, modal:true, foco:'.v87-volta'});   // (Esc fecha; o resto fica inerte)
+29843	// o login da v84 com a cara do jogo (o cinza-carvão das janelas, o amarelo dos botões, o contorno de tinta, a Lilita One);
+29844	// "body #v84auth" ganha do estilo da v84 qualquer que seja a ordem (ele entra quando o login abre)
+29847	body #v84auth .v84-card{background:linear-gradient(#31363a,#1a1d1f);border:0;border-radius:22px;color:#f1f1ee;box-shadow:inset 0 0 0 3px rgba(255,255,255,.13), 0 22px 50px rgba(0,0,0,.55)}
+29848	body #v84auth .v84-logo{font-family:"Lilita One","Arial Black",Impact,system-ui,sans-serif;font-weight:400;letter-spacing:.06em;color:#f4bd32;text-shadow:-3px -3px 0 #0c0e0f,3px -3px 0 #0c0e0f,-3px 3px 0 #0c0e0…
+29849	body #v84auth .v84-sub,body #v84auth .v84-nota,body #v84auth .v84-termos{color:#c6d2ee;font-family:'Barlow',system-ui,sans-serif}
+29850	body #v84auth .v84-abas{background:#16181a;border:2px solid #0c0e0f;border-radius:14px}
+29851	body #v84auth .v84-abas button{font-family:"Lilita One","Arial Black",Impact,system-ui,sans-serif;font-weight:400;font-size:14px;color:#c6d2ee}
+29852	body #v84auth .v84-abas button.at{background:#f4bd32;color:#0c0e0f;box-shadow:0 3px 0 #0c0e0f}
+29853	body #v84auth label.v84-cp>span{color:#c6d2ee;font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:700}
+29856	body #v84auth .v84-senha button{color:#c6d2ee}
+29857	body #v84auth .v84-go{background:#f4bd32;color:#0c0e0f;border:3px solid #0c0e0f;border-radius:14px;box-shadow:0 5px 0 #0c0e0f;font-family:"Lilita One","Arial Black",Impact,system-ui,sans-serif;font-weight:400;f…
+29858	body #v84auth .v84-go:active{transform:translateY(3px);box-shadow:0 2px 0 #0c0e0f}
+29859	body #v84auth .v84-alt{background:#484e51;color:#ffffff;border:3px solid #0c0e0f;border-radius:14px;box-shadow:0 4px 0 #0c0e0f;font-family:"Lilita One","Arial Black",Impact,system-ui,sans-serif;font-weight:400;…
+29860	body #v84auth .v84-alt:active{transform:translateY(2px);box-shadow:0 2px 0 #0c0e0f}
+29861	body #v84auth .v84-link{color:#f4bd32;font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:700}
+29862	body #v84auth .v84-termos input{accent-color:#f4bd32}
+29863	body #v84auth .v84-erro{background:#3b1d14;color:#ffb8a3;border:2px solid #d96f45}
+29864	body #v84auth .v84-okm{background:#14301f;color:#9fe0b8;border:2px solid #4db27c}
+29865	body #v84auth .v84-cod{background:#16181a;border:2px dashed #f4bd32;color:#f4bd32}
+29866	body #v84auth .v84-ver{color:#c6d2ee;font-family:'Barlow',system-ui,sans-serif}
+29867	body #v84auth .v84-ver b{color:#f4bd32;font-family:"Lilita One","Arial Black",Impact,system-ui,sans-serif;font-weight:400}
+29869	#v87site .v87-bar{flex:none;display:flex;align-items:center;gap:14px;padding:8px max(12px, env(safe-area-inset-right)) 8px max(12px, env(safe-area-inset-left));background:linear-gradient(#31363a,#1a1d1f);box-sh…
+29870	#v87site .v87-volta{flex:none;border:3px solid #0c0e0f;border-radius:12px;background:#f4bd32;color:#0c0e0f;font-family:"Lilita One","Arial Black",Impact,system-ui,sans-serif;font-size:17px;letter-spacing:.03em;…
+29871	#v87site .v87-volta:active{transform:translateY(2px);box-shadow:0 2px 0 #0c0e0f}
+29872	#v87site .v87-tit{color:#f1f1ee;font-family:"Lilita One","Arial Black",Impact,system-ui,sans-serif;font-weight:400;font-size:17px;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+29873	#v87site .v87-frame{flex:1;width:100%;min-height:0;border:0;background:#0d0b1e}
+29877	body #v84auth .v84-card{max-width:520px;padding:12px 18px 14px;border-radius:18px}
+29878	body #v84auth .v84-logo{font-size:36px}
+29879	body #v84auth .v84-sub{margin:4px 0 10px;font-size:12px}
+29880	body #v84auth .v84-abas{margin-bottom:10px}
+29881	body #v84auth .v84-abas button{padding:7px 6px}
+29882	body #v84auth label.v84-cp{margin-bottom:8px}
+29883	body #v84auth label.v84-cp>span{margin-bottom:3px}
+29885	body #v84auth .v84-go{padding:9px;margin-top:4px}
+29886	body #v84auth .v84-alt{padding:8px;margin-top:6px}
+29887	body #v84auth .v84-nota{margin:6px 0}
+29889	@media (max-height:430px){ body #v84auth .v84-sub{display:none} body #v84auth .v84-logo{font-size:30px;margin-bottom:8px} }`;
+29948	// v87.2: o presente de teste na produção (o texto da demonstração diz que ele não existe no lançamento)
+29954	/* ======================================================================= RACHA v88 (tools/v88/*.js) */
+29955	const CAT88 = {"_sobre":"RACHA v88 — o catálogo da loja, do passe e das missões. O MESMO arquivo vale para o jogo (o build cola no racha.html como CAT88) e para a plataforma (que confere cada compra, coleta e m…
+30162	setInterval(() => { try { if (v88Logado()) v70PedeBilhete(); } catch (_) {} }, 9*60e3);   // (o setInterval da v70 guardou a função velha, com o teto de 600)
+30181	if (!V70ON.bilhete \|\| Date.now() - V70ON.bilheteT > 10*60e3) v70PedeBilhete().then(comeca); else comeca();   // v100: (o bilhete vale 15 min)
+30320	if (m.de !== V88.eu && V88.dmAberto !== '#clube') V88.clube.naoLidas++;
+30417	const cab = nodo('header', 'tl-cab v88-cab v77-cab');                  // (o mesmo cabeçalho das telas da v77: o título grande com o desenho)
+30575	const pa = document.querySelector('#rx [data-rx="passe"]'), liga = topo.querySelector('.v71-liga');
+30609	const b = t.closest('#lb [data-rx="amigos"], #lb .v77-amg, #lb [data-rx="passe"], #lb #lb-missoes, #lb .v77-eventos');
+30680	v88Selo(document.querySelector('#lb .v77-amg'), logado ? (R ? R.pedidos : 0) + convites : 0);
+30686	v88Selo(document.querySelector('#lb .v77-eventos'), logado ? pr.eventos \|\| 0 : 0);
+30810	/* ---- a lista dos amigos não cobre o Cristo: onde a estátua cai na tela depende do encaixe do fundo (v75); se encostar,
+30812	const V88_CRISTO = [1195, 8, 1305, 110];                   // px da imagem do fundo (tools/v75/lobby_fundo.webp): a estátua, com folga
+31540	if (!q \|\| (novo === false && !v93FxArmado(q)) \|\| !v88Efeitos()) return r;   // v93: o chute armado também tem o efeito
+32200	function v88LinhaCh(m, opts){                              // uma linha do clube ou dos amigos (o mesmo jeito da linha da v81)
+32309	// o VER PERFIL: o perfil do jogador no jogo (o da v87 abria a página do site por cima; um botão só, nunca dois)
+32317	// a denúncia de antes ia sem motivo: agora pede o motivo ali mesmo, na ficha (vale na partida, com o lobby fechado)
+32329	function v88FichaCh(m, canal){                             // a ficha das mensagens do clube e dos amigos (a mesma caixa da v81)
+32500	const V88_CAMPO = -2;                                       // (o alvo "campo inteiro"; -1 = a bola · i = RQ.jog[i], como na v70)
+32531	sair.hidden = !v88Assistindo();                         // (o alvo volta para a bola no x49GameUI da v70, o campo inteiro junto)
+33013	const h = nodo('div', 'rq-sub v88-md-sub', 'JOGAR')   /* (div, não h3: o v71.css esconde o 4º h3 da folha) */, row = nodo('div', 'v88-md'); row.setAttribute('role', 'group'); row.setAttribute('aria-label', 'O q…
+33553	/* ================================================================ v88.1: AS CONTAS PELO DONO (o lado do jogo)
+33564	const V881 = {cadastro:null, perguntando:false, recarregando:false, esperando:[], semPlataforma:false};   // v88.2: semPlataforma = as rotas da conta não existem neste endereço (o Render, o GitHub Pages)
+33642	/* ================================================================ v88.2: JOGAR ONLINE SEM CONTA (só o nome)
+33658	#v84auth .v882-visit{background:#0f1a10;border:1px solid #2f6b3a;border-radius:14px;padding:14px 14px 10px;margin:0 0 16px}
+33659	#v84auth .v882-visit .v882-tit{display:block;font-size:13px;font-weight:900;letter-spacing:.08em;color:#7ee08f;margin-bottom:10px}
+33660	#v84auth .v882-go{width:100%;border:0;border-radius:12px;background:#2fb34a;color:#06200c;font-weight:900;font-size:16px;letter-spacing:.06em;padding:14px;cursor:pointer;margin-top:6px}
+33661	#v84auth .v882-go:disabled{opacity:.55}
+33662	#v84auth .v882-ou{display:flex;align-items:center;gap:10px;color:#7d7468;font-size:11px;font-weight:800;letter-spacing:.1em;margin:0 0 14px}
+33663	#v84auth .v882-ou::before,#v84auth .v882-ou::after{content:'';flex:1;height:1px;background:#2c2721}`;
+33678	const go = v84El('button', 'v882-go', 'JOGAR ONLINE'); go.type = 'submit';   // (classe própria: o .v84-go continua sendo só o botão da conta)
+33744	/* ======================================================================= RACHA v90 (tools/v90/*.js) */
+33745	const V90_CENARIO_SVG = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1600 900\" preserveAspectRatio=\"xMidYMax slice\"><defs><linearGradient id=\"v90c-ceu\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop…
+34013	const liga = document.querySelector('#lb .lb-topo .v71-liga small');
+34018	// o PASSE vai para baixo (o mesmo botão: o v88 continua mostrando o nível e a barra)
+34019	const pa = document.querySelector('#lb .v88-passe');
+34025	const tp = document.querySelector('#rx .v71-esq [data-rx="skins"]');
+34341	/* ======================================================================= RACHA v91 (tools/v91/*.js) */
+34342	const V91_FUNDO = {src:"data:image/webp;base64,UklGRpDtAgBXRUJQVlA4IITtAgDwoQ2dASpQDegEPlUqkkajorEmozHZmiAKiWVu/7l/y6hP6fk+fA/t/tm7lv/L/tfy06o3YP+H6HHzX/w/IxGV6/6Jf1H+1Prj/w+iQjR5q48vms+u+Uz12HIJmrLb+jCv/OzN6j/…
+34344	const V91_SPRITE = "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"0\" height=\"0\" style=\"position:absolute;width:0;height:0;overflow:hidden\" aria-hidden=\"tru…
+34349	Qual implementação valia: a tela inicial e as telas da v90 (tools/v90/*.js + v90.css, por cima da v88, da v77 e da v71).
+34356	O visual mora no app/public/game/v91.css. Tudo que é v91 fica atrás da classe .v91 no #lb: sem ela, é a v90 de sempre.
+34378	// o tema da v91 no documento todo (o login, o painel do chat e as janelas ficam fora do #lb) e o carvão da v71.1 desligado:
+34380	// tampa.css, v70.css), que é o da v91 — o v91.css só põe o contorno e o brilho por cima
+34387	// o letreiro grafitado da v77 (o RACHA com a coroa e o FUTEBOL DE RUA) para a entrada do jogo
+34398	// o controle Bluetooth (v88) anda só entre os botões de verdade (nunca dentro de um desenho SVG)
+34489	// a tela das PATENTES: o painel e as colunas com a cara nova (v91.css) · a insígnia da faixa de cima é refeita
+34584	// (depois da LIGA da v71, que continua colada no cartão — escondida desde a v90 — para quem a procura do lado dele)
+34620	// os botões dos lados: o ícone novo e o nome da cor (idempotente: a v90 troca o ícone do COFRE na primeira arrumação)
+34635	const pa = document.querySelector('#lb .v88-passe');
+34647	const pa = document.querySelector('#lb .v88-passe'); if (!pa) return;
+34721	// a área de toque da tampinha: o círculo dela (a v90 continua cuidando do toque e do segurar)
+34840	const R = Math.min(w*.42, h*(rk ? .31 : .35), 220);       // (o tamanho da v78: a tampinha grande do perfil)
+34875	lbLayout = function(){ const r = lbLayoutAntes91.apply(this, arguments); try { v91Posiciona(); } catch (e) { console.error('v91', e); } return r; };   // (depois da v90, que também mexe na dica)
+34900	// o ícone do título (a v88 e a v77 repintam o título às vezes: confere a cada abertura)
+34908	// a faixa igual em todas as telas: as que nasceram sem as moedas e as gemas ou sem os 3 quadrados (o RANKING da v90 e as
+34909	// telas da v88: passe, eventos, missões, correio…) ganham os mesmos da v77 (as moedas abrem a loja; o chat, os amigos e os ajustes)
+34910	// (só no cabeçalho pronto — o da v77 ou o da v88: os da v77 são montados depois, no montaAbas, e trazem os deles)
+34940	// a SALA aberta (a tela da sala, com os times): o VOLTAR amarelo e a engrenagem com os desenhos novos (o resto é o v91.css)
+34958	const def = document.querySelector('#v91-sprite defs');
+34969	/* ======================================================================= RACHA v92 · o núcleo (server/partida/nucleo.js) */
+35002	// v91: os números do jogo (a mecânica clássica da v84 com o chute da v87.1) e o comportamento do servidor da v91.
+35026	bufferToque: 0,       // ticks que um toque fica armado esperando a bola (0 = só o passo seguinte, como até a v91)
+35045	// v92: o padrão novo — a física de números é a MESMA; só o toque armado (100 ms) e a rede do gol igual ao offline.
+35060	const FOLGA_CHUTE = 0.5;                             // v95: o anel do chute passa do corpo pelo menos isto (u)
+35101	// v95: o anel do chute nunca fica por dentro da tampinha. Com o tamanho maior que o anel a tampinha não chutava nunca
+35106	C.CR = crMedidas(C);                               // v99: as medidas dos chutes do Rachão (só valem na sala que liga)
+35110	/* ---------- v99 · OS CHUTES DO RACHÃO — a CAVADINHA, a CURVA e o SUPER CHUTE, opcionais em cada sala ----------
+35237	/* ---------- as batidas (as mesmas fórmulas do jogo e da v83) ---------- */
+35289	const ia = a.cinematico ? 0 : 1 / a.m, ib = b.cinematico ? 0 : 1 / b.m, is = ia + ib;   // (v92: cinemático = não é empurrado)
+35312	/* ---------- o campo das salas (Arena e Estádio: a mesma geometria) · v95: o campo 30% maior (o gol, o de antes), os mesmos números do jogo ---------- */
+35320	const SAIDA_U = [10.4, 13, 15.6, 17.55];          // o raio da barreira da saída por tamanho (v95: × 1,3, com o campo)
+35381	function chute(M, C, q, forca, carga) {             // (v99: carga = o super chute dos chutes do Rachão; sem ela, o chute de sempre)
+35386	if (M.cr && (!crAlcanca(M, C) \|\| (q.cr && q.cr.segura && !Number.isFinite(carga)))) return false;   // v99: alta demais · carregando o super
+35614	if (!alta) hitBodies(q, B, C.QUIQUE_BOLA, C.ATRITO_JOG_BOLA);   // (v99: a bola alta passa por cima)
+35616	if (C.JOG_REDE) {                              // v92: como no jogo offline (rqParedes): a rede segura e a trave bate
+35631	// v99: o travessão — a bola alta bate na boca do gol e volta. Só vindo do campo (o centro da bola do lado de fora da linha):
+35668	const fb = CR && (B.z > 0 \|\| B.vz > 0) ? CR.FREIO_AR : C.FATOR_BOLA;   // (v99: no ar a bola freia menos)
+35671	if (CR && B.sp) crGiro(B, CR);                   // v99: a curva do Rachão
+35672	const speed = Math.hypot(B.vx, B.vy), teto = CR && B.teto > C.LIMITE_VEL_BOLA ? B.teto : C.LIMITE_VEL_BOLA;   // (v99: o super passa do teto)
+35686	const lado = golCruzou(M, C, bx0, by0, B.x, B.y);   // (v99: a bola alta não chega lá — o travessão segura do lado do campo)
+35690	if (CR) { const imp = crAltura(B, CR); if (imp) M.quique = Math.max(M.quique \|\| 0, imp); if (B.fogo > 0) B.fogo--; }   // v99: a gravidade e o quique
+35693	/* ---------- v96 · O PASSO SÓ DA TAMPINHA (a recuperação da fila de comandos) ----------
+35729	// v99 · os chutes do Rachão
+35734	/* ======================================================================= RACHA v92 (tools/v92/*.js) */
+35736	RACHA v92 · A MECÂNICA MAIS LISA, MAIS PRECISA E MAIS RESPONSIVA (tools/v92/*.js, colado depois da v91).
+35771	const V92_V91 = Object.freeze({                                  // o comportamento exato da v91 (o "Restaurar v91" do painel)
+35776	const V92_PADRAO = Object.freeze(Object.assign({}, V92_V91, {   // o padrão da v92 (o que a versão oficial usa)
+35814	// o teste nos celulares: as memórias já vêm prontas — A = o Padrão v92 (o que está valendo na primeira vez), B = a v91
+35820	function v92Curto(c){                                            // o nome curto de um perfil: v92, v91 ou "ajuste" (o medidor não conta)
+35822	const db = !!(c && c.fisica && c.fisica.dbModo === 1);           // (o DB por estados aparece junto: "v92 + DB por estados")
+35837	R_JOG = U(p.rJog); RAIO_CHUTE = V92_FIS.RAIO_CHUTE; MASSA_JOG = p.massaJog; VEL_JOG = U(p.velJog);   // (v95: o anel nunca por dentro da tampinha)
+35869	FPS.alvo = 1000;                                              // (o limite da v91 desligado neste quadro: o quadro já foi escolhido)
+35967	/* ---------------------------------------------------------------- 4) o analógico (a mesma regra da v65, com os números do cfg) */
+36009	// a vibração do iPhone no toque armado: no iPhone a vibração só sai DENTRO do toque (o truque do interruptor da v48), e a
+36010	// v91 só vibrava com a bola já no alcance. Com o toque armado, o chute de um toque um pouco adiantado sai depois — quando o
+36020	const dx = B.x - P.x, dy = B.y - P.y; if (Math.hypot(dx, dy) <= ALCANCE_CHUTE) return r;   // (no alcance: a da v91 já vibrou)
+36024	if (!HAP.el){                                                 // (o mesmo interruptor escondido da v48)
+36144	cv.addEventListener('pointerdown', e => {            // (antes do controle da v91; só lê o instante, não mexe em nada)
+36295	if (!(V92N.slot >= 0 && V92N.slot < M.jog.length)) return;     // (a vaga não existe nesta sala: fica o caminho da v91)
+36351	/* ---------------------------------------------------------------- 1) o comando de cada passo (no lugar do da v91) */
+36367	function v92RedeFalhou(e){                                       // (um erro na previsão nunca trava o jogo: volta para o caminho da v91)
+36387	window.addEventListener('blur', () => {                          // (a v91 manda um comando parado ao sair da aba: entra na previsão também)
+36421	NET49.pending = [];                                            // (o replay da v91 não roda: o daqui é o do núcleo)
+36422	const r = v92SnapAntes.apply(this, arguments);                 // o resto da v91: placar, gol, sons, a suavização dos outros…
+36423	// a v91 põe na sua tampinha e na bola (e no desenho) a posição do servidor, de uns 100 ms atrás, até o próximo quadro;
+36494	const sx = B.x, sy = B.y;                                    // (a bola do servidor, que o netSuaviza da v64 acabou de pôr no B)
+36501	// ('servidor': a bola fica a do netSuaviza, como na v91)
+36506	if (!V92N.M \|\| !V92N.M.jog[V92N.slot]){ V92N.on = false; return v92DrawAntes.apply(this, arguments); }   // (segurança: sem o mundo, o desenho da v91)
+36507	netSuaviza();                                                  // (v64) a bola do servidor e os outros jogadores, lisos entre os quadros
+36588	/* ---------------------------------------------------------------- as peças (o jeito dos ajustes da v70/v88) */
+36750	const lin = v92Faixa('db-' + k, t, n + ' · padrão: ' + v92Virgula(fmt(V92_NUC.PERFIL_V92[k])), mi, ma, pa, V92.cfg.fisica[k], fmt, v => v92MudaDb({[k]:v}), null);   // (a v91 não tem estes ajustes: a referência…
+36799	// (no celular deitado os Ajustes encolhem o que cabe sem rolar — v70.1; o painel de testes é comprido de propósito: fica
+36981	const HE_CHAVE_DONO_HUD = 'racha-hud-dono';         // de quem é o HUD guardado no aparelho (racha-treino-hud-v11)
+37003	const o = {x:+e.x, y:+e.y, s:+e.s, a:+e.a, fx:e.fx !== false};   // fx: os efeitos ao pressionar (v93: desligado, o botão fica parado)
+37130	const heSalvarBase = salvar;                                     // o salvar de sempre (racha-treino-hud-v11: o HUD, a câmera e o resto)
+37172	/* ---------------------------------------------------------------- 3) a conta (os layouts vão com o progresso; ver tools/v82) */
+37343	if (!ok){                                                    // v94 (do RACHA-v92-melhorado): o aparelho não guardou — o editor fica
+37870	for (const s of ['#x49-onlinebar', '.v92-medidor', '.v88-livre', '.tu-painel']){
+38085	g.appendChild(heChaveBt('Efeitos ao pressionar', () => hud[sel].fx !== false, () => { hud[sel].fx = hud[sel].fx === false; }, 'efeitos ao pressionar (' + nome + ')'));   // v93: desligado, o botão fica parado (…
+38180	if (typeof v702Modo === 'function' && v702Modo('ginga')){       // (a GINGA saiu do jogo na v70.2: o layout dela só aparece com o modo de volta)
+38318	// o Esc com o editor aberto (a camada de cima, em tools/v70/polimento.js): fecha o que estiver por cima e pergunta antes de perder as mudanças
+38327	/* RACHA v92 · o fim: aplica o cfg (a física do aparelho, a câmera, o aro, a rede e o painel) depois de todos os arquivos da v92 */
+38330	/* ======================================================================= RACHA v93 (tools/v93/*.js) */
+38530	/* ---------------------------------------------------------------- 6) os cosméticos antigos da v49 (sem onde trocar) voltam ao original */
+38875	try { if (skin && typeof tpNoTime === 'function' && (q.time === 0 \|\| q.time === 1)) skin = tpNoTime(skin, q.time); } catch (_) {}   // v95: a inicial na cor do time (como na partida)
+38878	emoji:typeof emjDe === 'function' && (q === P \|\| (RQ.jog && RQ.jog.indexOf(q) >= 0)) ? emjDe(q) : ''};   // v95: o emoji da tampinha
+38883	// o hello da v93: o servidor fica sabendo que este aparelho conhece a contagem e o replay (numa sala com alguém que ainda tem
+39022	if (autor.emoji && typeof emjPoe === 'function') emjPoe(g, ax, ay, ar*.92, autor.emoji, typeof tpEscalaDe === 'function' ? tpEscalaDe(g) : 1, tpLe(autor.skin)); }   // v95: o emoji de quem marcou
+39167	try { if (c && c.skin && typeof tpNoTime === 'function' && (c.time === 0 \|\| c.time === 1)) c = Object.assign({}, c, {skin:tpNoTime(c.skin, c.time)}); } catch (_) {}   // v95: a inicial na cor do time
+40091	/* ======================================================================= RACHA v94 · o motor próprio (server/partida/motor.js) */
+40092	;/* RACHA v94 · o motor da partida: a física, a máquina de comandos e as regras da bola.
+41033	/* ======================================================================= RACHA v94 (tools/v94/*.js) */
+41035	RACHA v94 · O MOTOR PRÓPRIO NO JOGO — a base (tools/v94/*.js, colado depois da v93).
+41051	// (window.RACHA_CONFIG.motor = 'v94' liga o motor próprio para todo mundo); o servidor tem a mesma chave (RACHA_MOTOR_JOGO)
+41056	sala:null,                                                     // numa sala online: o motor da rodada ('v94' \| 'v93'), que vale no lugar do do painel
+41060	/* ---------------------------------------------------------------- 1) o perfil (no cfg da v92) */
+41064	// (o "PADRÃO v92" e o "RESTAURAR v91" do painel são os perfis do motor de antes: valem com ele; o resto, o padrão)
+41073	function v94CfgPadrao(){ return v92Limpa(Object.assign({}, V92_PADRAO, {motor:'v94', fisica94:V94_PERFIL_PADRAO}), V92_PADRAO); }   // o "PADRÃO v94" do painel
+41458	// o analógico da tela (a regra da v92: liga acima de zonaLiga e desliga abaixo de zonaDesliga, a zona morta do HUD) com a
+41459	// direção do motor próprio — a da v92 arredondava sempre nos setores do perfil antigo (32)
+41591	// (o botão PADRÃO v92 dos PERFIS passa a deixar claro que é o motor de antes)
+41619	//  o intervalo dos botões e as direções da v92 são do motor de antes; os da parte MOTOR, do próprio)
+41642	// na pausa: MOTOR ⇄ (troca o motor na hora, no treino e contra os bots); o DB da v92 é do motor de antes (some com o próprio)
+41704	v94Compat();                                                   // (a v92 pôs os números dela depois do começo: valem os da sala)
+41706	V92N.on = false;                                               // (a previsão da v92 é do motor de antes)
+41824	NET49.pending = [];                                            // (o replay da v91 não roda: o daqui é o do motor)
+41904	/* RACHA v94 · o fim: o perfil vale de novo, agora com o motor (o v92Aplica da v92 rodou antes das trocas da v94) */
+41928	// os do cfg da v92 que valem aqui (os do cliente: a física e o DB ficam de fora)
+41951	// (na versão oficial os do cfg da v92 vêm daqui; na de testes, do painel de testes — que guarda do jeito dele)
+42078	// (comprido de propósito: fica no tamanho normal e rola — como o painel de testes; o encolher da v70.1 não pega nele)
+42118	// (a linha do chute desligada: o comprimento e o caminho continuam; com o motor próprio da v94, as linhas ainda não aparecem)
+42150	// v95: as linhas só aparecem nas partidas da Oficina com o RANK OFF ligado pelo criador da sala (e no TESTAR com o RANK OFF):
+42157	if (typeof v94Ligado === 'function' && v94Ligado()) return false;   // (o motor próprio da v94: ainda não)
+42369	// v95: as linhas no estilo da imagem: pontinhos saindo da bola, cada vez menores e mais fracos até o fim do caminho (brancos;
+42465	/* ======================================================================= RACHA v92 · OFICINA: o motor dos mapas (server/partida/mapa.js) */
+42561	// v97 (depois do teste): a arrancada vai até 0,02 — a tampinha com o embalo do Rachão (a ponte da física) chega na máxima
+42670	// v95: as linhas da bola para todos (o criador liga no editor: valem em toda sala com o mapa e no TESTAR; a partida
+44170	/* ======================================================================= RACHA v97 · a ponte da física RACHA × Rachão (app/public/game/rachao/ponte.js) */
+44370	/* ======================================================================= RACHA v92 · OFICINA (tools/oficina/*.js) */
+44468	pontos: '<circle cx="4.5" cy="12" r="3" fill="currentColor"/><circle cx="11.5" cy="12" r="2.4" fill="currentColor" opacity=".8"/><circle cx="17.6" cy="12" r="1.8" fill="currentColor" opacity=".6"/><circle cx="2…
+44685	try { const lbLayoutAntes = lbLayout; lbLayout = function () { const r = lbLayoutAntes.apply(this, arguments); try { botaoLobby(); posicionaLobby(); } catch (_) {} try { if (typeof v93GrupoLugar === 'function')…
+44741	const esq = R('#rx .v71-esq') \|\| R('#rx .rx-esq'), passe = R('#lb .v88-passe') \|\| R('#lb .rx-baixo'), dica = R('#lb .v90-dica'), emb = R('#lb-emblema');
+44746	// v95: na fileira do TREINO, do lado dele (a mesma altura e o mesmo alto: a coluna e a OFICINA formam uma fileira só)
+44747	const treino = R('#rx .v71-esq [data-rx="treino"]');
+45283	let id = skinId;                                   // v95: a tampinha inicial (e a dos bots) com as listras na cor do time do mapa: cor, branco, cor
+45293	const OFI_VERDE = '#3ee06c';                         // v95: o sensor de quem você controla (o mesmo do jogo)
+45298	// v95: o sensor limpo e translúcido (o seu verde; o dos outros na cor do time), com a borda de fora mais viva
+45303	// v95: apertou o PASSE ou o CHUTE, o anel acende num branco forte (segurando, fica; soltou ou foi só um toque, some rápido)
+45306	let luz = 1; try { luz = V95S.luz \|\| 1; } catch (_) {}   // (v96: o branco com opacidade baixa — V95S.luz, tools/v96/conta.js)
+45328	// ou pela EQUIPADA (cada um vê a bola que equipou na loja — v93: as bolas lisas e a Clássica Lisa; só o desenho).
+45333	if (est === 'jogador') {                           // v93: a bola que cada um equipou na loja (as lisas, a Clássica Lisa…); sem bola equipada, a branca
+45431	OFE.aba = 'campo'; OFP.chave = '';                  // (v95: o painel de outro mapa não deixa a rolagem)
+46561	/* ---------------------------------------------------------------- o painel: refaz sem pular (v95)
+46805	['velJog', 'Velocidade', 'u/s', 0.1], ['acelJog', 'Aceleração', '', 0.01, 'extra'], ['freioJog', 'Deslize ao soltar o analógico', '%', 1, 'deslize'], ['atritoJog', 'Atrito', '', 0.01],   // (v97: a aceleração d…
+46808	// v95: o DESLIZE DA TAMPINHA (soltou o analógico: quanto ela ainda anda). 0% = para na hora (o RACHA de sempre) e 100% = o
+46815	// v95: o anel do chute vale pelo menos o raio + 0,5 u (senão a tampinha grande não chutava): o alcance que vale de verdade
+46817	/* ---------------------------------------------------------------- v97 (depois do teste): MISTURAR COM O RACHÃO
+46856	if (tipo === 'deslize') {                         // (v95: 0% para na hora · 100% desliza o máximo)
+46865	if (k === 'raioChute') {                          // (v95: o anel nunca por dentro da tampinha — mostra o que vale)
+46904	fBool('Linhas da bola para todos', !!P.linhas, (v, f) => muda(M2 => { if (v) M2.partida.linhas = true; else delete M2.partida.linhas; }, f)),   // v95
+47122	// v98: os DOIS MODOS da Oficina, separados — RACHA (os mapas da Oficina) e RACHÃO (os estádios e as salas online do Rachão).
+47130	['rachao', 'rachao', 'Estádios', 'rachao'], ['rachao_salas', 'online', 'Salas online', 'rachao']];   // v97: o Rachão (tools/oficina/rachao.js) · v98: as salas online dele (rachao_sala.js)
+47177	// v98: o modo da Oficina, no topo (RACHA \| RACHÃO): troca as abas, o CRIAR e as salas
+47191	else if (HUB.aba !== 'busca' && modoDaAba(HUB.aba) !== HUB.modo) HUB.aba = HUB.abaDe[HUB.modo] \|\| (HUB.modo === 'rachao' ? 'rachao' : 'meus');   // v98: abre no modo guardado
+47202	if (HU.modo) for (const b of HU.modo.children) { const on = b.dataset.m === HUB.modo; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); }   // v98
+47206	function mudaModo(m) {                                // v98: RACHA ou RACHÃO (cada modo volta para a aba em que estava)
+47215	const md = modoDaAba(HUB.aba);                         // v98: a aba é de um modo (abrir uma aba do outro modo troca o modo)
+47240	if (aba === 'rachao') return abaRachao(vivo);          // v97: o Rachão e os estádios dele (tools/oficina/rachao.js)
+47241	if (aba === 'rachao_salas') return abaRachaoSalas(vivo);   // v98: as salas online do Rachão (tools/oficina/rachao_sala.js)
+47358	/* ---------------------------------------------------------------- v98: CRIAR — no modo RACHA (um mapa) ou no modo Rachão (um estádio) */
+47786	botao('SALA ONLINE', () => rachaoAbre('online'), 'escuro', 'online', 'Criar uma sala online do Rachão'),   // v98
+47837	// v98: mostra o Rachão sem mexer na âncora quando a moldura já está aberta (a partida online e os ajustes chegam por mensagem);
+47907	const OFJ_RANKOFF_CHAVE = 'racha-ofi-rankoff';          // v95: o RANK OFF do TESTAR (as linhas da bola no teste; desligado de começo)
+47909	// v95: as linhas da bola só com o RANK OFF: o da sala (o curador liga no CRIAR SALA ou nos AJUSTES) ou o do TESTAR
+47990	// v93: a contagem 3, 2, 1, JÁ! (o desenho, os bips e o JÁ! são os da partida de sempre: tools/v93/partida.js)
+48079	if (R.pausado \|\| R.semSnap \|\| !conectado() \|\| OFJ.contando) { OFJ.acc = 0; return; }   // (v93: na contagem o servidor segura a partida: nada sai daqui)
+48101	try { const c = typeof V93P !== 'undefined' ? V93P.contagem : null; if (c && c.espera && s.tick > 0) { c.espera = false; c.fim = Math.min(c.fim, performance.now()); } } catch (_) {}   // (v93: o JÁ! na hora em …
+48113	if (L) {                                             // v96 · o deslize liso das salas (tools/v96/liso.js): a mola e o teto de velocidade
+48151	const card = ofjCartaoNovo(e);                  // v93: o cartão de quem marcou (com a assistência) — as linhas de texto do banner saem
+48188	OFJ.contando = ofjContando();                        // (v93: 3, 2, 1… a física espera, como na pausa)
+48223	if (L && R.dz) {                                   // v96 · o deslize liso (a mola crítica com o teto de velocidade, como nas salas)
+48397	if (ofjLinhasDoMapa()) { const b = botao('LINHAS DA BOLA: DO MAPA (PARA TODOS)', () => {}, 'ofj-item escuro', 'pontos'); b.disabled = true; b.title = 'O criador ligou as linhas no mapa (Editor › Partida)'; c.ap…
+48460	/* ---------------------------------------------------------------- v93 na Oficina: o cartão de quem fez o gol, os balões e o craque */
+48490	function ofjCartaoGol(g) {                             // o cartão num canto (entra e sai rápido), como o do replay da v93
+48522	// os balões de fala rápida (as frases da v93: só as prontas; online o servidor confere o ritmo e quem bloqueou não recebe)
+48569	// o craque da partida (a conta da v93 com o que a partida no mapa conta: gols, assistências, gols contra e o resultado)
+48652	const rb = C.R_BOLA;                                  // v95: os pontinhos (o caminho da bola mais fraco; o PASSE, azul e menor)
+48719	// v93 nas salas com mapa: a contagem 3, 2, 1, JÁ! (o servidor segura e solta junto), os balões de fala rápida; o painel de
+48754	if (r.rachao) { if (!rchTemCampo(r)) pedeMapaDeNovo(r.code); }   // v98: a sala do Rachão (o campo chega no rachao_sala: rachao_sala.js)
+48836	SU.rankTag = h('span.ofi-rankoff-tag', { title: 'RANK OFF: as linhas da bola aparecem para todos e a partida não conta nas jogadas do mapa' }, icone('pontos'), h('b', { texto: 'RANK OFF' }));   // v95
+48846	SU.rank = botao('', () => { const r = OFS.sala; if (r) mandaSala({ type: 'config', rankOff: !r.rankOff }); }, 'escuro ofi-rankoff', 'pontos', 'RANK OFF: as linhas da bola para todos (só o admin muda, fora da pa…
+48864	const linhasMapa = !!(M && M.partida && M.partida.linhas);   // v95: o criador do mapa ligou as linhas para todos
+48866	if (SU.rankTag) {                                     // v95: RANK OFF (o curador ligou) ou LINHAS (o mapa já tem, para todos)
+48899	if (SU.rank) {                                       // v95: o RANK OFF (as linhas da bola para todos) — só o curador (o admin) muda; o mapa com as linhas já ligadas não precisa
+48956	: jogando ? fNota('RANK OFF: ' + (rankOff ? 'ligado' : 'desligado') + ' (muda só entre as partidas).') : fBool('RANK OFF · as linhas da bola para todos (não conta nas jogadas do mapa)', rankOff, v => { rankOff …
+48966	if (!jogando && rankOff !== !!r.rankOff) m.rankOff = rankOff;   // v95
+49007	if (PONTE) {                                          // v97: as partes do Rachão ("bola do Rachão", "a do Rachão")
+49044	let mist = null;                                  // v97: o MISTURAR COM O RACHÃO (refeito no lugar quando um número muda)
+49057	if (k === 'freioJog')                           // v95: 0% = para na hora (o RACHA de sempre) · 100% = desliza o máximo
+49064	if (PONTE) { mist = misturaGr(); c.appendChild(mist); }   // v97
+49073	const listaPartes = l => l.length < 2 ? l.join('') : l.slice(0, -1).join(', ') + ' e ' + l[l.length - 1];   // v97
+49098	: fBool('RANK OFF · as linhas da bola para todos (não conta nas jogadas do mapa)', rankOff, v => { rankOff = v; })),   // v95
+49105	if (rankOff) m.rankOff = true;                      // v95: as linhas da bola (pontinhos) para todos na sala
+49137	ofjRankOff, ofjLinhasDoMapa, ofjComLinhas, painelRefaz, OFP, deslizeJogDe, freioDoDeslizeJog, deslizeJogU, alcanceValendo, pctFisica };   // (v95)
+49471	/* ======================================================================= RACHA v95 (tools/v95/*.js) */
+49472	/* ---------------------------------------------------------------- tools/v95/visual.js */
+49537	const d = document.querySelector('#lb .v90-dica span'), t = 'Toque para abrir o cofre, segure para trocar';
+49547	/* ---------------------------------------------------------------- tools/v95/times.js */
+49571	tpSkin = function(cod){ return tpSkinAntes95.call(this, V95_TIME_V80.get(cod) \|\| cod); };   // (a da v80, de um jogo antigo, vira a nova)
+49585	try {                                                    // quem estava com a da v80 gravada passa para a nova
+49699	g.globalAlpha = a0*Math.min(1, w)*(V95S.luz \|\| 1); g.drawImage(c, x - m, y - m, 2*m, 2*m); g.globalAlpha = a0;   // (v96: V95S.luz, o branco suave)
+49740	/* ---------------------------------------------------------------- tools/v95/emoji.js */
+49752	const EMJ = {atlas:{src:"data:image/webp;base64,UklGRsbcCgBXRUJQVlA4WAoAAAAQAAAAPwgALwYAQUxQSMUgAAABN6egbRvp3B1/0v8dgojI5hQj9rGWTUzltUxlEyN2HREIBCHOsY+fEQZu2zZKovz/0W1v+/aK6L+Ctm2YlEB3y8EMr8qq1Vow+livBTr4qi1ERI…
+50056	// o cartão do CRAQUE DA PARTIDA (v93): o emoji em cima da tampinha dele
+50092	/* ---------------------------------------------------------------- tools/v95/fim.js */
+50278	/* ---------------------------------------------------------------- tools/v95/patentes.js */
+50399	/* ---------------------------------------------------------------- tools/v95/ranqueada.js */
+50570	/* ---------------------------------------------------------------- tools/v95/chat.js */
+50619	const corpo = document.querySelector('#tela-chat .br-corpo'); if (!corpo \|\| corpo.querySelector('.v95-ch-abas')) return;
+50673	/* ---------------------------------------------------------------- tools/v95/perfil.js */
+50735	/* ---------------------------------------------------------------- tools/v95/economia.js */
+50867	/* ---------------------------------------------------------------- tools/v95/hud.js */
+51250	/* ---------------------------------------------------------------- tools/v95/grupo.js */
+51384	window.addEventListener('click', e => {                          // (antes do JOGAR DE NOVO de sempre — a v79 escuta no document)
+51477	// a votação fechou: a busca do grupo começou no servidor — no aparelho do líder também (o de quem não é líder a v93 já abre)
+51485	/* ---------------------------------------------------------------- tools/v95/mapas.js */
+51657	/* ======================================================================= RACHA v96 (tools/v96/*.js) */
+51658	/* ---------------------------------------------------------------- tools/v96/liso.js */
+51756	/* ---------------------------------------------------------------- tools/v96/rede.js */
+51783	// (RACHA_CONFIG.rede96 = false: o online de antes — as correções da v92 — para comparar nos testes)
+51823	V92N.ofP = [0, 0]; V92N.ofB = [0, 0]; V92N.ofJ = M.jog.map(() => [0, 0]);   // (o desenho da v92 não soma mais nada: os deslizes são estes)
+51824	const S = V92N.serv, t = performance.now();                    // o ritmo do servidor visto daqui (passos por segundo), como na v92
+51857	if (V92.cfg.bolaPrev === 'eu') {                                // (com a bola do servidor ou a mista, a bola e os outros são os da v91)
+51882	/* ---------------------------------------------------------------- tools/v96/skins.js */
+52339	// (tudo dentro de 1,15 × o raio: o aro do time e a bola ficam livres, como nas animadas da v76)
+52382	// os modelos prontos da coleção (no PRÉ-PROJETADO, depois dos da v76; o dos fundadores só para quem tem)
+52392	for (const x of [...SK76_PRE, SK96_PRE_FUNDADOR]) if (!x.cod) { x.cod = tpCodigo(x.d); x.anim = SK76_CARA.get(x.d.i).anim; }   // (o código e o que mexe, como os da v76)
+52566	/* ---------------------------------------------------------------- tools/v96/conta.js */
+52587	try { V95S.luz = 0.3; } catch (_) {}                         // (tools/v95/times.js e tools/oficina/desenho.js multiplicam por ele)
+52687	sel.addEventListener('click', abre, true);                  // (antes do ENTRAR da v82: o selo agora abre a janela inteira)
+52697	/* ======================================================================= RACHA v99 (tools/v99/*.js) */
+52698	/* ======================================================================= RACHA v99 · o motor das salas (server/partida) para a sala neste aparelho */
+52735	const FORCA_KICK = 212.5, FORCA_POWER = 340;   // PASSE / CHUTE (v87.1: 15% abaixo da versão antiga, 250 / 400; na v86, 275 / 440) — os mesmos do jogo
+52739	const LIMITE_VEL_BOLA = U(46.75); // 46,75 u/s (v87.1: 15% abaixo dos 55 da versão antiga; na v86, 60)
+52754	// Os tamanhos de campo (u), os mesmos do jogo — o índice é o tamanho do time menos 1 (1v1 … 4v4) · v95: o campo 30% maior (a área
+53022	/* v99 · OS CHUTES DO RACHÃO (p.cr: a sala ligou a cavadinha, a curva e/ou o super chute): o bot usa os três como gente —
+53028	const K = p => p.C \|\| F;                             // v92: os números do perfil da sala (o padrão é igual ao da fisica.js)
+53046	if (p && p.v94) {                                  // v94: chega sem passar do ponto (a frenagem do motor: v² ÷ 2a)
+53059	/* v94: há outra tampinha na linha do chute, logo à frente da bola? */
+53077	// v99: alguém (do outro time) no caminho da bola até o alvo, longe o bastante da bola para a cavadinha passar por cima
+53090	if (p.v94) {                                       // v94: a mira do nível gira a linha do chute (uma vez por plano)
+53095	// v94: um adversário encostado na frente da bola, na linha por onde ela sairia. Com o motor próprio a bola que chega numa
+53110	// v95: sem ninguém marcando (nenhum adversário a 6 raios da bola), o chute no gol só sai se vai entrar na boca (ver naBoca);
+53114	if (cr && cr.super && gol && !travado) {           // v99: o super no chute de longe — carrega chegando, solta alinhado
+53129	if (cr) extrasDoChute(p, q, cr, ex, ey, gol);   // v99: a cavadinha e a curva (armadas antes do chute)
+53139	// v95: parado perto do ponto de mira (o vai para a 0,35 raio dele) e ainda fora do alcance — encostado na beira, sem passar
+53146	// v99: arma a cavadinha (alguém no caminho) e, no chute ao gol, às vezes a curva para dentro da boca
+53156	// v95: a linha do corpo (dx, dy, unitária) leva a bola para dentro da boca do gol da linha x = gx? (com folga de 1,3 bola das
+53180	if (p.v94 && q.lugar94) { x = q.lugar94.x; y = q.lugar94.y; }   // v94: o lugar da formação do motor
+53219	// perto: bate para o canto mais livre. v95: "perto" é medido pela boca do gol (2,5 bocas = o 1,15 meio campo de antes em
+53250	q.suBot = false; if (q.botAi) q.botAi.soltar = false;   // v99: o botão do super (só fica segurado enquanto o lance pede)
+53252	if (q.cr && q.cr.segura && !q.suBot && !q.botAi.soltar) { q.cr.segura = false; q.cr.cT = 0; }   // v99: desistiu do lance: cancela sem chutar
+53284	// v95: presa de verdade (a bola parada entre ele e a parede, sem como dar a volta nela): depois de ~1 s chuta como está,
+53368	/* v99 · OS CHUTES DO RACHÃO (a CAVADINHA, a CURVA e o SUPER CHUTE, opcionais na sala de FUTEBOL: o.chutes = {lob, curva, super}):
+53376	// v94 · o motor próprio (server/partida/motor.js, ligado pelo sala94.js): só carrega numa sala que usa o motor novo
+53384	const EST_POSSE_TK = 10, EST_DESARME_TK = 45;       // v93: o desarme (estatística): o outro estava com a bola (10 passos) · um a cada 0,75 s
+53387	// (v92: a CURVA — carga de 1,2 s, 0,35 s armado, o efeito e a duração — mora no núcleo: N.curvaTick, N.cvMarca, N.curvaNoAr)
+53392	const SNAP_A_CADA = 2;                               // 1 quadro a cada 2 passos = 30 por segundo (o ritmo da v82) · v92: a sala de testes pode pedir 60 (o.quadros)
+53393	// v96 · a RECUPERAÇÃO da fila de comandos: os passos em que a tampinha ficou parada esperando comando (o apagão do 4G, o
+53396	// Sem crédito (o aparelho mandando mais rápido que 60/s), sobrou é pulado como sempre. RACHA_FILA=v95 volta à fila antiga.
+53404	// (v92: o raio da barreira da saída por tamanho — 8, 10, 12 e 13,5 u — vem no campo do núcleo: G.circ)
+53408	const CR_CONT = ['lb', 'ce', 'cd', 'sx'];             // v99: os contadores dos chutes do Rachão no comando (a cavadinha, as curvas, o super cancelado)
+53409	const NAO_CHUTA = () => false;                       // v99: (a recuperação da fila só anda a tampinha: o chute fica para o passo de agora)
+53459	// v92: o perfil da física (o padrão é o PERFIL_V92: os números da v91; a turma só passa outro com RACHA_EXPERIMENTAL=1)
+53465	this.cr = this.jogo === 'futebol' && o.motor !== 'v94' ? N.crOpcoes(o.chutes) : null;   // v99: os chutes do Rachão (null = só o chutar)
+53467	this.filaV95 = FILA_V95 \|\| o.fila === 'v95';     // v96: a fila antiga (sem a recuperação), para comparar
+53469	this.decorrido = o.decorrido \|\| null;            // v80: o relógio oficial (ms, sem as pausas)
+53476	this.onReplay = o.onReplay \|\| null;              // v93: depois da comemoração, o replay do gol (a turma para o motor e volta com fimReplay)
+53477	this.est = {};                                   // v93: as estatísticas de cada um (humanos pelo id; bots pelo lugar: 'b' + i)
+53486	this.prorrog = false;                            // gol de ouro (sala por tempo ou 0x0 da v80)
+53494	// v94: o motor próprio (o.motor = 'v94'): a física, os botões, a saída e o gol passam a ser do motor (ver sala94.js);
+53512	cr: this.cr ? N.crNovo() : null, suBot: false,  // v99: os chutes do Rachão (o bot também usa)
+53517	q.netButton = N.novoBotao();                    // v92: a máquina dos botões do núcleo (com o toque armado e os contadores)
+53526	if (ja) {                                        // v93: já está num lugar: não pega outro (duas tampinhas da mesma pessoa) — e a fila de comandos
+53529	if (this.cr) ja.cr = N.crNovo();                 // v99
+53530	if (this.v94) S94().reiniciaJogador(this, ja);   // v94: a máquina de comandos do motor também recomeça
+53533	const L = Number.isInteger(lugar) ? this.jog[lugar] : null;   // v93: o lugar da sala (a turma sabe onde a pessoa está sentada): esse primeiro
+53542	if (this.cr) q.cr = N.crNovo();                  // v99
+53552	if (this.cr) q.cr = N.crNovo();                  // v99 (o bot começa sem nada armado)
+53557	/* ---- v93 · Fase 3: o admin mexe nos lugares no meio da partida (a turma confere quem pode). O placar, o relógio e os números
+53562	if (this.cr) q.cr = N.crNovo();                  // v99
+53569	if (this.cr) q.cr = N.crNovo();                  // v99
+53588	encerraJa() {                                      // v93: o admin encerrou: o apito final agora (o placar de agora fica)
+53610	if (Number.isInteger(m.kc) && m.kc >= 0) c.kc = m.kc;   // v92: os contadores de toque do aparelho (PASSE e CHUTE)
+53612	// v92 · o DB por estados (só vale com dbModo 1): os botões apertados (1 PASSE, 2 CHUTE) e o relógio do toque (o CHUTE
+53616	if (this.cr) {                                     // v99: os chutes do Rachão — os toques (contadores), o super segurado, o super
+53625	nsDescarta(f, q) {                                  // pula o mais velho sem perder o botão (nem os contadores, v92) que estava nele
+53627	if (q && this.C.DB_MODO === 1) {                   // v92 · DB por estados: os botões dele valem no passo dele (juntar mudaria a ordem)
+53629	if (this.cr) N.crComando(q.cr, v, this);         // v99
+53636	if (p) for (const k of CR_CONT) if (v[k] != null && !(p[k] >= v[k])) p[k] = v[k];   // v99: o toque não se perde
+53642	nsCredita(f) {                                     // v96: um passo parado sem comando (para pagar logo depois, se o comando chegar)
+53645	nsRecupera(q, f, b, porComando) {                  // v96: um comando a mais neste passo, só a tampinha (o passo que ficou para trás)
+53649	if (this.cr) { N.crComando(q.cr, c, this); N.crTick(this, this.C, q, q.cr, c.su === 1, true, NAO_CHUTA); }   // v99: o super carrega (e solta) no passo dele, como no aparelho; o chute sai nos passos de agora
+53658	if (q.cr) { q.cr.segura = false; q.cr.cT = 0; q.cr.espera = 0; q.cr.su = false; }   // v99: a internet sumiu — o super carregando não sai sozinho
+53662	// v92 · DB por estados (dbModo 1): a máquina dos botões anda só com os comandos, cada um no passo dele (o seq) — o
+53674	if (recupera && f.cred > 0 && f.fila.length > 2) this.nsRecupera(q, f, b, porComando);   // v96: a fila passou do colchão e há passo para pagar
+53679	else if (recupera) this.nsCredita(f);                                             // v96: parado sem comando — um passo para pagar depois
+53685	// v99: o super (antes do PASSE/CHUTE: carregando, eles esperam). Sem comando nenhum neste passo (o buraco da internet, depois
+53692	remotoCurva(q, f, vale, dir) {                       // (o porte do v70Remoto; a ginga não abre em sala) — v92: no núcleo
+53696	/* v94 · a mesma fila (seq, palpite de até 4 passos, salto de seq perdida, descarte, silêncio de 350 ms); os botões não
+53723	if (this.v94) {                                    // v94: os comandos e o passo do motor próprio (o mesmo da previsão do aparelho)
+53730	if (q.bot) { BotSala.decide(this, q); if (this.cr) N.crTick(this, this.C, q, q.cr, q.suBot, this.estado === 'saida' \|\| this.estado === 'jogo', this.chutaCb); }   // v99: o bot também carrega o super
+53733	// 2–4) v92: o passo do núcleo (o mesmo que a previsão do aparelho roda): a velocidade ADITIVA com teto (rqPre), a bola
+53739	// 6) o quadro para os aparelhos (30 por segundo, o ritmo da v82)
+53743	colide() { N.colide(this, this.C); }               // (o collide/rqColide do jogo, com todos — v92: no núcleo)
+53748	if (this.cr && N.crAlta(this, this.C)) return;   // v99: a bola passando por cima não é toque de ninguém
+53755	else { h.push({ p: q, t0: this.tick, tick: this.tick, chute: -1 }); if (h.length > 12) h.shift(); this.estToque(q, u, this.chuteDe); }   // v93: defesa, desarme, passe certo
+53760	chuta(q, forca, carga) {                           // (o rqChuta: centro do jogador → centro da bola, só no alcance) · v99: carga = o super
+53761	if (this.v94) return S94().chuta(this, q, forca);  // v94: o bot toca o botão; o chute é do motor
+53766	if (this.cr && (!N.crAlcanca(this, this.C) \|\| (q.cr && q.cr.segura && !Number.isFinite(carga)))) return false;   // v99: alta demais · carregando o super
+53767	// v92: o mínimo entre dois chutes do mesmo jogador conta em PASSOS da partida (2 = os 33 ms de sempre). Até aqui era o
+53772	if (!(this.cr && q.chuteT === this.tick)) this.suspeito(q.netId, 'chute_rapido', '');   // (v99: o PASSE/CHUTE segurado logo depois do super no mesmo passo não é suspeito)
+53778	if (this.cr) N.crDepois(this, this.C, q, carga);   // v99: a cavadinha, a cabeçada, a curva e o fogo do super
+53782	marcaChute(q, forca) {                             // (o rqMarcaChute: marca o toque e guarda se a bola ia no gol)
+53788	if (cd.alvo) this.estDe(q).c++;                  // v93: chute no gol
+53793	if (this.v80 && !this.prorrog && this.relogioS() >= this.v80.seg) return;   // v80: depois dos 3:00 só vale o gol de ouro
+53797	this.estGol(L);                                  // v93: gol, assistência, gol contra (e a defesa que virou desvio sai)
+53799	if (this.placar[time] >= this.meta) this.fimPendente = true;      // a meta (3, ou a da v80)
+53833	else if (this.onReplay && this.onReplay()) { this.estado = 'replay'; this.pausado = true; }   // v93: o replay do gol (a turma volta com fimReplay)
+53843	relogioS() {                                       // o relógio oficial em segundos (v80: o do servidor, sem pausas)
+53847	if (this.v80) {                                  // a regra da ranqueada v80 (3:00, 1×1/2×2 acabam, 0×0 tem gol de ouro)
+53862	if (this.v94) return;                            // v94: a formação é a do motor (M.saida)
+53873	if (this.cr) { N.crZeraBola(B); for (const q of this.jog) { N.crZera(q.cr); q.suBot = false; } }   // v99
+53889	estat: this.estatisticas(),                    // v93: os números de cada um (o craque da partida)
+53894	/* ---- v93: as estatísticas (o painel de jogadores e o craque da partida) — as mesmas regras no aparelho (tools/v93/partida.js) ----
+53921	fimReplay() {                                      // v93: o replay acabou (todos votaram ou o tempo passou): a saída, como depois de todo gol
+53928	soltaFilas() { for (const q of this.jog) if (q.fila) { q.fila.fila.length = 0; q.fila.ult = null; if (this.v94) S94().reiniciaJogador(this, q); } }   // v93: a contagem acabou (o que chegou antes não vale)
+53930	/* ---- o quadro clássico (exatamente o que o convidado da v82 já recebe e renderiza) ---- */
+53935	ball: this.jogo === 'curva' ? [ns1(B.x), ns1(B.y), ns1(B.vx), ns1(B.vy), ns3(B.w), ns3(B.cv \|\| 0), ns3(B.cvT > 0 ? B.cvT : 0)]   // v92: + o efeito da CURVA (a previsão)
+53939	if (this.C.DB_MODO === 1 && q.netButton) v.push(N.dbPack(q.netButton, q.ack49 \|\| 0));   // v92 · o estado do DB por estados
+53944	if (this.cr) {                                     // v99: a bola no alto (altura, subida, giro, o teto do super, o fogo) e o estado de cada um
+53948	if (this.v94) S94().quadroExtra(this, Q);        // v94: + o estado do motor (m94) para a previsão do aparelho
+53952	botaoQuadro(q) {                                   // v92: o estado dos botões no quadro (a previsão do aparelho continua daqui)
+53959	if (this.v94) return S94().noAlvo(this, time);   // v94: o motor numa cópia (as mesmas batidas e o mesmo gol)
+53961	if (this.cr && (B.sp \|\| B.z > 0 \|\| B.vz > 0)) return this.crNoAlvo(lado);   // v99: com a curva ou no alto
+53976	crNoAlvo(lado) {                                   // v99: o caminho com o giro e a altura (sem as batidas): entra por baixo do travessão?
+54034	/* ---------------------------------------------------------------- tools/v99/chutes.js */
+54125	// o HUD e os layouts guardados antes da v99 (sem os quatro): os quatro vão para o lugar do molde de cada um. Os layouts que
+54137	if (S && Array.isArray(S.lista)) for (const L of S.lista){   // (a lista já aberta pela v92, antes desta troca)
+54140	const antigo = c && !(c.estado && c.estado.base && c.estado.base.cav);                                     // guardado antes da v99
+54156	// o desenho de cada botão (a imagem pronta, no jeito dos botões da v61: o disco neon, o aro de pixo e o ícone) + o estado
+54582	/* ---------------------------------------------------------------- tools/v99/salas.js */
+54835	/* ======================================================================= RACHA v100 (tools/v100/*.js) */
+54836	/* ---------------------------------------------------------------- tools/v100/seguranca.js */
+54962	/* ======================================================================= RACHA v101 (tools/v101/*.js) */
+54964	const V101_OFICINA = "data:image/webp;base64,UklGRih1AABXRUJQVlA4WAoAAAAQAAAARwMAFwEAQUxQSHIRAAAB/yckSPD/eGtEpO4jDBpJUrSzz//t3/DTwgmI6P8E2GjRsxnPXkrUQOL+9t3DQJmEuY/He8xzCzXxKBsRTbg6SEgt2GI87pIEELLP0hX0zBJipnSjK…
+54965	/* ---------------------------------------------------------------- tools/v101/lobby.js */
+54991	/* ---------------------------------------------------------------- 1) montar (uma vez, depois da v91) */
+55013	// as peças novas (idempotente: as telas da v88/v90/oficina aparecem em momentos diferentes)
+55031	// o SINAL: depois dos ajustes (as barras e o ping do servidor das salas; tocar abre a conexão da v88)
+55133	// tablet 4:3 encolhe o palco para 0,68) e, no celular deitado (onde tudo cabe na tela, como na v69), 30 px
+55200	// a tampinha (a mesma da v91, com o reflexo de volta: o chão da quadra nova é molhado)
+55330	// o piso do texto (a v70: o texto pequeno cresce até 12 px de verdade) roda quando o texto muda; a troca deitado ⇄ em pé só
+55340	/* ---------------------------------------------------------------- tools/v101/semskins.js */
+55567	if (onbPrecisa()) onbAbre();   // v57: a primeira vez (antes do presente)
+55569	setTimeout(slEntrarConvite, 400);   // v62: chegou por um link de convite
+55571	setTimeout(v84Inicia, 60);          // v84: ABRIR → VERIFICAR SESSÃO → LOGIN/CADASTRO (sem o site)
